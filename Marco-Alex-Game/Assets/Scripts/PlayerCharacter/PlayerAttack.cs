@@ -32,7 +32,7 @@ public class PlayerAttack : MonoBehaviour
         {
             Player.Instance.Animator.SetBool("Attacking", true);
             Player.Instance.CooldownTime = attackSpeed;
-            Player.Instance.Stamina -= 5;
+            Player.Instance.StaminaCost(staminaCost);
 
             StartCoroutine("CheckHitbox");
         }

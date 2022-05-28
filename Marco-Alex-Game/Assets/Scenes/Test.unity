@@ -365,7 +365,7 @@ GameObject:
   - component: {fileID: 1619554765}
   m_Layer: 6
   m_Name: Test Dummy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -574,6 +574,7 @@ GameObject:
   - component: {fileID: 1967504233}
   - component: {fileID: 1967504234}
   - component: {fileID: 1967504235}
+  - component: {fileID: 1967504236}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -793,6 +794,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 2a508a34-8f1e-42e1-a17b-b566f9f31db9
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1967504236}
+        m_TargetAssemblyTypeName: Spell, Assembly-CSharp
+        m_MethodName: OnSpellcast
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 88799f2f-c334-45c7-af9f-3d41a849ef6f
+    m_ActionName: Player/Fireball[/Keyboard/q]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -847,6 +864,20 @@ MonoBehaviour:
   - {fileID: 1257458969}
   - {fileID: 1317212808}
   - {fileID: 558103177}
+--- !u!114 &1967504236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967504226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14dab8c29d481cf4ba925170426436e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mpCost: 20
+  fireballPrefab: {fileID: 4302203384133919593, guid: 71f609b10851b2d4ca4a623005a22397, type: 3}
 --- !u!1 &2009410596
 GameObject:
   m_ObjectHideFlags: 0

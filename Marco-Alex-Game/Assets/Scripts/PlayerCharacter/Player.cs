@@ -5,10 +5,15 @@ using UnityEngine;
 public class Player : Character
 {
     private static Player instance;
+
     private float mp = 100f;
+    private float maxMp = 100f;
+    private float mpRegen = 2f;
+
     private float stamina = 100f;
     private float maxStamina = 100f;
     private float staminaRegen = 3f;
+
     private Animator animator;
     private float cooldownTime = 0f;
 
@@ -40,14 +45,25 @@ public class Player : Character
     {
 
     }
+    
+    private void MpRegen()
+    {
+        if (mp < maxMp)
+        {
+            mp += mpRegen * Time.deltaTime;
+        }
+        if (mp > maxMp) mp = maxMp;
+    }
 
     public bool StaminaCostCheck(float cost)
     {
-        if (cost <= Stamina)
-        {
-            return true;
-        }
+        if (cost <= Stamina) return true;
         else return false;
+    }
+
+    public void StaminaCost(float cost)
+    {
+        Stamina -= cost;
     }
 
     private void StaminaRegen()
@@ -57,6 +73,11 @@ public class Player : Character
             stamina += staminaRegen * Time.deltaTime;
         }
         if (stamina > maxStamina) stamina = maxStamina;
+    }
+
+    public void ActionCooldown(float cooltime)
+    {
+        CooldownTime = cooltime;
     }
 
     public bool CooldownCheck()
@@ -73,6 +94,7 @@ public class Player : Character
     // Update is called once per frame
     void Update()
     {
+        MpRegen();
         StaminaRegen();
         Cooldown();
     }

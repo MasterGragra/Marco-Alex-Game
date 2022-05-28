@@ -268,37 +268,37 @@ TextureImporter:
     second: objects_87
   - first:
       213: -6156538738564848463
-    second: objects_88
+    second: Fire1
   - first:
       213: -3163061646288262330
-    second: objects_89
+    second: Fire2
   - first:
       213: -8894351329827163213
-    second: objects_90
+    second: Fire3
   - first:
       213: -7946122169745577622
-    second: objects_91
+    second: Fire4
   - first:
       213: -8914528431609462405
-    second: objects_92
+    second: Fire5
   - first:
       213: -76596165655313214
-    second: objects_93
+    second: Fire6
   - first:
       213: 4810265859514842165
-    second: objects_94
+    second: Fire7
   - first:
       213: -1722444441660132011
-    second: objects_95
+    second: Glow4
   - first:
       213: 1702683679510850378
-    second: objects_96
+    second: Glow3
   - first:
       213: 4391973271103909417
-    second: objects_97
+    second: Glow2
   - first:
       213: -2639854583086408205
-    second: objects_98
+    second: Glow1
   - first:
       213: 5955781087917997448
     second: objects_99
@@ -2941,7 +2941,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_88
+      name: Fire1
       rect:
         serializedVersion: 2
         x: 64
@@ -2962,7 +2962,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_89
+      name: Fire2
       rect:
         serializedVersion: 2
         x: 80
@@ -2983,7 +2983,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_90
+      name: Fire3
       rect:
         serializedVersion: 2
         x: 96
@@ -3004,7 +3004,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_91
+      name: Fire4
       rect:
         serializedVersion: 2
         x: 112
@@ -3025,7 +3025,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_92
+      name: Fire5
       rect:
         serializedVersion: 2
         x: 128
@@ -3046,7 +3046,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_93
+      name: Fire6
       rect:
         serializedVersion: 2
         x: 144
@@ -3067,7 +3067,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_94
+      name: Fire7
       rect:
         serializedVersion: 2
         x: 160
@@ -3088,7 +3088,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_95
+      name: Glow4
       rect:
         serializedVersion: 2
         x: 176
@@ -3109,7 +3109,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_96
+      name: Glow3
       rect:
         serializedVersion: 2
         x: 192
@@ -3130,7 +3130,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_97
+      name: Glow2
       rect:
         serializedVersion: 2
         x: 208
@@ -3151,7 +3151,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_98
+      name: Glow1
       rect:
         serializedVersion: 2
         x: 224
