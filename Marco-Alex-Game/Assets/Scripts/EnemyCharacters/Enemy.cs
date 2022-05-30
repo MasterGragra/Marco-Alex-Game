@@ -9,7 +9,7 @@ public class Enemy : Character
     // Start is called before the first frame update
     void Start()
     {
-        
+        OriginalColor = GetComponent<SpriteRenderer>().color;
     }
 
     // Update is called once per frame

@@ -69,7 +69,7 @@ public class PlayerAttack : MonoBehaviour
 
         foreach (Collider2D enemy in enemies)
         {
-            enemy.GetComponent<Enemy>().ReceiveDamage(damage);
+            enemy.SendMessage("ReceiveIndirectDamage", damage);
         }
     }
 

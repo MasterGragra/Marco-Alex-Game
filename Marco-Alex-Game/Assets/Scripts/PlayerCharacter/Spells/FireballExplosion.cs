@@ -4,14 +4,25 @@ using UnityEngine;
 
 public class FireballExplosion : Projectile
 {
-    private void OnTriggerEnter2D(Collider2D collider)
+    private BoxCollider2D explosionCollider;
+    private LayerMask enemyLayer;
+    private float burnDamage = 10f;
+
+    private void Start()
     {
-        if (collider != null)
+        explosionCollider = GetComponent<BoxCollider2D>();
+        enemyLayer = LayerMask.GetMask("Enemy");
+        InvokeRepeating("BurnDamage", 0.1f, 0.3f);
+    }
+
+    private void BurnDamage()
+    {
+        Collider2D[] enemies = Physics2D.OverlapBoxAll(explosionCollider.transform.position, explosionCollider.size, 0f, enemyLayer);
+        foreach(Collider2D enemy in enemies)
         {
-            for (int i = 0; i < targetTags.Length; i++)
-            {
-                if (collider.gameObject.CompareTag(targetTags[i])) collider.SendMessage("ReceiveDamage", damage);
-            }
+            enemy.SendMessage("ReceiveIndirectDamage", burnDamage);
         }
     }
 }
+
+

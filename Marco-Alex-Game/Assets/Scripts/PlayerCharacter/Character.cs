@@ -7,6 +7,9 @@ public class Character : MonoBehaviour
     [SerializeField] private float hp;
     private bool invincible = false;
     private float invincibilityTime = 0.2f;
+    private Color originalColor;
+
+    public Color OriginalColor { get => originalColor; set => originalColor = value; }
 
     public virtual void ReceiveDamage(float damage)
     {
@@ -21,6 +24,16 @@ public class Character : MonoBehaviour
             StartCoroutine("DamageFeedback");
             StartCoroutine("InvincibilityTimer");
         }
+    }
+
+    public void ReceiveIndirectDamage(float damage)
+    {
+        hp -= damage;
+        if(IsDead())
+        {
+            Die();
+        }
+        StartCoroutine("DamageFeedback");
     }
 
     private bool IsDead()
@@ -41,10 +54,9 @@ public class Character : MonoBehaviour
 
     public IEnumerator DamageFeedback()
     {
-        SpriteRenderer sprite = GetComponent<SpriteRenderer>();
-        Color original = sprite.color;
+        SpriteRenderer sprite = GetComponent<SpriteRenderer>();;
         sprite.color = Color.red;
         yield return new WaitForSeconds(0.1f);
-        sprite.color = original;
+        sprite.color = OriginalColor;
     }
 }

@@ -8,7 +8,7 @@ public class Projectile : MonoBehaviour
     [SerializeField] private float lifetime;
     public string[] targetTags;
 
-    void Start()
+    void Awake()
     {
         Destroy(gameObject, lifetime);
     }

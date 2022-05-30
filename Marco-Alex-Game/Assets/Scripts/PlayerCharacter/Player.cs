@@ -39,6 +39,7 @@ public class Player : Character
     void Start()
     {
         Animator = GetComponent<Animator>();
+        OriginalColor = GetComponent<SpriteRenderer>().color;
     }
 
     public override void Die()
