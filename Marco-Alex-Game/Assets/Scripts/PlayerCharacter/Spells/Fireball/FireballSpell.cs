@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class FireballSpell : Spell
 {
-    [SerializeField] private GameObject fireballPrefab;
     private float fireballSpeed = 10f;
 
     private void CastFireball()
@@ -13,9 +12,9 @@ public class FireballSpell : Spell
         {
             Player.Instance.ActionCooldown(0.3f);
             MpCost(mpCost);
-            GameObject fireball = Instantiate(fireballPrefab, Player.Instance.transform.position, Quaternion.identity);
+            GameObject fireball = Instantiate(spellPrefab, Player.Instance.transform.position, Quaternion.identity);
             Rigidbody2D rigid = fireball.GetComponent<Rigidbody2D>();
-            rigid.AddForce(Player.Instance.GetComponent<PlayerMovement>().PlayerDirection * fireballSpeed, ForceMode2D.Impulse);
+            rigid.AddForce(Player.Instance.GetComponent<PlayerMovement>().PlayerDirection.normalized * fireballSpeed, ForceMode2D.Impulse);
         }
     }
 

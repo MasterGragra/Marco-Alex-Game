@@ -97,7 +97,7 @@ TextureImporter:
     second: objects_30
   - first:
       213: 4698315425400886581
-    second: objects_31
+    second: WindBlade
   - first:
       213: 2197855871317943228
     second: objects_32
@@ -1786,13 +1786,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_31
+      name: WindBlade
       rect:
         serializedVersion: 2
         x: 64
-        y: 288
-        width: 16
-        height: 16
+        y: 272
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1802,27 +1802,6 @@ TextureImporter:
       bones: []
       spriteID: 53512c59cf4c33140800000000000000
       internalID: 4698315425400886581
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: objects_32
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 288
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cb3a96d254a508e10800000000000000
-      internalID: 2197855871317943228
       vertices: []
       indices: 
       edges: []
@@ -2264,48 +2243,6 @@ TextureImporter:
       bones: []
       spriteID: ccf84e7261a448c00800000000000000
       internalID: 901927284399968204
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: objects_56
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 272
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5d9565722825aef80800000000000000
-      internalID: -8076552262776366635
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: objects_57
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 272
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 287eaaa3ad58c77e0800000000000000
-      internalID: -1766389781502433406
       vertices: []
       indices: 
       edges: []

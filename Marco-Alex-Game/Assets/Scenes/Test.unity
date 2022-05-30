@@ -378,7 +378,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1619554763}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3, z: 0}
+  m_LocalPosition: {x: 0, y: -6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -464,7 +464,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 5879345f760693e4f9e4b15989fd621e, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -575,6 +575,7 @@ GameObject:
   - component: {fileID: 1967504234}
   - component: {fileID: 1967504235}
   - component: {fileID: 1967504236}
+  - component: {fileID: 1967504237}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -662,7 +663,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1967504226}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2009410597}
@@ -810,6 +811,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 88799f2f-c334-45c7-af9f-3d41a849ef6f
     m_ActionName: Player/Fireball[/Keyboard/q]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1967504237}
+        m_TargetAssemblyTypeName: Spell, Assembly-CSharp
+        m_MethodName: OnSpellcast
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: cec59f90-58cc-45d8-abbc-42110b6c2b43
+    m_ActionName: Player/New action
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -876,8 +893,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14dab8c29d481cf4ba925170426436e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spellPrefab: {fileID: 4302203384133919593, guid: 71f609b10851b2d4ca4a623005a22397, type: 3}
   mpCost: 20
-  fireballPrefab: {fileID: 4302203384133919593, guid: 71f609b10851b2d4ca4a623005a22397, type: 3}
+--- !u!114 &1967504237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967504226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8e9ccd3f5b34234d9d6ecf0847994cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spellPrefab: {fileID: 4958719264314343407, guid: 41f9fe4906c670745aca4767a01b1f77, type: 3}
+  mpCost: 10
 --- !u!1 &2009410596
 GameObject:
   m_ObjectHideFlags: 0

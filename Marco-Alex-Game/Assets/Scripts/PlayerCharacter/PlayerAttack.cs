@@ -26,7 +26,7 @@ public class PlayerAttack : MonoBehaviour
 
     private void Attack()
     {
-        if(attack 
+        if (attack 
             && Player.Instance.StaminaCostCheck(staminaCost) 
             && Player.Instance.CooldownCheck())
         {
@@ -69,7 +69,7 @@ public class PlayerAttack : MonoBehaviour
 
         foreach (Collider2D enemy in enemies)
         {
-            enemy.SendMessage("ReceiveIndirectDamage", damage);
+            enemy.SendMessage("ReceiveDamage", damage);
         }
     }
 

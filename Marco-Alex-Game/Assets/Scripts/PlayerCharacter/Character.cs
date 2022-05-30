@@ -29,7 +29,7 @@ public class Character : MonoBehaviour
     public void ReceiveIndirectDamage(float damage)
     {
         hp -= damage;
-        if(IsDead())
+        if (IsDead())
         {
             Die();
         }
@@ -58,5 +58,10 @@ public class Character : MonoBehaviour
         sprite.color = Color.red;
         yield return new WaitForSeconds(0.1f);
         sprite.color = OriginalColor;
+    }
+
+    private void Awake()
+    {
+        OriginalColor = GetComponent<SpriteRenderer>().color;
     }
 }

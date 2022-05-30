@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 public class Spell : MonoBehaviour
 {
+    public GameObject spellPrefab;
     private bool spellcast;
     public float mpCost;
 

@@ -25,7 +25,7 @@ public class Player : Character
 
     private void Awake()
     {
-        if(Instance != null && Instance != this)
+        if (Instance != null && Instance != this)
         {
             Destroy(this);
         }
@@ -69,7 +69,7 @@ public class Player : Character
 
     private void StaminaRegen()
     {
-        if(stamina < maxStamina)
+        if (stamina < maxStamina)
         {
             stamina += staminaRegen * Time.deltaTime;
         }

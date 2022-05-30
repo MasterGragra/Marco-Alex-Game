@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 891bd9f5bac54e541a9b0fb2bfe36560, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 15
   lifetime: 1
   targetTags:
   - Enemy

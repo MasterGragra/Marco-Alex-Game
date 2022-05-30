@@ -691,7 +691,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2021c9381f1ef34fa360786f2792f4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 30
+  damage: 5
   lifetime: 1
   targetTags:
   - Enemy
