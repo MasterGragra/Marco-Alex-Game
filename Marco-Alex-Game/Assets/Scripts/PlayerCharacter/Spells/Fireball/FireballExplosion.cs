@@ -19,7 +19,7 @@ public class FireballExplosion : Projectile
         Collider2D[] enemies = Physics2D.OverlapBoxAll(explosionCollider.transform.position, explosionCollider.size, 0f, enemyLayer);
         foreach(Collider2D enemy in enemies)
         {
-            enemy.SendMessage("ReceiveIndirectDamage", damage);
+            enemy.SendMessage("ReceiveIndirectDamage", Damage);
         }
     }
 }

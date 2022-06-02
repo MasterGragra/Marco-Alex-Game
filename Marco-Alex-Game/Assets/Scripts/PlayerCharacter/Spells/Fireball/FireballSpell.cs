@@ -10,7 +10,7 @@ public class FireballSpell : Spell
     {
         if (CanCast())
         {
-            GameObject fireball = Instantiate(spellPrefab, Player.Instance.transform.position, Quaternion.identity);
+            GameObject fireball = Instantiate(SpellPrefab, Player.Instance.transform.position, Quaternion.identity);
             Rigidbody2D rigid = fireball.GetComponent<Rigidbody2D>();
             rigid.AddForce(Player.Instance.GetComponent<PlayerMovement>().PlayerDirection.normalized * fireballSpeed, ForceMode2D.Impulse);
         }

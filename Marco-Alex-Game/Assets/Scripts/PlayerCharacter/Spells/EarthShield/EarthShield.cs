@@ -11,11 +11,11 @@ public class EarthShield : Projectile
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        for (int i = 0; i < targetTags.Length; i++)
+        for (int i = 0; i < TargetTags.Length; i++)
         {
-            if (collider.gameObject.CompareTag(targetTags[i]))
+            if (collider.gameObject.CompareTag(TargetTags[i]))
             {
-                collider.SendMessage("ReceiveDamage", damage);
+                collider.SendMessage("ReceiveDamage", Damage);
                 durability--;
             }
         }
@@ -40,8 +40,8 @@ public class EarthShield : Projectile
 
     private void FixedUpdate()
     {
-        lifetime -= Time.fixedDeltaTime;
-        if (lifetime <= 0f || durability <= 0)
+        Lifetime -= Time.fixedDeltaTime;
+        if (Lifetime <= 0f || durability <= 0)
         {
             StartCoroutine(DestroyShield());
         }

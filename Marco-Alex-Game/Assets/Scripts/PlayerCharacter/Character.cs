@@ -21,8 +21,11 @@ public class Character : MonoBehaviour
             {
                 Die();
             }
-            StartCoroutine("DamageFeedback");
-            StartCoroutine("InvincibilityTimer");
+            else
+            {
+                StartCoroutine("DamageFeedback");
+                StartCoroutine("InvincibilityTimer");
+            }
         }
     }
 

@@ -5,9 +5,11 @@ using UnityEngine.InputSystem;
 
 public class Spell : MonoBehaviour
 {
-    public GameObject spellPrefab;
+    [SerializeField] private GameObject spellPrefab;
     private bool spellcast;
-    public float mpCost;
+    [SerializeField] private float mpCost;
+
+    public GameObject SpellPrefab { get => spellPrefab; set => spellPrefab = value; }
 
     public void OnSpellcast(InputAction.CallbackContext context)
     {
@@ -31,6 +33,7 @@ public class Spell : MonoBehaviour
         {
             Player.Instance.ActionCooldown(0.3f);
             MpCost(mpCost);
+            Player.Instance.Animator.SetTrigger("Spellcast");
             return true;
         }
         return false;

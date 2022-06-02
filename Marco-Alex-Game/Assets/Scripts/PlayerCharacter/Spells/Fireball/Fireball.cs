@@ -8,11 +8,11 @@ public class Fireball : Projectile
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        for (int i = 0; i < targetTags.Length; i++)
+        for (int i = 0; i < TargetTags.Length; i++)
         {
-            if (collider.gameObject.CompareTag(targetTags[i]))
+            if (collider.gameObject.CompareTag(TargetTags[i]))
             {
-                collider.SendMessage("ReceiveDamage", damage);
+                collider.SendMessage("ReceiveDamage", Damage);
                 Instantiate(explosionPrefab, transform.position, Quaternion.identity);
                 Destroy(gameObject);
             }

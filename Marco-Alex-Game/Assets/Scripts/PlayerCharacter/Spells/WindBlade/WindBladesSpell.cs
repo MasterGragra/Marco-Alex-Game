@@ -15,7 +15,7 @@ public class WindBladesSpell : Spell
             Vector3 skillDirection = Quaternion.AngleAxis(-(windBladesSpread * ((float)windBladesCount - 1f) / 2), Vector3.forward) * Player.Instance.GetComponent<PlayerMovement>().PlayerDirection;
             for(int i = 0; i < windBladesCount; i++)
             {
-                GameObject windBlade = Instantiate(spellPrefab, Player.Instance.transform.position, Quaternion.identity);
+                GameObject windBlade = Instantiate(SpellPrefab, Player.Instance.transform.position, Quaternion.identity);
                 Rigidbody2D rigid = windBlade.GetComponent<Rigidbody2D>();
                 rigid.AddForce(skillDirection.normalized * windBladesSpeed, ForceMode2D.Impulse);
                 skillDirection = Quaternion.AngleAxis(windBladesSpread, Vector3.forward) * skillDirection;
