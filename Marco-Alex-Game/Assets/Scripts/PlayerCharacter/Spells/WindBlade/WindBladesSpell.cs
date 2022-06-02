@@ -12,8 +12,6 @@ public class WindBladesSpell : Spell
     {
         if (CanCast())
         {
-            Player.Instance.ActionCooldown(0.3f);
-            MpCost(mpCost);
             Vector3 skillDirection = Quaternion.AngleAxis(-(windBladesSpread * ((float)windBladesCount - 1f) / 2), Vector3.forward) * Player.Instance.GetComponent<PlayerMovement>().PlayerDirection;
             for(int i = 0; i < windBladesCount; i++)
             {

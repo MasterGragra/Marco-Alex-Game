@@ -27,7 +27,12 @@ public class Spell : MonoBehaviour
 
     public bool CanCast()
     {
-        if (spellcast && Player.Instance.CooldownCheck() && MpCostCheck()) return true;
+        if (spellcast && Player.Instance.CooldownCheck() && MpCostCheck())
+        {
+            Player.Instance.ActionCooldown(0.3f);
+            MpCost(mpCost);
+            return true;
+        }
         return false;
     }
 }

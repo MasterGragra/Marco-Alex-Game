@@ -5,7 +5,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public float damage;
-    [SerializeField] private float lifetime;
+    public float lifetime;
     public string[] targetTags;
 
     void Awake()

@@ -576,6 +576,7 @@ GameObject:
   - component: {fileID: 1967504235}
   - component: {fileID: 1967504236}
   - component: {fileID: 1967504237}
+  - component: {fileID: 1967504238}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -827,6 +828,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: cec59f90-58cc-45d8-abbc-42110b6c2b43
     m_ActionName: Player/New action
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1967504238}
+        m_TargetAssemblyTypeName: Spell, Assembly-CSharp
+        m_MethodName: OnSpellcast
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: fd554434-979b-4a5b-bab4-bc4a685697ac
+    m_ActionName: Player/New action
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -909,6 +926,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellPrefab: {fileID: 4958719264314343407, guid: 41f9fe4906c670745aca4767a01b1f77, type: 3}
   mpCost: 10
+--- !u!114 &1967504238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967504226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc2ae88145d2da84e9de43ed98e3ab75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spellPrefab: {fileID: 1564260674139367626, guid: da014cd0007be5b47b5fc17de9b3c016, type: 3}
+  mpCost: 30
 --- !u!1 &2009410596
 GameObject:
   m_ObjectHideFlags: 0
