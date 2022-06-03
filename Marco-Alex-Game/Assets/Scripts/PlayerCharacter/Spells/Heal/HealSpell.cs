@@ -8,25 +8,22 @@ public class HealSpell : Spell
 
     private void CastHeal()
     {
-        if(CanCast() && Player.Instance.Hp < Player.Instance.MaxHp)
+        if (Player.Instance.Hp < Player.Instance.MaxHp)
         {
-            if (Player.Instance.Hp + healAmount < Player.Instance.MaxHp) Player.Instance.Hp = Player.Instance.MaxHp;
-            else Player.Instance.Hp += healAmount;
+            if (CanCast())
+            {
+                if (Player.Instance.Hp + healAmount > Player.Instance.MaxHp) Player.Instance.Hp = Player.Instance.MaxHp;
+                else Player.Instance.Hp += healAmount;
 
-            GameObject heal = Instantiate(SpellPrefab, transform.position, Quaternion.identity);
-            //heal.GetComponent<Heal>().Target = transform;
+                GameObject heal = Instantiate(SpellPrefab, this.transform.position, Quaternion.identity);
+                heal.GetComponent<Heal>().Target = this.transform;
+            }
         }
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        CastHeal();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        CastHeal();
     }
 }

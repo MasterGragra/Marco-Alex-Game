@@ -38,6 +38,7 @@ public class Player : Character
     // Start is called before the first frame update
     void Start()
     {
+        //Hp = MaxHp;
         OriginalColor = GetComponent<SpriteRenderer>().color;
         Animator = GetComponent<Animator>();
     }

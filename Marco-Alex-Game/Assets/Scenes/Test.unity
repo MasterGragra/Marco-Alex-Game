@@ -396,6 +396,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fd00068cf939454e978e0da34f1744e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 0
   maxHp: 100
 --- !u!61 &1619554766
 BoxCollider2D:
@@ -577,6 +578,7 @@ GameObject:
   - component: {fileID: 1967504236}
   - component: {fileID: 1967504237}
   - component: {fileID: 1967504238}
+  - component: {fileID: 1967504241}
   - component: {fileID: 1967504239}
   - component: {fileID: 1967504240}
   m_Layer: 0
@@ -847,6 +849,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: fd554434-979b-4a5b-bab4-bc4a685697ac
     m_ActionName: Player/New action
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1967504241}
+        m_TargetAssemblyTypeName: Spell, Assembly-CSharp
+        m_MethodName: OnSpellcast
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 85579487-55c8-48a7-9cf6-d92116817a0e
+    m_ActionName: Player/New action
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -883,6 +901,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db1554e765875924baafbc0b77baa0d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 10
   maxHp: 100
   normalAudio: {fileID: 1967504239}
   loopingAudio: {fileID: 1967504240}
@@ -1147,6 +1166,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1967504241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967504226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa091a9a1e6a4b3488021566e4f37c06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spellPrefab: {fileID: 5609632458946122239, guid: c2fb20b6fa5c39840bfc7ff8c17a2e85, type: 3}
+  mpCost: 50
+  buffSpell: 1
+  spellSFX: {fileID: 8300000, guid: 97c9be6a345f4c54b9a277d8472f62f7, type: 3}
+  sfxDuration: 0.4
 --- !u!1 &2009410596
 GameObject:
   m_ObjectHideFlags: 0

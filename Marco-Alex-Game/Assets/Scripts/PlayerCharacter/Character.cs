@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
-    private float hp;
+    [SerializeField] private float hp;
     [SerializeField] private float maxHp;
 
     private bool invincible = false;
