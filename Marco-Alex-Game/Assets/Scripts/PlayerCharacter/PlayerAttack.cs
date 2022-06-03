@@ -80,8 +80,8 @@ public class PlayerAttack : MonoBehaviour
 
     private void AttackSFX()
     {
-        Player.Instance.Source.clip = attackSFX;
-        Player.Instance.Source.Play();
+        Player.Instance.NormalAudio.clip = attackSFX;
+        Player.Instance.NormalAudio.Play();
     }
 
 

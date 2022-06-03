@@ -7,7 +7,10 @@ public class Spell : MonoBehaviour
 {
     [SerializeField] private GameObject spellPrefab;
     private bool spellcast;
+
     [SerializeField] private float mpCost;
+
+    [SerializeField] private AudioClip spellSFX;
 
     public GameObject SpellPrefab { get => spellPrefab; set => spellPrefab = value; }
 
@@ -33,9 +36,17 @@ public class Spell : MonoBehaviour
         {
             Player.Instance.ActionCooldown(0.3f);
             MpCost(mpCost);
+
             Player.Instance.Animator.SetTrigger("Spellcast");
+
+            SpellSFX();
             return true;
         }
         return false;
+    }
+
+    public void SpellSFX()
+    {
+
     }
 }

@@ -75,10 +75,9 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Player.Instance.Animator.GetBool("Moving") && walkCount == 0)
         {
-            Player.Instance.Source.clip = walkingSFX;
-            Player.Instance.Source.Play();
+            Player.Instance.LoopingAudio.Play();
         }
-        else Player.Instance.Source.Stop();
+        else Player.Instance.LoopingAudio.Stop();
 
         walkCount += Time.deltaTime;
         if (walkCount >= 0.3 || !Player.Instance.Animator.GetBool("Moving"))
