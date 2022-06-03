@@ -11,6 +11,7 @@ public class Spell : MonoBehaviour
     [SerializeField] private float mpCost;
 
     [SerializeField] private AudioClip spellSFX;
+    [SerializeField] private float sfxDuration;
 
     public GameObject SpellPrefab { get => spellPrefab; set => spellPrefab = value; }
 
@@ -39,14 +40,17 @@ public class Spell : MonoBehaviour
 
             Player.Instance.Animator.SetTrigger("Spellcast");
 
-            SpellSFX();
+            StartCoroutine("SpellSFX", sfxDuration);
             return true;
         }
         return false;
     }
 
-    public void SpellSFX()
+    public IEnumerator SpellSFX(float duration)
     {
-
+        Player.Instance.NormalAudio.clip = spellSFX;
+        Player.Instance.NormalAudio.Play();
+        yield return new WaitForSeconds(duration);
+        Player.Instance.NormalAudio.Stop();
     }
 }

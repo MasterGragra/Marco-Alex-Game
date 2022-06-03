@@ -918,7 +918,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellPrefab: {fileID: 4302203384133919593, guid: 71f609b10851b2d4ca4a623005a22397, type: 3}
   mpCost: 20
-  spellSFX: {fileID: 0}
+  spellSFX: {fileID: 8300000, guid: 085aa69bb194fbe4eb8618b80629c965, type: 3}
+  sfxDuration: 0.3
 --- !u!114 &1967504237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -933,7 +934,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellPrefab: {fileID: 4958719264314343407, guid: 41f9fe4906c670745aca4767a01b1f77, type: 3}
   mpCost: 10
-  spellSFX: {fileID: 0}
+  spellSFX: {fileID: 8300000, guid: e64803ffa87f9304eb0eb170a267bbf8, type: 3}
+  sfxDuration: 0.3
 --- !u!114 &1967504238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -948,7 +950,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellPrefab: {fileID: 1564260674139367626, guid: da014cd0007be5b47b5fc17de9b3c016, type: 3}
   mpCost: 30
-  spellSFX: {fileID: 0}
+  spellSFX: {fileID: 8300000, guid: 1c2024885b669dc4b8978c83e360744e, type: 3}
+  sfxDuration: 0.6
 --- !u!82 &1967504239
 AudioSource:
   m_ObjectHideFlags: 0
