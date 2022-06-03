@@ -13,6 +13,8 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private GameObject[] attackHitboxes;
     private LayerMask enemyLayer;
 
+    [SerializeField] private AudioClip attackSFX;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +37,9 @@ public class PlayerAttack : MonoBehaviour
             Player.Instance.StaminaCost(staminaCost);
 
             StartCoroutine("CheckHitbox");
+
+            AttackSFX();
+
         }
         else
         {
@@ -72,6 +77,13 @@ public class PlayerAttack : MonoBehaviour
             enemy.SendMessage("ReceiveDamage", damage);
         }
     }
+
+    private void AttackSFX()
+    {
+        Player.Instance.Source.clip = attackSFX;
+        Player.Instance.Source.Play();
+    }
+
 
     // Update is called once per frame
     void Update()

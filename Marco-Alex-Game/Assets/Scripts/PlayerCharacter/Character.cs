@@ -5,6 +5,7 @@ using UnityEngine;
 public class Character : MonoBehaviour
 {
     [SerializeField] private float hp;
+
     private bool invincible = false;
     private float invincibilityTime = 0.2f;
     private Color originalColor;

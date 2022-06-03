@@ -17,11 +17,14 @@ public class Player : Character
     private Animator animator;
     private float cooldownTime = 0f;
 
+    private AudioSource source;
+
     public static Player Instance { get => instance; set => instance = value; }
     public float Mp { get => mp; set => mp = value; }
     public float Stamina { get => stamina; set => stamina = value; }
     public Animator Animator { get => animator; set => animator = value; }
     public float CooldownTime { get => cooldownTime; set => cooldownTime = value; }
+    public AudioSource Source { get => source; set => source = value; }
 
     private void Awake()
     {
@@ -38,8 +41,9 @@ public class Player : Character
     // Start is called before the first frame update
     void Start()
     {
-        Animator = GetComponent<Animator>();
         OriginalColor = GetComponent<SpriteRenderer>().color;
+        Animator = GetComponent<Animator>();
+        Source = GetComponent<AudioSource>();
     }
 
     public override void Die()

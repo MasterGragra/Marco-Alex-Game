@@ -11,6 +11,9 @@ public class PlayerMovement : MonoBehaviour
     private string direction = "Down";
     private Vector2 playerDirection = new Vector2(0f, -1f);
 
+    [SerializeField] private AudioClip walkingSFX;
+    private float walkCount = 0;
+
     public string Direction { get => direction; set => direction = value; }
     public Vector2 PlayerDirection { get => playerDirection; set => playerDirection = value; }
 
@@ -68,11 +71,28 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void WalkingSFX()
+    {
+        if (Player.Instance.Animator.GetBool("Moving") && walkCount == 0)
+        {
+            Player.Instance.Source.clip = walkingSFX;
+            Player.Instance.Source.Play();
+        }
+        else Player.Instance.Source.Stop();
+
+        walkCount += Time.deltaTime;
+        if (walkCount >= 0.3 || !Player.Instance.Animator.GetBool("Moving"))
+        {
+            walkCount = 0;
+        }
+    }
+
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         Animate();
         Move();
         CalculateDirection();
+        WalkingSFX();
     }
 }
