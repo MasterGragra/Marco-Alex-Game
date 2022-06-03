@@ -14,7 +14,7 @@ public class EarthShieldSpell : Spell
             {
                 GameObject shield = Instantiate(SpellPrefab, transform.position, Quaternion.identity);
                 Orbit script = shield.GetComponent<Orbit>();
-                script.Axis = gameObject.transform;
+                script.Axis = transform;
                 script.Angle = (360f / earthShieldCount) * i;
             }
         }

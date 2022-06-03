@@ -39,7 +39,6 @@ public class PlayerAttack : MonoBehaviour
             StartCoroutine("CheckHitbox");
 
             AttackSFX();
-
         }
         else
         {

@@ -217,7 +217,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_7
+      name: BuffDown
       rect:
         serializedVersion: 2
         x: 112
@@ -469,7 +469,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_24
+      name: BuffRight
       rect:
         serializedVersion: 2
         x: 112
@@ -700,7 +700,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_41
+      name: BuffUp
       rect:
         serializedVersion: 2
         x: 112
@@ -931,7 +931,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: character_58
+      name: BuffLeft
       rect:
         serializedVersion: 2
         x: 112

@@ -7,8 +7,8 @@ public class Spell : MonoBehaviour
 {
     [SerializeField] private GameObject spellPrefab;
     private bool spellcast;
-
     [SerializeField] private float mpCost;
+    [SerializeField] private bool buffSpell = false;
 
     [SerializeField] private AudioClip spellSFX;
     [SerializeField] private float sfxDuration;
@@ -38,15 +38,22 @@ public class Spell : MonoBehaviour
             Player.Instance.ActionCooldown(0.3f);
             MpCost(mpCost);
 
-            Player.Instance.Animator.SetTrigger("Spellcast");
+            SpellcastAnimation();
 
             StartCoroutine("SpellSFX", sfxDuration);
+
             return true;
         }
         return false;
     }
 
-    public IEnumerator SpellSFX(float duration)
+    private void SpellcastAnimation()
+    {
+        if (buffSpell) Player.Instance.Animator.SetTrigger("Buffcast");
+        else Player.Instance.Animator.SetTrigger("Spellcast");
+    }
+
+    private IEnumerator SpellSFX(float duration)
     {
         Player.Instance.NormalAudio.clip = spellSFX;
         Player.Instance.NormalAudio.Play();

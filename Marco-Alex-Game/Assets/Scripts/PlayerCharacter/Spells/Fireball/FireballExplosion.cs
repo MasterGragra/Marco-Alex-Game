@@ -7,11 +7,16 @@ public class FireballExplosion : Projectile
     private BoxCollider2D explosionCollider;
     private LayerMask enemyLayer;
 
+    private AudioSource audioSource;
+    [SerializeField] private AudioClip explosionSFX;
+
+
     private void Start()
     {
         explosionCollider = GetComponent<BoxCollider2D>();
         enemyLayer = LayerMask.GetMask("Enemy");
         InvokeRepeating("BurnDamage", 0.1f, 0.3f);
+        StartCoroutine("ExplosionSFX");
     }
 
     private void BurnDamage()
@@ -21,6 +26,15 @@ public class FireballExplosion : Projectile
         {
             enemy.SendMessage("ReceiveIndirectDamage", Damage);
         }
+    }
+
+    private IEnumerator ExplosionSFX()
+    {
+        audioSource = GameManager.Instance.GetComponent<AudioSource>();
+        audioSource.clip = explosionSFX;
+        audioSource.Play();
+        yield return new WaitForSeconds(0.4f);
+        audioSource.Stop();
     }
 }
 

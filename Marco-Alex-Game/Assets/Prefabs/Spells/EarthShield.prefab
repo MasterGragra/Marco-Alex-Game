@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 2039303139}
   m_Layer: 0
   m_Name: EarthShield
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -174,5 +174,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   lifetime: 5
-  targetTags:
-  - Enemy
+  brokenShieldSFX: {fileID: 8300000, guid: 1c2024885b669dc4b8978c83e360744e, type: 3}

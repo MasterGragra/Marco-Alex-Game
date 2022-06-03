@@ -31,14 +31,8 @@ public class Player : Character
 
     private void Awake()
     {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(this);
-        }
-        else
-        {
-            Instance = this;
-        }
+        if (Instance != null && Instance != this) Destroy(this);
+        else Instance = this;
     }
 
     // Start is called before the first frame update
@@ -55,11 +49,8 @@ public class Player : Character
     
     private void MpRegen()
     {
-        if (mp < maxMp)
-        {
-            mp += mpRegen * Time.deltaTime;
-        }
-        if (mp > maxMp) mp = maxMp;
+        if (mp < maxMp) mp += mpRegen * Time.deltaTime;
+        else if (mp > maxMp) mp = maxMp;
     }
 
     public bool StaminaCostCheck(float cost)
@@ -75,11 +66,8 @@ public class Player : Character
 
     private void StaminaRegen()
     {
-        if (stamina < maxStamina)
-        {
-            stamina += staminaRegen * Time.deltaTime;
-        }
-        if (stamina > maxStamina) stamina = maxStamina;
+        if (stamina < maxStamina) stamina += staminaRegen * Time.deltaTime;
+        else if (stamina > maxStamina) stamina = maxStamina;
     }
 
     public void ActionCooldown(float cooltime)

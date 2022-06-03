@@ -7,7 +7,21 @@ public class EarthShield : Projectile
     private Animator animator;
     private int durability = 1;
 
+    private AudioSource audioSource;
+    [SerializeField] private AudioClip brokenShieldSFX;
+
     public int Durability { get => durability; set => durability = value; }
+
+    private void Awake()
+    {
+
+    }
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+        audioSource = GameManager.Instance.GetComponent<AudioSource>();
+    }
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
@@ -15,8 +29,9 @@ public class EarthShield : Projectile
         {
             if (collider.gameObject.CompareTag(TargetTags[i]))
             {
-                collider.SendMessage("ReceiveDamage", Damage);
                 durability--;
+                collider.SendMessage("ReceiveDamage", Damage);
+                DestroyShieldSFX();
             }
         }
     }
@@ -28,14 +43,10 @@ public class EarthShield : Projectile
         Destroy(gameObject);
     }
 
-    private void Awake()
+    private void DestroyShieldSFX()
     {
-        
-    }
-
-    private void Start()
-    {
-        animator = GetComponent<Animator>();
+        audioSource.clip = brokenShieldSFX;
+        audioSource.Play();
     }
 
     private void FixedUpdate()

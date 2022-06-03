@@ -4,19 +4,29 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
-    [SerializeField] private float hp;
+    private float hp;
+    [SerializeField] private float maxHp;
 
     private bool invincible = false;
     private float invincibilityTime = 0.2f;
+
     private Color originalColor;
 
+    public float Hp { get => hp; set => hp = value; }
     public Color OriginalColor { get => originalColor; set => originalColor = value; }
+    public float MaxHp { get => maxHp; set => maxHp = value; }
+
+    private void Awake()
+    {
+        Hp = MaxHp;
+        OriginalColor = GetComponent<SpriteRenderer>().color;
+    }
 
     public virtual void ReceiveDamage(float damage)
     {
         if (!invincible)
         {
-            hp -= damage;
+            Hp -= damage;
             invincible = true;
             if (IsDead())
             {
@@ -32,17 +42,14 @@ public class Character : MonoBehaviour
 
     public void ReceiveIndirectDamage(float damage)
     {
-        hp -= damage;
-        if (IsDead())
-        {
-            Die();
-        }
-        StartCoroutine("DamageFeedback");
+        Hp -= damage;
+        if (IsDead()) Die();
+        else StartCoroutine("DamageFeedback");
     }
 
     private bool IsDead()
     {
-        return hp <= 0;
+        return Hp <= 0;
     }
 
     public virtual void Die()
@@ -62,10 +69,5 @@ public class Character : MonoBehaviour
         sprite.color = Color.red;
         yield return new WaitForSeconds(0.1f);
         sprite.color = OriginalColor;
-    }
-
-    private void Awake()
-    {
-        OriginalColor = GetComponent<SpriteRenderer>().color;
     }
 }

@@ -625,7 +625,7 @@ GameObject:
   - component: {fileID: 4640501818692109389}
   m_Layer: 0
   m_Name: FireBallExplosion
-  m_TagString: Untagged
+  m_TagString: Fire
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -693,8 +693,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   lifetime: 1
-  targetTags:
-  - Enemy
+  explosionSFX: {fileID: 8300000, guid: 085aa69bb194fbe4eb8618b80629c965, type: 3}
 --- !u!1 &4640501818753348889
 GameObject:
   m_ObjectHideFlags: 0

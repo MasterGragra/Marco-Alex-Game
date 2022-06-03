@@ -14,6 +14,6 @@ public class Projectile : MonoBehaviour
 
     void Awake()
     {
-        Destroy(gameObject, Lifetime);
+        if (Lifetime > 0 ) Destroy(gameObject, Lifetime);
     }
 }
