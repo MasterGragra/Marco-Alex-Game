@@ -156,6 +156,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 15
   lifetime: 1
-  targetTags:
-  - Enemy
   explosionPrefab: {fileID: 4640501818692109384, guid: c8d36c44d793b75409a53472bc0bf583, type: 3}

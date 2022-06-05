@@ -8,6 +8,7 @@ public class Spell : MonoBehaviour
     [SerializeField] private GameObject spellPrefab;
     private bool spellcast;
     [SerializeField] private float mpCost;
+    [SerializeField] private float actionCooldown = 0.3f;
     [SerializeField] private bool buffSpell = false;
 
     [SerializeField] private AudioClip spellSFX;
@@ -26,7 +27,7 @@ public class Spell : MonoBehaviour
         else return false;
     }
 
-    public void MpCost(float mpCost)
+    public void MpCost()
     {
         Player.Instance.Mp -= mpCost;
     }
@@ -35,8 +36,8 @@ public class Spell : MonoBehaviour
     {
         if (spellcast && Player.Instance.CooldownCheck() && MpCostCheck())
         {
-            Player.Instance.ActionCooldown(0.3f);
-            MpCost(mpCost);
+            Player.Instance.ActionCooldown(actionCooldown);
+            MpCost();
 
             SpellcastAnimation();
 

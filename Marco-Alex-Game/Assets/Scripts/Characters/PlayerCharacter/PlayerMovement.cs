@@ -10,12 +10,14 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 movement;
     private string direction = "Down";
     private Vector2 playerDirection = new Vector2(0f, -1f);
+    private bool dashing = false;
 
     [SerializeField] private AudioClip walkingSFX;
     private float walkCount = 0;
 
     public string Direction { get => direction; set => direction = value; }
     public Vector2 PlayerDirection { get => playerDirection; set => playerDirection = value; }
+    public bool Dashing { get => dashing; set => dashing = value; }
 
     void Start()
     {
@@ -33,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
         {
             rigid.velocity = movement.normalized * movespeed * Time.fixedDeltaTime;
         }
-        else
+        else if(!Dashing)
         {
             rigid.velocity = Vector2.zero;
         }
