@@ -9,7 +9,6 @@ public class Character : MonoBehaviour
 
     private bool invincible = false;
     private float invincibilityTime = 0.2f;
-
     private Color originalColor;
 
     public float Hp { get => hp; set => hp = value; }
@@ -22,6 +21,7 @@ public class Character : MonoBehaviour
         OriginalColor = GetComponent<SpriteRenderer>().color;
     }
 
+    //Alex Version 
     public virtual void ReceiveDamage(float damage)
     {
         if (!invincible)
