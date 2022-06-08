@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Character : MonoBehaviour
 {
     [SerializeField] private float hp;
     [SerializeField] private float maxHp;
+
+    //UI
+    private Image healthBarImage;
 
     private bool invincible = false;
     private float invincibilityTime = 0.2f;
@@ -19,14 +23,19 @@ public class Character : MonoBehaviour
     {
         Hp = MaxHp;
         OriginalColor = GetComponent<SpriteRenderer>().color;
+
+        //UI
+        healthBarImage = transform.Find("HealthFillBar").GetComponent<Image>();
     }
 
-    //Alex Version 
+  
     public virtual void ReceiveDamage(float damage)
     {
         if (!invincible)
         {
             Hp -= damage;
+            //UI
+            healthBarImage.fillAmount = Hp;
             invincible = true;
             if (IsDead())
             {
@@ -43,6 +52,8 @@ public class Character : MonoBehaviour
     public void ReceiveIndirectDamage(float damage)
     {
         Hp -= damage;
+        //UI
+        healthBarImage.fillAmount = Hp;
         if (IsDead()) Die();
         else StartCoroutine("DamageFeedback");
     }

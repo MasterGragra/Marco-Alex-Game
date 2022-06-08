@@ -1,10 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : Character
 {
     private static Player instance;
+
+    //UI
+    private Image manaBarImage;
+    private Image healthBarImage;
+    private Image staminaBarImage;
 
     private float mp = 100f;
     private float maxMp = 100f;
@@ -33,6 +39,11 @@ public class Player : Character
     {
         if (Instance != null && Instance != this) Destroy(this);
         else Instance = this;
+
+        //UI 
+        healthBarImage = transform.Find("HealthFillBar").GetComponent<Image>();
+        manaBarImage = transform.Find("ManaFillBar").GetComponent<Image>();
+        staminaBarImage = transform.Find("StaminaFillBar").GetComponent<Image>();
     }
 
     // Start is called before the first frame update
@@ -46,11 +57,16 @@ public class Player : Character
     public override void Die()
     {
 
-    }
-    
+    }    
     private void MpRegen()
     {
-        if (mp < maxMp) mp += mpRegen * Time.deltaTime;
+        if (mp < maxMp)
+        {
+            mp += mpRegen * Time.deltaTime;
+
+            //UI 
+            manaBarImage.fillAmount = mp;
+        }
         else if (mp > maxMp) mp = maxMp;
     }
 
@@ -63,11 +79,18 @@ public class Player : Character
     public void StaminaCost(float cost)
     {
         Stamina -= cost;
+        //UI
+        staminaBarImage.fillAmount = Stamina; 
     }
 
     private void StaminaRegen()
     {
-        if (stamina < maxStamina) stamina += staminaRegen * Time.deltaTime;
+        if (stamina < maxStamina)
+        {
+            stamina += staminaRegen * Time.deltaTime;
+            //UI
+            staminaBarImage.fillAmount = stamina;
+        }
         else if (stamina > maxStamina) stamina = maxStamina;
     }
 
