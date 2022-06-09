@@ -100,7 +100,7 @@ TextureImporter:
     second: WindBlade
   - first:
       213: 2197855871317943228
-    second: objects_32
+    second: UIBar
   - first:
       213: 741922582067912797
     second: objects_33
@@ -154,7 +154,7 @@ TextureImporter:
     second: objects_49
   - first:
       213: 138822527552902627
-    second: ManaBarOneNineth
+    second: UIBarOutline
   - first:
       213: -2336223751096622429
     second: ManaBarTwoNineth
@@ -7329,10 +7329,8 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-<<<<<<< HEAD
-=======
     - serializedVersion: 2
-      name: Mana Bar
+      name: UIBar
       rect:
         serializedVersion: 2
         x: 7
@@ -7340,7 +7338,7 @@ TextureImporter:
         width: 54
         height: 3
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -7353,13 +7351,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ManaBarOneNineth
+      name: UIBarOutline
       rect:
         serializedVersion: 2
-        x: 7
-        y: 19
-        width: 6
-        height: 3
+        x: 48
+        y: 49
+        width: 30
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -7373,179 +7371,10 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: ManaBarTwoNineth
-      rect:
-        serializedVersion: 2
-        x: 13
-        y: 19
-        width: 6
-        height: 3
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3a22e0050e0149fd0800000000000000
-      internalID: -2336223751096622429
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ManaBarThreeNineth
-      rect:
-        serializedVersion: 2
-        x: 19
-        y: 19
-        width: 6
-        height: 3
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5d9565722825aef80800000000000000
-      internalID: -8076552262776366635
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ManaBarFourNineth
-      rect:
-        serializedVersion: 2
-        x: 25
-        y: 19
-        width: 6
-        height: 3
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 287eaaa3ad58c77e0800000000000000
-      internalID: -1766389781502433406
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ManaBarFifthNineth
-      rect:
-        serializedVersion: 2
-        x: 31
-        y: 19
-        width: 6
-        height: 3
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 665990e2c60d7a330800000000000000
-      internalID: 3722172780092429670
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ManaBarSixNineth
-      rect:
-        serializedVersion: 2
-        x: 37
-        y: 19
-        width: 6
-        height: 3
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fc3ad8f8712d66670800000000000000
-      internalID: 8531737542734488527
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ManaBarSevenNineth
-      rect:
-        serializedVersion: 2
-        x: 43
-        y: 19
-        width: 6
-        height: 3
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a150da77e9972ff40800000000000000
-      internalID: 5760800594879907098
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ManaBarEightNineth
-      rect:
-        serializedVersion: 2
-        x: 49
-        y: 19
-        width: 6
-        height: 3
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4a8d4f37b909d64e0800000000000000
-      internalID: -1986772863260763996
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ManaBarFull
-      rect:
-        serializedVersion: 2
-        x: 55
-        y: 19
-        width: 6
-        height: 3
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3f890cfa8d42a47f0800000000000000
-      internalID: -627648684984592141
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
->>>>>>> main
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 969641de04efa6446aee4e8fafcc8874
     internalID: 0
     vertices: []
     indices: 

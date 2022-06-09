@@ -29,6 +29,8 @@ public class Player : Character
     public float CooldownTime { get => cooldownTime; set => cooldownTime = value; }
     public AudioSource NormalAudio { get => normalAudio; set => normalAudio = value; }
     public AudioSource LoopingAudio { get => loopingAudio; set => loopingAudio = value; }
+    public float MaxMp { get => maxMp; set => maxMp = value; }
+    public float MaxStamina { get => maxStamina; set => maxStamina = value; }
 
     private void Awake()
     {
@@ -51,11 +53,11 @@ public class Player : Character
     }    
     private void MpRegen()
     {
-        if (mp < maxMp)
+        if (mp < MaxMp)
         {
             mp += mpRegen * Time.deltaTime;
         }
-        else if (mp > maxMp) mp = maxMp;
+        else if (mp > MaxMp) mp = MaxMp;
     }
 
     public bool StaminaCostCheck(float cost)
@@ -71,11 +73,11 @@ public class Player : Character
 
     private void StaminaRegen()
     {
-        if (stamina < maxStamina)
+        if (stamina < MaxStamina)
         {
             stamina += staminaRegen * Time.deltaTime;
         }
-        else if (stamina > maxStamina) stamina = maxStamina;
+        else if (stamina > MaxStamina) stamina = MaxStamina;
     }
 
     public void ActionCooldown(float cooltime)

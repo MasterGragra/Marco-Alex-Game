@@ -4,21 +4,21 @@ using UnityEngine;
 using UnityEngine.UI;
 public class HMSBar : MonoBehaviour
 {
-    private Image manaBarImage;
-    private Image healthBarImage;
-    private Image StaminaBarImage;
+    [SerializeField] private Image manaBarImage;
+    [SerializeField] private Image healthBarImage;
+    [SerializeField] private Image StaminaBarImage;
     
     private void Awake()
     {
-        manaBarImage = transform.Find("ManaFillBar").GetComponent<Image>();
-        healthBarImage = transform.Find("HealthFillBar").GetComponent<Image>();
-        StaminaBarImage = transform.Find("StaminaFillBar").GetComponent<Image>();
+        //manaBarImage = transform.Find("ManaFillBar").GetComponent<Image>();
+        //healthBarImage = transform.Find("HealthFillBar").GetComponent<Image>();
+        //StaminaBarImage = transform.Find("StaminaFillBar").GetComponent<Image>();
     }
 
     private void Update()
     {
-        manaBarImage.fillAmount = Player.Instance.Mp;
-        healthBarImage.fillAmount = Player.Instance.Hp;
-        StaminaBarImage.fillAmount = Player.Instance.Stamina;
+        manaBarImage.fillAmount = Player.Instance.Mp / Player.Instance.MaxMp;
+        healthBarImage.fillAmount = Player.Instance.Hp / Player.Instance.MaxHp;
+        StaminaBarImage.fillAmount = Player.Instance.Stamina / Player.Instance.MaxStamina;
     }    
 }
