@@ -12,17 +12,23 @@ public class SpellContainers : MonoBehaviour
 
     private EarthShieldSpell earthSpell;
     private FireballSpell fireSpell;
-    private WindBladesSpell wingSpell;
+    private WindBladesSpell windSpell;
     private HealSpell healSpell;
 
     private void Start()
     {
         earthSpell = Player.Instance.GetComponent<EarthShieldSpell>();
+        fireSpell = Player.Instance.GetComponent<FireballSpell>();
+        windSpell = Player.Instance.GetComponent<WindBladesSpell>();
+        healSpell = Player.Instance.GetComponent<HealSpell>();
         
     }
     // Update is called once per frame
     void Update()
     {
-        earthSpellBarImage.fillAmount = earthSpell.SpellCooldownTimer / earthSpell.SpellCooldown;
+        earthSpellBarImage.fillAmount = 1f - earthSpell.SpellCooldownTimer / earthSpell.SpellCooldown;
+        fireSpellBarImage.fillAmount = 1f - fireSpell.SpellCooldownTimer / fireSpell.SpellCooldown;
+        windSpellBarImage.fillAmount = 1f - windSpell.SpellCooldownTimer / windSpell.SpellCooldown;
+        healSpellBarImage.fillAmount = 1f - healSpell.SpellCooldownTimer / healSpell.SpellCooldown;
     }
 }
