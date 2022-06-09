@@ -83,7 +83,6 @@ public class PlayerAttack : MonoBehaviour
         Player.Instance.NormalAudio.Play();
     }
 
-
     // Update is called once per frame
     void Update()
     {
