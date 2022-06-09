@@ -9,6 +9,8 @@ public class Spell : MonoBehaviour
     private bool spellcast;
     [SerializeField] private float mpCost;
     [SerializeField] private float actionCooldown = 0.3f;
+    [SerializeField] private float spellCooldown;
+
     [SerializeField] private bool buffSpell = false;
 
     [SerializeField] private AudioClip spellSFX;
