@@ -8,9 +8,6 @@ public class Character : MonoBehaviour
     [SerializeField] private float hp;
     [SerializeField] private float maxHp;
 
-    //UI
-    private Image healthBarImage;
-
     private bool invincible = false;
     private float invincibilityTime = 0.2f;
     private Color originalColor;
@@ -24,8 +21,6 @@ public class Character : MonoBehaviour
         Hp = MaxHp;
         OriginalColor = GetComponent<SpriteRenderer>().color;
 
-        //UI
-        healthBarImage = transform.Find("HealthFillBar").GetComponent<Image>();
     }
 
   
@@ -34,8 +29,6 @@ public class Character : MonoBehaviour
         if (!invincible)
         {
             Hp -= damage;
-            //UI
-            healthBarImage.fillAmount = Hp;
             invincible = true;
             if (IsDead())
             {
@@ -52,8 +45,6 @@ public class Character : MonoBehaviour
     public void ReceiveIndirectDamage(float damage)
     {
         Hp -= damage;
-        //UI
-        healthBarImage.fillAmount = Hp;
         if (IsDead()) Die();
         else StartCoroutine("DamageFeedback");
     }
