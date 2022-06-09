@@ -474,6 +474,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2136340675606517393, guid: 58341280639130f4783dbe26b19b6b74, type: 3}
+      propertyPath: m_Type
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2136340675606517393, guid: 58341280639130f4783dbe26b19b6b74, type: 3}
+      propertyPath: m_FillAmount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2136340676784348859, guid: 58341280639130f4783dbe26b19b6b74, type: 3}
       propertyPath: m_Name
       value: UI

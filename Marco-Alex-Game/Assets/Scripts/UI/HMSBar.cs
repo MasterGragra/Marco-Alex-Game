@@ -8,6 +8,7 @@ public class HMSBar : MonoBehaviour
     [SerializeField] private Image healthBarImage;
     [SerializeField] private Image StaminaBarImage;
     
+
     private void Awake()
     {
         //manaBarImage = transform.Find("ManaFillBar").GetComponent<Image>();
