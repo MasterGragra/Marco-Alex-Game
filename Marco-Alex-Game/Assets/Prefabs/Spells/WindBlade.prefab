@@ -156,5 +156,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   lifetime: 1
-  targetTags:
-  - Enemy

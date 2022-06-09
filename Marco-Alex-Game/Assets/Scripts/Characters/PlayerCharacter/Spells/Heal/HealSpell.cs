@@ -12,11 +12,10 @@ public class HealSpell : Spell
         {
             if (CanCast())
             {
-                if (Player.Instance.Hp + healAmount > Player.Instance.MaxHp) Player.Instance.Hp = Player.Instance.MaxHp;
-                else Player.Instance.Hp += healAmount;
-
                 GameObject heal = Instantiate(SpellPrefab, this.transform.position, Quaternion.identity);
-                heal.GetComponent<Heal>().Target = this.transform;
+                Heal script = heal.GetComponent<Heal>();
+                script.Target = this.transform;
+                script.HealAmount = healAmount;
             }
         }
     }

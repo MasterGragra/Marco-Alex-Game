@@ -693,7 +693,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   lifetime: 1
-  explosionSFX: {fileID: 8300000, guid: 085aa69bb194fbe4eb8618b80629c965, type: 3}
+  explosionSFX: {fileID: 8300000, guid: 55f8fe1460bfbf24bbd2520e898c4674, type: 3}
 --- !u!1 &4640501818753348889
 GameObject:
   m_ObjectHideFlags: 0
