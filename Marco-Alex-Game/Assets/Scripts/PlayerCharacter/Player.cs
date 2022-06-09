@@ -7,11 +7,6 @@ public class Player : Character
 {
     private static Player instance;
 
-    //UI
-    private Image manaBarImage;
-    private Image healthBarImage;
-    private Image staminaBarImage;
-
     private float mp = 100f;
     private float maxMp = 100f;
     private float mpRegen = 2f;
@@ -40,10 +35,6 @@ public class Player : Character
         if (Instance != null && Instance != this) Destroy(this);
         else Instance = this;
 
-        //UI 
-        healthBarImage = transform.Find("HealthFillBar").GetComponent<Image>();
-        manaBarImage = transform.Find("ManaFillBar").GetComponent<Image>();
-        staminaBarImage = transform.Find("StaminaFillBar").GetComponent<Image>();
     }
 
     // Start is called before the first frame update
@@ -63,9 +54,6 @@ public class Player : Character
         if (mp < maxMp)
         {
             mp += mpRegen * Time.deltaTime;
-
-            //UI 
-            manaBarImage.fillAmount = mp;
         }
         else if (mp > maxMp) mp = maxMp;
     }
@@ -79,8 +67,6 @@ public class Player : Character
     public void StaminaCost(float cost)
     {
         Stamina -= cost;
-        //UI
-        staminaBarImage.fillAmount = Stamina; 
     }
 
     private void StaminaRegen()
@@ -88,8 +74,6 @@ public class Player : Character
         if (stamina < maxStamina)
         {
             stamina += staminaRegen * Time.deltaTime;
-            //UI
-            staminaBarImage.fillAmount = stamina;
         }
         else if (stamina > maxStamina) stamina = maxStamina;
     }
