@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : Character
 {
@@ -33,6 +34,7 @@ public class Player : Character
     {
         if (Instance != null && Instance != this) Destroy(this);
         else Instance = this;
+
     }
 
     // Start is called before the first frame update
@@ -46,11 +48,13 @@ public class Player : Character
     public override void Die()
     {
 
-    }
-    
+    }    
     private void MpRegen()
     {
-        if (mp < maxMp) mp += mpRegen * Time.deltaTime;
+        if (mp < maxMp)
+        {
+            mp += mpRegen * Time.deltaTime;
+        }
         else if (mp > maxMp) mp = maxMp;
     }
 
@@ -67,7 +71,10 @@ public class Player : Character
 
     private void StaminaRegen()
     {
-        if (stamina < maxStamina) stamina += staminaRegen * Time.deltaTime;
+        if (stamina < maxStamina)
+        {
+            stamina += staminaRegen * Time.deltaTime;
+        }
         else if (stamina > maxStamina) stamina = maxStamina;
     }
 
