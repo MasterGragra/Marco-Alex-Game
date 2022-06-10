@@ -7,14 +7,13 @@ public class Player : Character
 {
     private static Player instance;
 
-    private bool hasDied = false;
     private float mp = 100f;
     private float maxMp = 100f;
     private float mpRegen = 2f;
 
     private float stamina = 100f;
     private float maxStamina = 100f;
-    private float staminaRegen = 3f;
+    private float staminaRegen = 4f;
 
     private Animator animator;
     private float cooldownTime = 0f;
@@ -51,14 +50,14 @@ public class Player : Character
     {
         if (IsDead())
         {
-            if (!hasDied)
+            if (!HasDied)
             {
-                hasDied = true;
+                HasDied = true;
                 animator.SetTrigger("Death");
                 GetComponent<Rigidbody2D>().velocity = Vector3.zero;
                 GetComponent<Rigidbody2D>().isKinematic = true;
 
-                //StartCoroutine("DeathCoroutine");
+                StartCoroutine("DeathCoroutine");
             }
         }
     }
@@ -67,12 +66,10 @@ public class Player : Character
     {
         yield return new WaitForSeconds(1.7f);
         int count = 8;
-
-        do
-        {
+        do {
             count--;
             yield return new WaitForSeconds(0.05f);
-            this.transform.position = new Vector3(this.transform.position.x - 0.05f, this.transform.position.y - 0.05f);
+            this.transform.position = new Vector3(this.transform.position.x - 0.025f, this.transform.position.y - 0.025f);
         } while (count > 0);
     }
 

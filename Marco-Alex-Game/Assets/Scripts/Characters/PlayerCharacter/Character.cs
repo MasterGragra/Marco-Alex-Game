@@ -10,11 +10,13 @@ public class Character : MonoBehaviour
 
     private bool invincible = false;
     private float invincibilityTime = 0.2f;
+    private bool hasDied = false;
     private Color originalColor;
 
     public float Hp { get => hp; set => hp = value; }
-    public Color OriginalColor { get => originalColor; set => originalColor = value; }
     public float MaxHp { get => maxHp; set => maxHp = value; }
+    public bool HasDied { get => hasDied; set => hasDied = value; }
+    public Color OriginalColor { get => originalColor; set => originalColor = value; }
 
     private void Awake()
     {
@@ -55,7 +57,26 @@ public class Character : MonoBehaviour
 
     public virtual void Die()
     {
-        Destroy(this.gameObject);
+        if (!HasDied)
+        {
+            StartCoroutine("DeathCoroutine");
+        }
+    }
+
+    private IEnumerator DeathCoroutine()
+    {
+        Vector3 originalPosition = transform.position;
+        SpriteRenderer sprite = GetComponent<SpriteRenderer>();
+        sprite.color = Color.gray;
+        do
+        {
+            sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, sprite.color.a - 0.2f);
+            float x = Random.Range(-0.1f, 0.1f);
+            transform.position = new Vector3(originalPosition.x + x, transform.position.y, transform.position.z);
+            yield return new WaitForSeconds(0.1f);
+            transform.position = originalPosition;
+        } while (sprite.color.a > 0f);
+        Destroy(gameObject);
     }
 
     public IEnumerator InvincibilityTimer()
