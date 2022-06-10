@@ -48,7 +48,7 @@ public class Character : MonoBehaviour
         else StartCoroutine("DamageFeedback");
     }
 
-    private bool IsDead()
+    public bool IsDead()
     {
         return Hp <= 0;
     }

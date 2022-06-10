@@ -91,9 +91,12 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Animate();
-        Move();
-        CalculateDirection();
-        WalkingSFX();
+        if (!Player.Instance.IsDead())
+        {
+            Animate();
+            Move();
+            CalculateDirection();
+            WalkingSFX();
+        }
     }
 }

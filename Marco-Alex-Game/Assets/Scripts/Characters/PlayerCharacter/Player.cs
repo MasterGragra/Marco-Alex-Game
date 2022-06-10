@@ -7,6 +7,7 @@ public class Player : Character
 {
     private static Player instance;
 
+    private bool hasDied = false;
     private float mp = 100f;
     private float maxMp = 100f;
     private float mpRegen = 2f;
@@ -48,8 +49,17 @@ public class Player : Character
 
     public override void Die()
     {
-
-    }    
+        if (IsDead())
+        {
+            if (!hasDied)
+            {
+                hasDied = true;
+                animator.SetTrigger("Die");
+                GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+                GetComponent<Rigidbody2D>().isKinematic = true;
+            }
+        }
+    }
 
     private void MpRegen()
     {
@@ -102,5 +112,10 @@ public class Player : Character
         MpRegen();
         StaminaRegen();
         Cooldown();
+
+        if(Input.GetKey(KeyCode.T))
+        {
+            ReceiveDamage(100f);
+        }
     }
 }
