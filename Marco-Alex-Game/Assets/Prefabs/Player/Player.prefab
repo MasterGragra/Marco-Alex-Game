@@ -584,7 +584,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e865ec33735b25840b85ac71dd0bd19b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  staminaCost: 0
+  staminaCost: 30
   actionCooldown: 0.3
 --- !u!82 &748202740382600252
 AudioSource:
