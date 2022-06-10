@@ -20,7 +20,6 @@ public class Character : MonoBehaviour
     {
         Hp = MaxHp;
         OriginalColor = GetComponent<SpriteRenderer>().color;
-
     }
 
   

@@ -24,25 +24,24 @@ public class Player : Character
 
     public static Player Instance { get => instance; set => instance = value; }
     public float Mp { get => mp; set => mp = value; }
+    public float MaxMp { get => maxMp; set => maxMp = value; }
     public float Stamina { get => stamina; set => stamina = value; }
+    public float MaxStamina { get => maxStamina; set => maxStamina = value; }
     public Animator Animator { get => animator; set => animator = value; }
     public float CooldownTime { get => cooldownTime; set => cooldownTime = value; }
     public AudioSource NormalAudio { get => normalAudio; set => normalAudio = value; }
     public AudioSource LoopingAudio { get => loopingAudio; set => loopingAudio = value; }
-    public float MaxMp { get => maxMp; set => maxMp = value; }
-    public float MaxStamina { get => maxStamina; set => maxStamina = value; }
+    
 
     private void Awake()
     {
         if (Instance != null && Instance != this) Destroy(this);
         else Instance = this;
-
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        //Hp = MaxHp;
         OriginalColor = GetComponent<SpriteRenderer>().color;
         Animator = GetComponent<Animator>();
     }
@@ -51,6 +50,7 @@ public class Player : Character
     {
 
     }    
+
     private void MpRegen()
     {
         if (mp < MaxMp)
