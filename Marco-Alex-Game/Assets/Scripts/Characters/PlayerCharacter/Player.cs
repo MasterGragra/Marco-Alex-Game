@@ -54,11 +54,26 @@ public class Player : Character
             if (!hasDied)
             {
                 hasDied = true;
-                animator.SetTrigger("Die");
+                animator.SetTrigger("Death");
                 GetComponent<Rigidbody2D>().velocity = Vector3.zero;
                 GetComponent<Rigidbody2D>().isKinematic = true;
+
+                //StartCoroutine("DeathCoroutine");
             }
         }
+    }
+
+    private IEnumerator DeathCoroutine()
+    {
+        yield return new WaitForSeconds(1.7f);
+        int count = 8;
+
+        do
+        {
+            count--;
+            yield return new WaitForSeconds(0.05f);
+            this.transform.position = new Vector3(this.transform.position.x - 0.05f, this.transform.position.y - 0.05f);
+        } while (count > 0);
     }
 
     private void MpRegen()
