@@ -714,8 +714,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 276, y: 0}
-  m_SizeDelta: {x: 551, y: 70}
+  m_AnchoredPosition: {x: 275, y: 0}
+  m_SizeDelta: {x: 550, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2136340676137352651
 CanvasRenderer:
@@ -1436,9 +1436,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6b6ce817931eaa428a1666e68d06ae2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manaBarImage: {fileID: 2136340676324457496}
   healthBarImage: {fileID: 2136340676627631476}
-  StaminaBarImage: {fileID: 2136340677472648109}
+  manaBarImage: {fileID: 2136340676324457496}
+  staminaBarImage: {fileID: 0}
 --- !u!114 &8169916759796885172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1453,8 +1453,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireSpellBarImage: {fileID: 2136340676839617633}
   windSpellBarImage: {fileID: 1892779402177302527}
-  healSpellBarImage: {fileID: 5085381009475927022}
   earthSpellBarImage: {fileID: 2136340675606517393}
+  healSpellBarImage: {fileID: 5085381009475927022}
 --- !u!1 &2136340676835286319
 GameObject:
   m_ObjectHideFlags: 0
@@ -2355,8 +2355,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -275.6, y: 0}
-  m_SizeDelta: {x: 551, y: 70}
+  m_AnchoredPosition: {x: -275, y: 0}
+  m_SizeDelta: {x: 550, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6321148248435289072
 CanvasRenderer:

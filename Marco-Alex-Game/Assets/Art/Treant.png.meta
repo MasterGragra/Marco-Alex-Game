@@ -4,73 +4,73 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: -5034061168752090764
-    second: log_0
+    second: TreantIdleDown
   - first:
       213: -8771329076928401280
-    second: log_1
+    second: TreantWalkDown1
   - first:
       213: 2376815873980901129
-    second: log_2
+    second: TreantWalkDown2
   - first:
       213: -1512028583440225198
-    second: log_3
+    second: TreantWalkDown3
   - first:
       213: 8213902188476598959
-    second: log_4
+    second: TreantSleep1
   - first:
       213: -22439546833456996
-    second: log_5
+    second: TreantWakeUp1
   - first:
       213: -451413936476517383
-    second: log_6
+    second: TreantIdleUp
   - first:
       213: 8458950633466780684
-    second: log_7
+    second: TreantWalkUp1
   - first:
       213: 3059174765694063163
-    second: log_8
+    second: TreantWalkUp2
   - first:
       213: -34017176892466219
-    second: log_9
+    second: TreantWalkUp3
   - first:
       213: -5690133823277906687
-    second: log_10
+    second: TreantSleep2
   - first:
       213: -2570500000468905864
-    second: log_11
+    second: TreantWakeUp2
   - first:
       213: 8498479158080882289
-    second: log_12
+    second: TreantIdleRight
   - first:
       213: -6457386710923275188
-    second: log_13
+    second: TreantWalkRight1
   - first:
       213: 681774289175886536
-    second: log_14
+    second: TreantWalkRight2
   - first:
       213: 2703527186074568732
-    second: log_15
+    second: TreantWalkRight3
   - first:
       213: 3107883342233372815
-    second: log_16
+    second: TreantSleep3
   - first:
       213: -822619953307990688
-    second: log_17
+    second: TreantWakeUp3
   - first:
       213: -128083769461270964
-    second: log_18
+    second: TreantIdleLeft
   - first:
       213: -3791062316690792145
-    second: log_19
+    second: TreantWalkLeft1
   - first:
       213: -2086765476746818828
-    second: log_20
+    second: TreantWalkLeft2
   - first:
       213: 5566842953363755866
-    second: log_21
+    second: TreantWalkLeft3
   - first:
       213: -7445369939883215787
-    second: log_22
+    second: TreantSleep4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -160,7 +160,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: log_0
+      name: TreantIdleDown
       rect:
         serializedVersion: 2
         x: 0
@@ -168,7 +168,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -181,7 +181,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: log_1
+      name: TreantWalkDown1
       rect:
         serializedVersion: 2
         x: 32
@@ -189,7 +189,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -202,7 +202,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: log_2
+      name: TreantWalkDown2
       rect:
         serializedVersion: 2
         x: 64
@@ -210,7 +210,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -223,7 +223,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: log_3
+      name: TreantWalkDown3
       rect:
         serializedVersion: 2
         x: 96
@@ -231,7 +231,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -244,7 +244,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: log_4
+      name: TreantSleep1
       rect:
         serializedVersion: 2
         x: 128
@@ -252,7 +252,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -265,7 +265,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: log_5
+      name: TreantWakeUp1
       rect:
         serializedVersion: 2
         x: 160
@@ -273,7 +273,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -286,7 +286,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: log_6
+      name: TreantIdleUp
       rect:
         serializedVersion: 2
         x: 0
@@ -294,7 +294,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -307,7 +307,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: log_7
+      name: TreantWalkUp1
       rect:
         serializedVersion: 2
         x: 32
@@ -315,7 +315,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -328,7 +328,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: log_8
+      name: TreantWalkUp2
       rect:
         serializedVersion: 2
         x: 64
@@ -336,7 +336,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -349,7 +349,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: log_9
+      name: TreantWalkUp3
       rect:
         serializedVersion: 2
         x: 96
@@ -357,7 +357,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -370,7 +370,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: log_10
+      name: TreantSleep2
       rect:
         serializedVersion: 2
         x: 128
@@ -378,7 +378,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -391,7 +391,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: log_11
+      name: TreantWakeUp2
       rect:
         serializedVersion: 2
         x: 160
@@ -399,7 +399,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -412,7 +412,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: log_12
+      name: TreantIdleRight
       rect:
         serializedVersion: 2
         x: 0
@@ -420,7 +420,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -433,7 +433,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: log_13
+      name: TreantWalkRight1
       rect:
         serializedVersion: 2
         x: 32
@@ -441,7 +441,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -454,7 +454,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: log_14
+      name: TreantWalkRight2
       rect:
         serializedVersion: 2
         x: 64
@@ -462,7 +462,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -475,7 +475,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: log_15
+      name: TreantWalkRight3
       rect:
         serializedVersion: 2
         x: 96
@@ -483,7 +483,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -496,7 +496,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: log_16
+      name: TreantSleep3
       rect:
         serializedVersion: 2
         x: 128
@@ -504,7 +504,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -517,7 +517,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: log_17
+      name: TreantWakeUp3
       rect:
         serializedVersion: 2
         x: 160
@@ -525,7 +525,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -538,7 +538,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: log_18
+      name: TreantIdleLeft
       rect:
         serializedVersion: 2
         x: 0
@@ -546,7 +546,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -559,7 +559,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: log_19
+      name: TreantWalkLeft1
       rect:
         serializedVersion: 2
         x: 32
@@ -567,7 +567,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -580,7 +580,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: log_20
+      name: TreantWalkLeft2
       rect:
         serializedVersion: 2
         x: 64
@@ -588,7 +588,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -601,7 +601,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: log_21
+      name: TreantWalkLeft3
       rect:
         serializedVersion: 2
         x: 96
@@ -609,7 +609,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -622,7 +622,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: log_22
+      name: TreantSleep4
       rect:
         serializedVersion: 2
         x: 128
@@ -630,7 +630,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

@@ -126,9 +126,9 @@ GameObject:
   - component: {fileID: 748202740382600247}
   - component: {fileID: 748202740382600240}
   - component: {fileID: 748202740382600245}
-  - component: {fileID: 748202740382600244}
-  - component: {fileID: 748202740382600251}
   - component: {fileID: 748202740382600250}
+  - component: {fileID: 748202740382600251}
+  - component: {fileID: 748202740382600244}
   - component: {fileID: 748202740382600249}
   - component: {fileID: 748202740382600248}
   - component: {fileID: 748202740382600255}
@@ -248,19 +248,25 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 1}
   m_Direction: 0
---- !u!114 &748202740382600244
-MonoBehaviour:
+--- !u!95 &748202740382600250
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 748202740382600241}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87f91519fac4b8647943b903bc6eb77e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  walkingSFX: {fileID: 8300000, guid: 1c2024885b669dc4b8978c83e360744e, type: 3}
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4016c97e3c6a84a489212ddc5c40e262, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &748202740382600251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -443,25 +449,19 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!95 &748202740382600250
-Animator:
-  serializedVersion: 3
+--- !u!114 &748202740382600244
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 748202740382600241}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4016c97e3c6a84a489212ddc5c40e262, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87f91519fac4b8647943b903bc6eb77e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkingSFX: {fileID: 8300000, guid: 1c2024885b669dc4b8978c83e360744e, type: 3}
 --- !u!114 &748202740382600249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -476,6 +476,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 10
   maxHp: 100
+  mp: 100
+  stamina: 100
   normalAudio: {fileID: 748202740382600252}
   loopingAudio: {fileID: 748202740382600227}
 --- !u!114 &748202740382600248

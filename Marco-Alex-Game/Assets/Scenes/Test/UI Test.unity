@@ -287,72 +287,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6b6ce817931eaa428a1666e68d06ae2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &340584451
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 340584454}
-  - component: {fileID: 340584453}
-  - component: {fileID: 340584452}
-  m_Layer: 0
-  m_Name: EventSystem
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &340584452
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 340584451}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
---- !u!114 &340584453
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 340584451}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
-  m_DragThreshold: 10
---- !u!4 &340584454
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 340584451}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  healthBarImage: {fileID: 0}
+  manaBarImage: {fileID: 0}
+  staminaBarImage: {fileID: 0}
 --- !u!1 &499003634
 GameObject:
   m_ObjectHideFlags: 0
@@ -1616,7 +1553,7 @@ RectTransform:
   - {fileID: 1922793413}
   - {fileID: 829043421}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2746,6 +2683,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6b6ce817931eaa428a1666e68d06ae2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthBarImage: {fileID: 0}
+  manaBarImage: {fileID: 0}
+  staminaBarImage: {fileID: 0}
 --- !u!1 &1967504226
 GameObject:
   m_ObjectHideFlags: 0
@@ -3053,6 +2993,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 85579487-55c8-48a7-9cf6-d92116817a0e
     m_ActionName: Player/New action
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8f7cd0f2-2c76-4fdd-93be-ba9c6bb3f817
+    m_ActionName: Player/Dash[/Keyboard/leftShift]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -3091,6 +3035,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 10
   maxHp: 100
+  mp: 100
+  stamina: 100
   normalAudio: {fileID: 1967504239}
   loopingAudio: {fileID: 1967504240}
 --- !u!114 &1967504235
@@ -3126,6 +3072,7 @@ MonoBehaviour:
   spellPrefab: {fileID: 4302203384133919593, guid: 71f609b10851b2d4ca4a623005a22397, type: 3}
   mpCost: 20
   actionCooldown: 0.3
+  spellCooldown: 0
   buffSpell: 0
   spellSFX: {fileID: 8300000, guid: 259b5f49454d0a1499ee0a4aa3c1d1c2, type: 3}
   sfxDuration: 0.3
@@ -3144,6 +3091,7 @@ MonoBehaviour:
   spellPrefab: {fileID: 4958719264314343407, guid: 41f9fe4906c670745aca4767a01b1f77, type: 3}
   mpCost: 10
   actionCooldown: 0.3
+  spellCooldown: 0
   buffSpell: 0
   spellSFX: {fileID: 8300000, guid: e64803ffa87f9304eb0eb170a267bbf8, type: 3}
   sfxDuration: 0.3
@@ -3162,6 +3110,7 @@ MonoBehaviour:
   spellPrefab: {fileID: 1564260674139367626, guid: da014cd0007be5b47b5fc17de9b3c016, type: 3}
   mpCost: 30
   actionCooldown: 0.3
+  spellCooldown: 0
   buffSpell: 1
   spellSFX: {fileID: 8300000, guid: 1c2024885b669dc4b8978c83e360744e, type: 3}
   sfxDuration: 0.6
@@ -3372,6 +3321,7 @@ MonoBehaviour:
   spellPrefab: {fileID: 5609632458946122239, guid: c2fb20b6fa5c39840bfc7ff8c17a2e85, type: 3}
   mpCost: 50
   actionCooldown: 0.3
+  spellCooldown: 0
   buffSpell: 1
   spellSFX: {fileID: 8300000, guid: 97c9be6a345f4c54b9a277d8472f62f7, type: 3}
   sfxDuration: 0.4
@@ -3428,6 +3378,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6b6ce817931eaa428a1666e68d06ae2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthBarImage: {fileID: 0}
+  manaBarImage: {fileID: 0}
+  staminaBarImage: {fileID: 0}
 --- !u!1 &2009410596
 GameObject:
   m_ObjectHideFlags: 0

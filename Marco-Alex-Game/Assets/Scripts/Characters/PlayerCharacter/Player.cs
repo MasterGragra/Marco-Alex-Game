@@ -7,16 +7,15 @@ public class Player : Character
 {
     private static Player instance;
 
-    private float mp = 100f;
+    [SerializeField] private float mp = 100f;
     private float maxMp = 100f;
     private float mpRegen = 2f;
 
-    private float stamina = 100f;
+    [SerializeField] private float stamina = 100f;
     private float maxStamina = 100f;
     private float staminaRegen = 4f;
 
     private Animator animator;
-    private float cooldownTime = 0f;
 
     [SerializeField] private AudioSource normalAudio;
     [SerializeField] private AudioSource loopingAudio;
@@ -28,7 +27,6 @@ public class Player : Character
     public float Stamina { get => stamina; set => stamina = value; }
     public float MaxStamina { get => maxStamina; set => maxStamina = value; }
     public Animator Animator { get => animator; set => animator = value; }
-    public float CooldownTime { get => cooldownTime; set => cooldownTime = value; }
     public AudioSource NormalAudio { get => normalAudio; set => normalAudio = value; }
     public AudioSource LoopingAudio { get => loopingAudio; set => loopingAudio = value; }
     
@@ -102,20 +100,13 @@ public class Player : Character
         else if (stamina > MaxStamina) stamina = MaxStamina;
     }
 
-    public void ActionCooldown(float cooltime)
+    private void Debug()
     {
-        CooldownTime = cooltime;
-    }
-
-    public bool CooldownCheck()
-    {
-        if (CooldownTime <= 0) return true;
-        else return false;
-    }
-
-    private void Cooldown()
-    {
-        if (!CooldownCheck()) CooldownTime -= Time.deltaTime;
+        //Suicide
+        if (Input.GetKey(KeyCode.T))
+        {
+            ReceiveDamage(100f);
+        }
     }
 
     // Update is called once per frame
@@ -125,9 +116,6 @@ public class Player : Character
         StaminaRegen();
         Cooldown();
 
-        if(Input.GetKey(KeyCode.T))
-        {
-            ReceiveDamage(100f);
-        }
+        Debug();
     }
 }

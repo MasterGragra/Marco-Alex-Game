@@ -39,11 +39,11 @@ public class Spell : MonoBehaviour
 
     public bool CanCast()
     {
-        if (spellcast && Player.Instance.CooldownCheck() && MpCostCheck())
+        if (spellcast && Player.Instance.CheckCooldown() && MpCostCheck())
         {
-            if (CooldownCheck())
+            if (SpellCooldownCheck())
             {
-                Player.Instance.ActionCooldown(actionCooldown);
+                Player.Instance.SetActionCooldown(actionCooldown);
                 MpCost();
 
                 SpellcastAnimation();
@@ -56,7 +56,7 @@ public class Spell : MonoBehaviour
         return false;
     }
 
-    private bool CooldownCheck()
+    private bool SpellCooldownCheck()
     {
         if(SpellCooldownTimer <= 0)
         {

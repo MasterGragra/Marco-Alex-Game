@@ -30,10 +30,10 @@ public class PlayerAttack : MonoBehaviour
     {
         if (attack 
             && Player.Instance.StaminaCostCheck(staminaCost) 
-            && Player.Instance.CooldownCheck())
+            && Player.Instance.CheckCooldown())
         {
             Player.Instance.Animator.SetBool("Attacking", true);
-            Player.Instance.CooldownTime = attackSpeed;
+            Player.Instance.CooldownTimer = attackSpeed;
             Player.Instance.StaminaCost(staminaCost);
 
             StartCoroutine("CheckHitbox");

@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rigid;
-    private float movespeed = 500f;
+    private float movementSpeed = 500f;
     private Vector2 movement;
     private string direction = "Down";
     private Vector2 playerDirection = new Vector2(0f, -1f);
@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Player.Instance.Animator.GetBool("Moving"))
         {
-            rigid.velocity = movement.normalized * movespeed * Time.fixedDeltaTime;
+            rigid.velocity = movement.normalized * movementSpeed * Time.fixedDeltaTime;
         }
         else if(!Dashing)
         {
@@ -43,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Animate()
     {
-        if (movement != Vector2.zero && Player.Instance.CooldownCheck())
+        if (movement != Vector2.zero && Player.Instance.CheckCooldown())
         {
             Player.Instance.Animator.SetFloat("X", movement.x);
             Player.Instance.Animator.SetFloat("Y", movement.y);
@@ -67,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void CalculateDirection()
     {
-        if ((movement.x != 0 || movement.y != 0) && Player.Instance.CooldownCheck())
+        if ((movement.x != 0 || movement.y != 0) && Player.Instance.CheckCooldown())
         {
             PlayerDirection = new Vector2(movement.x, movement.y);
         }

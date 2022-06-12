@@ -13,10 +13,13 @@ public class Character : MonoBehaviour
     private bool hasDied = false;
     private Color originalColor;
 
+    private float cooldownTimer = 0f;
+
     public float Hp { get => hp; set => hp = value; }
     public float MaxHp { get => maxHp; set => maxHp = value; }
     public bool HasDied { get => hasDied; set => hasDied = value; }
     public Color OriginalColor { get => originalColor; set => originalColor = value; }
+    public float CooldownTimer { get => cooldownTimer; set => cooldownTimer = value; }
 
     private void Awake()
     {
@@ -91,5 +94,21 @@ public class Character : MonoBehaviour
         sprite.color = Color.red;
         yield return new WaitForSeconds(0.1f);
         sprite.color = OriginalColor;
+    }
+
+    public void SetActionCooldown(float cooltime)
+    {
+        CooldownTimer = cooltime;
+    }
+
+    public bool CheckCooldown()
+    {
+        if (CooldownTimer <= 0) return true;
+        else return false;
+    }
+
+    public void Cooldown()
+    {
+        if (!CheckCooldown()) CooldownTimer -= Time.deltaTime;
     }
 }

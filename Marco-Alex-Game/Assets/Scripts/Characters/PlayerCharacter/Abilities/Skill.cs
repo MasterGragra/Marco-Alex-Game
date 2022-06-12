@@ -29,9 +29,9 @@ public class Skill : MonoBehaviour
 
     public bool CanUse()
     {
-        if (skillUse && Player.Instance.CooldownCheck() && StaminaCostCheck())
+        if (skillUse && Player.Instance.CheckCooldown() && StaminaCostCheck())
         {
-            Player.Instance.ActionCooldown(ActionCooldown);
+            Player.Instance.SetActionCooldown(ActionCooldown);
             PayStaminaCost();
             return true;
         }
