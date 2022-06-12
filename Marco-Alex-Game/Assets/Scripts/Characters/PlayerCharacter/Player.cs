@@ -112,9 +112,12 @@ public class Player : Character
     // Update is called once per frame
     void Update()
     {
-        MpRegen();
-        StaminaRegen();
-        Cooldown();
+        if (!IsDead())
+        {
+            MpRegen();
+            StaminaRegen();
+            Cooldown();
+        }
 
         Debug();
     }

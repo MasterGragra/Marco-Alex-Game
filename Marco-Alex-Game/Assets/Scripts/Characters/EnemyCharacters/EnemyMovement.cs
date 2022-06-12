@@ -7,6 +7,7 @@ public class EnemyMovement : MonoBehaviour
     private Rigidbody2D rigid;
     private Animator animator;
     private Transform target;
+    private Enemy script;
 
     [SerializeField] private float attackRange = 1.5f;
     [SerializeField] private float movementSpeed = 5f;
@@ -18,6 +19,7 @@ public class EnemyMovement : MonoBehaviour
         rigid = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         target = Player.Instance.transform;
+        script = GetComponent<Enemy>();
         InvokeRepeating("FacePlayer", 0f, 0.2f);
     }
 
@@ -50,8 +52,11 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MoveEnemy();
-        FacePlayer();
-        Animate();
+        if (!script.IsDead())
+        {
+            MoveEnemy();
+            FacePlayer();
+            Animate();
+        }
     }
 }
