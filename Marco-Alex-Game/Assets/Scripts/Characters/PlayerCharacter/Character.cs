@@ -21,7 +21,7 @@ public class Character : MonoBehaviour
     public Color OriginalColor { get => originalColor; set => originalColor = value; }
     public float CooldownTimer { get => cooldownTimer; set => cooldownTimer = value; }
 
-    private void Awake()
+    public void OnAwake()
     {
         Hp = MaxHp;
         OriginalColor = GetComponent<SpriteRenderer>().color;
@@ -126,10 +126,5 @@ public class Character : MonoBehaviour
     public void Cooldown()
     {
         if (!CheckCooldown()) CooldownTimer -= Time.deltaTime;
-    }
-
-    private void Update()
-    {
-        Cooldown();
     }
 }
