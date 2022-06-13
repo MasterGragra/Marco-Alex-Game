@@ -52,7 +52,7 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!script.IsDead())
+        if (!script.IsDead() && script.CheckCooldown())
         {
             MoveEnemy();
             FacePlayer();

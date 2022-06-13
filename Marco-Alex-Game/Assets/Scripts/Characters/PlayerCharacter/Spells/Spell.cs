@@ -8,7 +8,6 @@ public class Spell : MonoBehaviour
     [SerializeField] private GameObject spellPrefab;
     private bool spellcast;
     [SerializeField] private float mpCost;
-    [SerializeField] private float actionCooldown = 0.3f;
     [SerializeField] private float spellCooldown;
     private float spellCooldownTimer = 0f;
 
@@ -43,7 +42,7 @@ public class Spell : MonoBehaviour
         {
             if (SpellCooldownCheck())
             {
-                Player.Instance.SetActionCooldown(actionCooldown);
+                Player.Instance.SetActionCooldown();
                 MpCost();
 
                 SpellcastAnimation();

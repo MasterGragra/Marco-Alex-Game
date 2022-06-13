@@ -6,7 +6,7 @@ public class Projectile : MonoBehaviour
 {
     [SerializeField] private float damage;
     [SerializeField] private float lifetime;
-    private string[] targetTags = new string[] { "Enemy" };
+    [SerializeField] private string[] targetTags = new string[] { "Enemy" };
 
     public float Damage { get => damage; set => damage = value; }
     public float Lifetime { get => lifetime; set => lifetime = value; }

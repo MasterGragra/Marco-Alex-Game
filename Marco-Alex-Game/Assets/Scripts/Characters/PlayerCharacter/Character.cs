@@ -96,6 +96,22 @@ public class Character : MonoBehaviour
         sprite.color = OriginalColor;
     }
 
+    public IEnumerator Knockback(Vector2 vector)
+    {
+        Rigidbody2D rigid = GetComponent<Rigidbody2D>();
+        rigid.isKinematic = false;
+        rigid.AddForce(vector, ForceMode2D.Impulse);
+        SetActionCooldown(0.5f);
+        yield return new WaitForSeconds(0.5f);
+        rigid.velocity = Vector2.zero;
+        rigid.isKinematic = true;
+    }
+
+    public void SetActionCooldown()
+    {
+        CooldownTimer = 0.3f;
+    }
+
     public void SetActionCooldown(float cooltime)
     {
         CooldownTimer = cooltime;
@@ -110,5 +126,10 @@ public class Character : MonoBehaviour
     public void Cooldown()
     {
         if (!CheckCooldown()) CooldownTimer -= Time.deltaTime;
+    }
+
+    private void Update()
+    {
+        Cooldown();
     }
 }
