@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class WindBlade : Projectile
 {
+    [SerializeField] private bool knockback = true;
+    [SerializeField] private bool destroyOnCollision = true;
+    public bool DestroyOnCollision { get => destroyOnCollision; set => destroyOnCollision = value; }
+
     private void OnTriggerEnter2D(Collider2D collider)
     {
         for (int i = 0; i < TargetTags.Length; i++)
@@ -11,7 +15,12 @@ public class WindBlade : Projectile
             if (collider.gameObject.CompareTag(TargetTags[i]))
             {
                 collider.SendMessage("ReceiveDamage", Damage);
-                Destroy(gameObject);
+                if (knockback)
+                {
+                    Vector2 direction = collider.transform.position - transform.position;
+                    collider.GetComponent<Character>().StartCoroutine("Knockback", direction * KnockbackForce);
+                }
+                if (destroyOnCollision) Destroy(gameObject);
             }
         }
 

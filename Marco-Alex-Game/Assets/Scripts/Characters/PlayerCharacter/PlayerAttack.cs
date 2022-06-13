@@ -29,7 +29,7 @@ public class PlayerAttack : MonoBehaviour
 
     private void Attack()
     {
-        if (attack 
+        if (attack && !Player.Instance.IsDead()
             && Player.Instance.StaminaCostCheck(staminaCost) 
             && Player.Instance.CheckCooldown())
         {

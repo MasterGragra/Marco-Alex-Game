@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 748202740382600227}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -474,7 +474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db1554e765875924baafbc0b77baa0d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 10
+  hp: 100
   maxHp: 100
   mp: 100
   stamina: 100
@@ -512,7 +512,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellPrefab: {fileID: 4302203384133919593, guid: 71f609b10851b2d4ca4a623005a22397, type: 3}
   mpCost: 20
-  actionCooldown: 0.3
   spellCooldown: 4
   buffSpell: 0
   spellSFX: {fileID: 8300000, guid: 85b910fd0cf37544680369d30f88197a, type: 3}
@@ -531,7 +530,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellPrefab: {fileID: 4958719264314343407, guid: 41f9fe4906c670745aca4767a01b1f77, type: 3}
   mpCost: 10
-  actionCooldown: 0.3
   spellCooldown: 2
   buffSpell: 0
   spellSFX: {fileID: 8300000, guid: e64803ffa87f9304eb0eb170a267bbf8, type: 3}
@@ -550,7 +548,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellPrefab: {fileID: 1564260674139367626, guid: da014cd0007be5b47b5fc17de9b3c016, type: 3}
   mpCost: 30
-  actionCooldown: 0.3
   spellCooldown: 6
   buffSpell: 1
   spellSFX: {fileID: 8300000, guid: 1c2024885b669dc4b8978c83e360744e, type: 3}
@@ -569,7 +566,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellPrefab: {fileID: 5609632458946122239, guid: c2fb20b6fa5c39840bfc7ff8c17a2e85, type: 3}
   mpCost: 50
-  actionCooldown: 0.3
   spellCooldown: 10
   buffSpell: 1
   spellSFX: {fileID: 8300000, guid: 97c9be6a345f4c54b9a277d8472f62f7, type: 3}

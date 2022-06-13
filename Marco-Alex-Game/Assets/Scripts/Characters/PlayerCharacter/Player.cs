@@ -70,6 +70,17 @@ public class Player : Character
             this.transform.position = new Vector3(this.transform.position.x - 0.025f, this.transform.position.y - 0.025f);
         } while (count > 0);
     }
+    public override IEnumerator Knockback(Vector2 vector)
+    {
+        Rigidbody2D rigid = GetComponent<Rigidbody2D>();
+        rigid.AddForce(vector, ForceMode2D.Impulse);
+        PlayerMovement script = GetComponent<PlayerMovement>();
+        script.UsingPhysics = true;
+        SetActionCooldown(0.5f);
+        yield return new WaitForSeconds(0.5f);
+        rigid.velocity = Vector2.zero;
+        script.UsingPhysics = false;
+    }
 
     private void MpRegen()
     {

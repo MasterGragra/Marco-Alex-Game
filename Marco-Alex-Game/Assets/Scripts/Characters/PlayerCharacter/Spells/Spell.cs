@@ -38,7 +38,9 @@ public class Spell : MonoBehaviour
 
     public bool CanCast()
     {
-        if (spellcast && Player.Instance.CheckCooldown() && MpCostCheck())
+        if (spellcast && !Player.Instance.IsDead() 
+            && Player.Instance.CheckCooldown() 
+            && MpCostCheck())
         {
             if (SpellCooldownCheck())
             {

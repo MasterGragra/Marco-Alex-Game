@@ -21,12 +21,11 @@ public class Character : MonoBehaviour
     public Color OriginalColor { get => originalColor; set => originalColor = value; }
     public float CooldownTimer { get => cooldownTimer; set => cooldownTimer = value; }
 
-    public void OnAwake()
+    public void CharacterStart()
     {
         Hp = MaxHp;
         OriginalColor = GetComponent<SpriteRenderer>().color;
     }
-
   
     public virtual void ReceiveDamage(float damage)
     {
@@ -96,7 +95,7 @@ public class Character : MonoBehaviour
         sprite.color = OriginalColor;
     }
 
-    public IEnumerator Knockback(Vector2 vector)
+    public virtual IEnumerator Knockback(Vector2 vector)
     {
         Rigidbody2D rigid = GetComponent<Rigidbody2D>();
         rigid.isKinematic = false;

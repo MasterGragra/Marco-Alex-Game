@@ -24,11 +24,11 @@ public class DashSkill : Skill
 
     private IEnumerator Dash()
     {
-        playerMovement.Dashing = true;
+        playerMovement.UsingPhysics= true;
         rigid.AddForce(playerMovement.PlayerDirection.normalized * DashForce, ForceMode2D.Impulse);
         animator.SetTrigger("Spellcast");
         yield return new WaitForSeconds(ActionCooldown);
-        playerMovement.Dashing = false;
+        playerMovement.UsingPhysics = false;
     }
 
     // Update is called once per frame

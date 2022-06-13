@@ -10,14 +10,14 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 movement;
     private string direction = "Down";
     private Vector2 playerDirection = new Vector2(0f, -1f);
-    private bool dashing = false;
+    private bool usingPhysics = false;
 
     [SerializeField] private AudioClip walkingSFX;
     private float walkCount = 0;
 
     public string Direction { get => direction; set => direction = value; }
     public Vector2 PlayerDirection { get => playerDirection; set => playerDirection = value; }
-    public bool Dashing { get => dashing; set => dashing = value; }
+    public bool UsingPhysics { get => usingPhysics; set => usingPhysics = value; }
 
     void Start()
     {
@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
         {
             rigid.velocity = movement.normalized * movementSpeed * Time.fixedDeltaTime;
         }
-        else if(!Dashing)
+        else if(!UsingPhysics)
         {
             rigid.velocity = Vector2.zero;
         }
@@ -89,7 +89,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         if (!Player.Instance.IsDead())
         {

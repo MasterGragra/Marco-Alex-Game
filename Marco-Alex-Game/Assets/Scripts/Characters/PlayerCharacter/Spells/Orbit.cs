@@ -15,14 +15,25 @@ public class Orbit : MonoBehaviour
     public float Angle { get => angle; set => angle = value; }
     public Transform Axis { get => axis; set => axis = value; }
 
-    // Update is called once per frame
-    void FixedUpdate()
+    private void Start()
     {
         position = new Vector3(0f, distance, 0f);
         position = Quaternion.AngleAxis(Angle, Vector3.forward) * position;
-        if (clockwise) Angle -= orbitSpeed * Time.fixedDeltaTime;
-        else Angle += orbitSpeed * Time.fixedDeltaTime;
-        distance += outwardTravelSpeed * Time.fixedDeltaTime;
         transform.position = Axis.position + position;
+    }
+
+    // Update is called once per frame
+    void FixedUpdate()
+    {
+        if (axis is null) Destroy(gameObject);
+        else
+        {
+            position = new Vector3(0f, distance, 0f);
+            position = Quaternion.AngleAxis(Angle, Vector3.forward) * position;
+            if (clockwise) Angle -= orbitSpeed * Time.fixedDeltaTime;
+            else Angle += orbitSpeed * Time.fixedDeltaTime;
+            distance += outwardTravelSpeed * Time.fixedDeltaTime;
+            transform.position = Axis.position + position;
+        }
     }
 }

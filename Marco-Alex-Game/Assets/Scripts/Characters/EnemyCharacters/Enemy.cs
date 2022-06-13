@@ -9,32 +9,37 @@ public class Enemy : Character
     private Transform target;
 
     [SerializeField] private float attackRange = 1.5f;
+    [SerializeField] private float attackDelay = 2f;
     [SerializeField] private float movementSpeed = 5f;
     private Vector3 facingDirection;
 
+    public Animator Animator { get => animator; set => animator = value; }
+    public float AttackDelay { get => attackDelay; set => attackDelay = value; }
+    public float AttackRange { get => attackRange; set => attackRange = value; }
+
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
-        OnAwake();
+        CharacterStart();
         rigid = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
+        Animator = GetComponent<Animator>();
         target = Player.Instance.transform;
         InvokeRepeating("FacePlayer", 0f, 0.2f);
     }
 
-    private float CheckDistance()
+    public float CheckDistance()
     {
         return Vector3.Distance(transform.position, target.transform.position);
     }
 
     private void MoveEnemy()
     {
-        if (attackRange < CheckDistance())
+        if (AttackRange < CheckDistance())
         {
             rigid.MovePosition(Vector3.MoveTowards(transform.position, target.transform.position, movementSpeed * Time.fixedDeltaTime));
-            animator.SetBool("Walking", true);
+            Animator.SetBool("Walking", true);
         }
-        else animator.SetBool("Walking", false);
+        else Animator.SetBool("Walking", false);
     }
 
     private void FacePlayer()
@@ -44,12 +49,11 @@ public class Enemy : Character
 
     private void Animate()
     {
-        animator.SetFloat("X", facingDirection.x);
-        animator.SetFloat("Y", facingDirection.y);
+        Animator.SetFloat("X", facingDirection.x);
+        Animator.SetFloat("Y", facingDirection.y);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void EnemyUpdate()
     {
         if (!IsDead() && CheckCooldown())
         {
