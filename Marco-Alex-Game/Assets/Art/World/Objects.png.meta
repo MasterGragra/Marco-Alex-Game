@@ -7,7 +7,7 @@ TextureImporter:
     second: SmallChestClosed
   - first:
       213: 318953615281452700
-    second: objects_1
+    second: SmallChestFullyOpen
   - first:
       213: 8333231276030249781
     second: objects_2
@@ -37,7 +37,7 @@ TextureImporter:
     second: objects_10
   - first:
       213: 2269949439249822484
-    second: B
+    second: BigChestFullyOpen
   - first:
       213: 6639657697291588988
     second: objects_12
@@ -1156,7 +1156,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_1
+      name: SmallChestFullyOpen
       rect:
         serializedVersion: 2
         x: 16
@@ -1324,7 +1324,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: B
+      name: BigChestFullyOpen
       rect:
         serializedVersion: 2
         x: 176
