@@ -25,6 +25,7 @@ public class Treant : Enemy
         for (int i = 0; i < attackCount; i++)
         {
             GameObject attack = Instantiate(attackPrefab, transform.position, Quaternion.identity);
+            attack.GetComponent<WindBlade>().DamageModifier *= AttackPower;
             Orbit script = attack.GetComponent<Orbit>();
             script.Axis = transform;
             script.Angle = (360f / attackCount) * i;

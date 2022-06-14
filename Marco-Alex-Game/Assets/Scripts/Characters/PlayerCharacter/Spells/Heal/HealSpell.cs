@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HealSpell : Spell
 {
-    private float healAmount = 50f;
+    private float healAmount = 40f;
 
     private void CastHeal()
     {
@@ -15,7 +15,7 @@ public class HealSpell : Spell
                 GameObject heal = Instantiate(SpellPrefab, this.transform.position, Quaternion.identity);
                 Heal script = heal.GetComponent<Heal>();
                 script.Target = this.transform;
-                script.HealAmount = healAmount;
+                script.HealAmount = Player.Instance.SpellPower + healAmount;
             }
         }
     }

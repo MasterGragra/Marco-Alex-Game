@@ -12,9 +12,7 @@ public class Fireball : Projectile
         {
             if (collider.gameObject.CompareTag(TargetTags[i]))
             {
-                collider.SendMessage("ReceiveDamage", Damage);
-                Vector2 direction = collider.transform.position - transform.position;
-                collider.GetComponent<Character>().StartCoroutine("Knockback", direction * KnockbackForce);
+                collider.SendMessage("ReceiveDamage", Player.Instance.SpellPower * Player.Instance.FireSpellModifier * DamageModifier);
                 Instantiate(explosionPrefab, transform.position, Quaternion.identity);
                 Destroy(gameObject);
             }

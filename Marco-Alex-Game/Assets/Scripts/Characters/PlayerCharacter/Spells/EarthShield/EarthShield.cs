@@ -29,10 +29,16 @@ public class EarthShield : Projectile
         {
             if (collider.gameObject.CompareTag(TargetTags[i]))
             {
-                durability--;
-                collider.SendMessage("ReceiveDamage", Damage);
+                collider.SendMessage("ReceiveDamage", Player.Instance.SpellPower * Player.Instance.EarthSpellModifier * DamageModifier);
                 Vector2 direction = collider.transform.position - transform.position;
                 collider.GetComponent<Character>().StartCoroutine("Knockback", direction * KnockbackForce);
+                durability--;
+                DestroyShieldSFX();
+            }
+
+            if (collider.gameObject.tag == "Projectile")
+            {
+                durability--;
                 DestroyShieldSFX();
             }
         }

@@ -7,6 +7,7 @@ public class Character : MonoBehaviour
 {
     [SerializeField] private float hp;
     [SerializeField] private float maxHp;
+    private float attackPower = 10f;
 
     private bool invincible = false;
     private float invincibilityTime = 0.2f;
@@ -17,6 +18,7 @@ public class Character : MonoBehaviour
 
     public float Hp { get => hp; set => hp = value; }
     public float MaxHp { get => maxHp; set => maxHp = value; }
+    public float AttackPower { get => attackPower; set => attackPower = value; }
     public bool HasDied { get => hasDied; set => hasDied = value; }
     public Color OriginalColor { get => originalColor; set => originalColor = value; }
     public float CooldownTimer { get => cooldownTimer; set => cooldownTimer = value; }

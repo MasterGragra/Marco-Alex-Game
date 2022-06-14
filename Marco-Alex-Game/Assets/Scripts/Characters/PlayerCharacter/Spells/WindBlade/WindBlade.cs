@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class WindBlade : Projectile
 {
+    [SerializeField] private bool player = true;
     [SerializeField] private bool knockback = true;
     [SerializeField] private bool destroyOnCollision = true;
     public bool DestroyOnCollision { get => destroyOnCollision; set => destroyOnCollision = value; }
@@ -14,7 +15,8 @@ public class WindBlade : Projectile
         {
             if (collider.gameObject.CompareTag(TargetTags[i]))
             {
-                collider.SendMessage("ReceiveDamage", Damage);
+                if (player) collider.SendMessage("ReceiveDamage", Player.Instance.SpellPower * Player.Instance.WindSpellModifier * DamageModifier);
+                else collider.SendMessage("ReceiveDamage", DamageModifier);
                 if (knockback)
                 {
                     Vector2 direction = collider.transform.position - transform.position;

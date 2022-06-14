@@ -8,7 +8,6 @@ public class PlayerAttack : MonoBehaviour
     private bool attack = false;
     private float attackSpeed = 0.4f;
     private float staminaCost = 5f;
-    private float damage = 10f;
     private float knockbackForce = 5f;
 
     [SerializeField] private GameObject[] attackHitboxes;
@@ -74,7 +73,7 @@ public class PlayerAttack : MonoBehaviour
 
         foreach (Collider2D enemy in enemies)
         {
-            enemy.SendMessage("ReceiveDamage", damage);
+            enemy.SendMessage("ReceiveDamage", Player.Instance.AttackPower);
             Vector2 direction = enemy.transform.position - transform.position;
             enemy.GetComponent<Character>().StartCoroutine("Knockback", direction * knockbackForce);
         }

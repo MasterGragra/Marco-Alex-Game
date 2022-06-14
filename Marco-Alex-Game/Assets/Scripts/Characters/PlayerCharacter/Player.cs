@@ -10,6 +10,10 @@ public class Player : Character
     [SerializeField] private float mp = 100f;
     private float maxMp = 100f;
     private float mpRegen = 2f;
+    private float spellPower = 10f;
+    private float fireSpellModifier = 1f;
+    private float windSpellModifier = 1f;
+    private float earthSpellModifier = 1f;
 
     [SerializeField] private float stamina = 100f;
     private float maxStamina = 100f;
@@ -24,12 +28,15 @@ public class Player : Character
     public static Player Instance { get => instance; set => instance = value; }
     public float Mp { get => mp; set => mp = value; }
     public float MaxMp { get => maxMp; set => maxMp = value; }
+    public float SpellPower { get => spellPower; set => spellPower = value; }
+    public float FireSpellModifier { get => fireSpellModifier; set => fireSpellModifier = value; }
+    public float WindSpellModifier { get => windSpellModifier; set => windSpellModifier = value; }
+    public float EarthSpellModifier { get => earthSpellModifier; set => earthSpellModifier = value; }
     public float Stamina { get => stamina; set => stamina = value; }
     public float MaxStamina { get => maxStamina; set => maxStamina = value; }
     public Animator Animator { get => animator; set => animator = value; }
     public AudioSource NormalAudio { get => normalAudio; set => normalAudio = value; }
     public AudioSource LoopingAudio { get => loopingAudio; set => loopingAudio = value; }
-    
 
     private void Awake()
     {
