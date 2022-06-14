@@ -157,5 +157,6 @@ MonoBehaviour:
   hp: 0
   maxHp: 50
   attackRange: 1.5
+  attackDelay: 2
   movementSpeed: 3
   attackPrefab: {fileID: 4449164927317996925, guid: be020fccdcaf0bb488a2ddc3afbbf434, type: 3}

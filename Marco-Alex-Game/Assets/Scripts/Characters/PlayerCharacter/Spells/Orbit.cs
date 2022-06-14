@@ -25,7 +25,7 @@ public class Orbit : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (axis is null) Destroy(gameObject);
+        if (axis == null) Destroy(gameObject);
         else
         {
             position = new Vector3(0f, distance, 0f);

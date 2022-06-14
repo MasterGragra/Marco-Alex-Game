@@ -31,6 +31,8 @@ public class EarthShield : Projectile
             {
                 durability--;
                 collider.SendMessage("ReceiveDamage", Damage);
+                Vector2 direction = collider.transform.position - transform.position;
+                collider.GetComponent<Character>().StartCoroutine("Knockback", direction * KnockbackForce);
                 DestroyShieldSFX();
             }
         }

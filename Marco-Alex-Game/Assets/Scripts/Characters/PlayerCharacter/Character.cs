@@ -67,6 +67,7 @@ public class Character : MonoBehaviour
 
     private IEnumerator DeathCoroutine()
     {
+        GetComponent<CapsuleCollider2D>().enabled = false;
         Vector3 originalPosition = transform.position;
         SpriteRenderer sprite = GetComponent<SpriteRenderer>();
         sprite.color = Color.gray;
@@ -108,12 +109,12 @@ public class Character : MonoBehaviour
 
     public void SetActionCooldown()
     {
-        CooldownTimer = 0.3f;
+        if (CooldownTimer < 0.3f) CooldownTimer = 0.3f;
     }
 
     public void SetActionCooldown(float cooltime)
     {
-        CooldownTimer = cooltime;
+        if (CooldownTimer < cooltime) CooldownTimer = cooltime;
     }
 
     public bool CheckCooldown()
