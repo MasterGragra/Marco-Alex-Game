@@ -337,10 +337,10 @@ TextureImporter:
     second: Overworld_110
   - first:
       213: 4479181887894498110
-    second: Overworld_111
+    second: GrassSign
   - first:
       213: -2758789277648346673
-    second: Overworld_112
+    second: Sign
   - first:
       213: -7073847437568735524
     second: Overworld_113
@@ -5830,7 +5830,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Overworld_111
+      name: GrassSign
       rect:
         serializedVersion: 2
         x: 544
@@ -5851,7 +5851,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Overworld_112
+      name: Sign
       rect:
         serializedVersion: 2
         x: 560

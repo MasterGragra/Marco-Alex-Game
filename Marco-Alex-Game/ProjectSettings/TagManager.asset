@@ -8,6 +8,8 @@ TagManager:
   - Fire
   - Terrain
   - Projectile
+  - Sign
+  - Chest
   layers:
   - Default
   - TransparentFX
@@ -47,6 +49,9 @@ TagManager:
     locked: 0
   - name: Collisions
     uniqueID: 1467969489
+    locked: 0
+  - name: Signs
+    uniqueID: 2033329251
     locked: 0
   - name: Player
     uniqueID: 402187967
