@@ -191,6 +191,10 @@ PrefabInstance:
       propertyPath: mpCost
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 748202740382600254, guid: 252183fc11ede4b49b7c4f1833a1031e, type: 3}
+      propertyPath: sfxDuration
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 252183fc11ede4b49b7c4f1833a1031e, type: 3}
 --- !u!114 &1418026499
@@ -212,6 +216,8 @@ MonoBehaviour:
   movementSpeed: 0
   meleeAttackPrefab: {fileID: 5373406930403090780, guid: 8b148399f6b26fb42bf8df3516cebf02, type: 3}
   fanAttackPrefab: {fileID: 3871015167285116005, guid: 4f01a5f56d126cd47bad449d38e85deb, type: 3}
+  whirlwindAttackPrefab: {fileID: 7944366985659559379, guid: afdc3fa361ba8be4baa04d124773602e, type: 3}
+  attackSFX: {fileID: 8300000, guid: e64803ffa87f9304eb0eb170a267bbf8, type: 3}
 --- !u!1 &1667750905
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,10 +12,18 @@ public class TreantBoss : Enemy
     [SerializeField] private GameObject fanAttackPrefab;
     private float fanAttackDelay = 5f;
     private int fanBarrageCount = 7;
-    private float barrageDelay = 0.5f;
+    private float fanBarrageDelay = 0.5f;
     private int fanProjectileCount = 5;
     private float fanProjectileSpeed = 5f;
     private float fanSpread = 30f;
+
+    [SerializeField] private GameObject whirlwindAttackPrefab;
+    private float whirlwindAttackDelay = 8f;
+    private int whirlwindCount = 3;
+    private int whirlwindLeafCount = 12;
+    private float whirlwindBarrageDelay = 2f;
+
+    [SerializeField] private AudioClip attackSFX;
 
     private IEnumerator MeleeAttackCoroutine()
     {
@@ -32,6 +40,7 @@ public class TreantBoss : Enemy
                 script.Axis = transform;
                 script.Angle = (360f / meleeAttackCount) * i;
             }
+            AttackSFX();
             yield return new WaitForSeconds(1f);
             Animator.SetBool("Attacking", false);
         }
@@ -53,7 +62,28 @@ public class TreantBoss : Enemy
                 rigid.AddForce(skillDirection.normalized * fanProjectileSpeed, ForceMode2D.Impulse);
                 skillDirection = Quaternion.AngleAxis(fanSpread, Vector3.forward) * skillDirection;
             }
-            yield return new WaitForSeconds(barrageDelay);
+            AttackSFX();
+            yield return new WaitForSeconds(fanBarrageDelay);
+        }
+    }
+
+    private IEnumerator WhirlwindAttackCoroutine()
+    {
+        SetActionCooldown(whirlwindAttackDelay);
+        Animator.SetBool("Attacking", true);
+        for (int i = 0; i < whirlwindCount; i++)
+        {
+            for (int j = 0; j < whirlwindLeafCount; j++)
+            {
+                GameObject projectile = Instantiate(whirlwindAttackPrefab, transform.position, Quaternion.identity);
+                projectile.GetComponent<WindBlade>().DamageModifier *= AttackPower;
+                Orbit script = projectile.GetComponent<Orbit>();
+                script.Axis = gameObject.transform;
+                script.Angle = 360f * 1 / whirlwindLeafCount * j;
+                AttackSFX();
+            }
+            Animator.SetBool("Attacking", false);
+            yield return new WaitForSeconds(whirlwindBarrageDelay);
         }
     }
 
@@ -61,7 +91,7 @@ public class TreantBoss : Enemy
     {
         if (CanAttack())
         {
-            int attack = Random.Range(2, 2);
+            int attack = Random.Range(1, 2);
             switch (attack)
             {
                 case 1:
@@ -70,8 +100,17 @@ public class TreantBoss : Enemy
                 case 2:
                     StartCoroutine(FanAttackCoroutine());
                     break;
+                case 3:
+                    StartCoroutine(WhirlwindAttackCoroutine());
+                    break;
             }
         }
+    }
+
+    private void AttackSFX()
+    {
+        GameManager.Instance.GetComponent<AudioSource>().clip = attackSFX;
+        GameManager.Instance.GetComponent<AudioSource>().Play();
     }
 
     // Update is called once per frame

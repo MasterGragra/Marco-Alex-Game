@@ -85,8 +85,11 @@ public class Spell : MonoBehaviour
     {
         Player.Instance.NormalAudio.clip = spellSFX;
         Player.Instance.NormalAudio.Play();
-        yield return new WaitForSeconds(duration);
-        Player.Instance.NormalAudio.Stop();
+        if (duration > 0)
+        {
+            yield return new WaitForSeconds(duration);
+            Player.Instance.NormalAudio.Stop();
+        }
     }
 
     private void FixedUpdate()
