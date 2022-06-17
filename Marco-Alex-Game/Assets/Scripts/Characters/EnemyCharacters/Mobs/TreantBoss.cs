@@ -4,18 +4,16 @@ using UnityEngine;
 
 public class TreantBoss : Enemy
 {
-    private Vector3 skillDirection;
-
     [SerializeField] private GameObject meleeAttackPrefab;
     private int meleeAttackCount = 3;
 
     [SerializeField] private GameObject fanAttackPrefab;
-    private float fanAttackDelay = 5f;
+    private float fanAttackDelay = 6f;
     private int fanBarrageCount = 7;
     private float fanBarrageDelay = 0.5f;
-    private int fanProjectileCount = 5;
+    private int fanProjectileCount = 7;
     private float fanProjectileSpeed = 5f;
-    private float fanSpread = 30f;
+    private float fanSpread = 20f;
 
     [SerializeField] private GameObject whirlwindAttackPrefab;
     private float whirlwindAttackDelay = 8f;
@@ -51,8 +49,8 @@ public class TreantBoss : Enemy
         SetActionCooldown(fanAttackDelay);
         for (int i = 0; i < fanBarrageCount; i++)
         {
-            skillDirection = Quaternion.AngleAxis(-(fanSpread * ((float)fanProjectileCount - 1f) / 2), Vector3.forward) * FacingDirection;
-            Vector3 offset = new Vector3(Random.Range(-1, 1), Random.Range(-1, 1));
+            Vector3 skillDirection = Quaternion.AngleAxis(-(fanSpread * ((float)fanProjectileCount - 1f) / 2), Vector3.forward) * FacingDirection;
+            Vector3 offset = new Vector3(Random.Range(-3, 3), Random.Range(-3, 3));
             skillDirection += offset;
             for (int k = 0; k < fanProjectileCount; k++)
             {
@@ -80,18 +78,18 @@ public class TreantBoss : Enemy
                 Orbit script = projectile.GetComponent<Orbit>();
                 script.Axis = gameObject.transform;
                 script.Angle = 360f * 1 / whirlwindLeafCount * j;
-                AttackSFX();
             }
-            Animator.SetBool("Attacking", false);
+            AttackSFX();
             yield return new WaitForSeconds(whirlwindBarrageDelay);
         }
+        Animator.SetBool("Attacking", false);
     }
 
     private void AttackSelection()
     {
         if (CanAttack())
         {
-            int attack = Random.Range(1, 2);
+            int attack = Random.Range(3, 4);
             switch (attack)
             {
                 case 1:
