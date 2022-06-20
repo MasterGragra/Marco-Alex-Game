@@ -5,11 +5,12 @@ using UnityEngine;
 public class TreantMelee : Enemy
 {
     [SerializeField] private GameObject attackPrefab;
+    private float attackMultiplier = 0.5f;
     private int attackCount = 3;
 
     private void MeleeAttack()
     {
-        if (CanAttack() && AttackRange >= CheckDistance()) StartCoroutine("AttackCoroutine");
+        if (CanAttack() && AttackRange >= CheckDistance()) StartCoroutine(MeleeAttackCoroutine());
     }
 
     private IEnumerator MeleeAttackCoroutine()
@@ -20,7 +21,7 @@ public class TreantMelee : Enemy
         for (int i = 0; i < attackCount; i++)
         {
             GameObject attack = Instantiate(attackPrefab, transform.position, Quaternion.identity);
-            attack.GetComponent<WindBlade>().DamageModifier *= AttackPower;
+            attack.GetComponent<WindBlade>().Damage = AttackPower * attackMultiplier;
             Orbit script = attack.GetComponent<Orbit>();
             script.Axis = transform;
             script.Angle = (360f / attackCount) * i;

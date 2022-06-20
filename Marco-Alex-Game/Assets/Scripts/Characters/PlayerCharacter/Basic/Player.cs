@@ -19,8 +19,10 @@ public class Player : Character
     private float spellCooldownMultiplier = 1f;
 
     private float fireSpellModifier = 1f;
+    private float fireSpellBurnModifier = 1f;
     private float windSpellModifier = 1f;
     private float earthSpellModifier = 1f;
+    private float healSpellModifier = 1f;
 
     [SerializeField] private float stamina = 100f;
     private float maxStamina = 100f;
@@ -44,8 +46,10 @@ public class Player : Character
     public float SpellPower { get => spellPower; set => spellPower = value; }
     public float SpellCooldownMultiplier { get => spellCooldownMultiplier; set => spellCooldownMultiplier = value; }
     public float FireSpellModifier { get => fireSpellModifier; set => fireSpellModifier = value; }
+    public float FireSpellBurnModifier { get => fireSpellBurnModifier; set => fireSpellBurnModifier = value; }
     public float WindSpellModifier { get => windSpellModifier; set => windSpellModifier = value; }
     public float EarthSpellModifier { get => earthSpellModifier; set => earthSpellModifier = value; }
+    public float HealSpellModifier { get => healSpellModifier; set => healSpellModifier = value; }
     public float Stamina { get => stamina; set => stamina = value; }
     public float MaxStamina { get => maxStamina; set => maxStamina = value; }
     public float StaminaRegenMultiplier { get => staminaRegenMultiplier; set => staminaRegenMultiplier = value; }
@@ -79,7 +83,7 @@ public class Player : Character
                 GetComponent<Rigidbody2D>().velocity = Vector3.zero;
                 GetComponent<Rigidbody2D>().isKinematic = true;
 
-                StartCoroutine("DeathCoroutine");
+                StartCoroutine(DeathCoroutine());
             }
         }
     }

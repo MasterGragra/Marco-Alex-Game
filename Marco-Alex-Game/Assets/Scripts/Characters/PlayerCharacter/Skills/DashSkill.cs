@@ -19,7 +19,7 @@ public class DashSkill : Skill
 
     private void UseDash()
     {
-        if (CanUse()) StartCoroutine("Dash");
+        if (CanUse()) StartCoroutine(Dash());
     }
 
     private IEnumerator Dash()

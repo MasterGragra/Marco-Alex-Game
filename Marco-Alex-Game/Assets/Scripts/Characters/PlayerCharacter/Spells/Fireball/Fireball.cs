@@ -5,6 +5,9 @@ using UnityEngine;
 public class Fireball : Projectile
 {
     [SerializeField] private GameObject explosionPrefab;
+    private float burnDamage;
+
+    public float BurnDamage { get => burnDamage; set => burnDamage = value; }
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
@@ -12,8 +15,7 @@ public class Fireball : Projectile
         {
             if (collider.gameObject.CompareTag(TargetTags[i]))
             {
-                collider.SendMessage("ReceiveDamage", Player.Instance.SpellPower * Player.Instance.FireSpellModifier * DamageModifier);
-                Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+                collider.SendMessage("ReceiveDamage", Damage);
                 Destroy(gameObject);
             }
         }
@@ -24,6 +26,7 @@ public class Fireball : Projectile
 
     private void OnDestroy()
     {
-        Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        explosion.GetComponent<Projectile>().Damage = burnDamage;
     }
 }

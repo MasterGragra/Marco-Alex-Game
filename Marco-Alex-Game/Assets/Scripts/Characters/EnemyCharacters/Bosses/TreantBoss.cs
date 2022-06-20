@@ -5,9 +5,11 @@ using UnityEngine;
 public class TreantBoss : Enemy
 {
     [SerializeField] private GameObject meleeAttackPrefab;
+    private float meleeAttackMultiplier = 1f;
     private int meleeAttackCount = 3;
 
     [SerializeField] private GameObject fanAttackPrefab;
+    private float fanAttackMultiplier = 2f;
     private float fanAttackDelay = 6f;
     private int fanBarrageCount = 7;
     private float fanBarrageDelay = 0.5f;
@@ -16,6 +18,7 @@ public class TreantBoss : Enemy
     private float fanSpread = 20f;
 
     [SerializeField] private GameObject whirlwindAttackPrefab;
+    private float whirlwindAttackMultiplier = 1.5f;
     private float whirlwindAttackDelay = 8f;
     private int whirlwindCount = 3;
     private int whirlwindLeafCount = 12;
@@ -33,7 +36,7 @@ public class TreantBoss : Enemy
             for (int i = 0; i < meleeAttackCount; i++)
             {
                 GameObject attack = Instantiate(meleeAttackPrefab, transform.position, Quaternion.identity);
-                attack.GetComponent<WindBlade>().DamageModifier *= AttackPower;
+                attack.GetComponent<WindBlade>().Damage = AttackPower * meleeAttackMultiplier;
                 Orbit script = attack.GetComponent<Orbit>();
                 script.Axis = transform;
                 script.Angle = (360f / meleeAttackCount) * i;
@@ -55,7 +58,7 @@ public class TreantBoss : Enemy
             for (int k = 0; k < fanProjectileCount; k++)
             {
                 GameObject projectile = Instantiate(fanAttackPrefab, transform.position, Quaternion.identity);
-                projectile.GetComponent<WindBlade>().DamageModifier *= AttackPower;
+                projectile.GetComponent<WindBlade>().Damage = AttackPower * fanAttackMultiplier;
                 Rigidbody2D rigid = projectile.GetComponent<Rigidbody2D>();
                 rigid.AddForce(skillDirection.normalized * fanProjectileSpeed, ForceMode2D.Impulse);
                 skillDirection = Quaternion.AngleAxis(fanSpread, Vector3.forward) * skillDirection;
@@ -74,7 +77,7 @@ public class TreantBoss : Enemy
             for (int j = 0; j < whirlwindLeafCount; j++)
             {
                 GameObject projectile = Instantiate(whirlwindAttackPrefab, transform.position, Quaternion.identity);
-                projectile.GetComponent<WindBlade>().DamageModifier *= AttackPower;
+                projectile.GetComponent<WindBlade>().Damage = AttackPower * whirlwindAttackMultiplier;
                 Orbit script = projectile.GetComponent<Orbit>();
                 script.Axis = gameObject.transform;
                 script.Angle = 360f * 1 / whirlwindLeafCount * j;

@@ -13,6 +13,7 @@ public class EarthShieldSpell : Spell
             for (int i = 0; i < earthShieldCount; i++)
             {
                 GameObject shield = Instantiate(SpellPrefab, transform.position, Quaternion.identity);
+                shield.GetComponent<Projectile>().Damage = CalculateDamage(Player.Instance.EarthSpellModifier);
                 Orbit script = shield.GetComponent<Orbit>();
                 script.Axis = transform;
                 script.Angle = (360f / earthShieldCount) * i;

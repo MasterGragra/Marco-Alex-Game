@@ -15,8 +15,7 @@ public class WindBlade : Projectile
         {
             if (collider.gameObject.CompareTag(TargetTags[i]))
             {
-                if (player) collider.SendMessage("ReceiveDamage", Player.Instance.SpellPower * Player.Instance.WindSpellModifier * DamageModifier);
-                else collider.SendMessage("ReceiveDamage", DamageModifier);
+                collider.SendMessage("ReceiveDamage", Damage);
                 if (knockback)
                 {
                     Vector2 direction = collider.transform.position - transform.position;
