@@ -32,16 +32,20 @@ public class EarthShield : Projectile
                 collider.SendMessage("ReceiveDamage", Player.Instance.SpellPower * Player.Instance.EarthSpellModifier * DamageModifier);
                 Vector2 direction = collider.transform.position - transform.position;
                 collider.GetComponent<Character>().StartCoroutine("Knockback", direction * KnockbackForce);
-                durability--;
-                DestroyShieldSFX();
+                DamageShield();
             }
 
-            if (collider.gameObject.tag == "Projectile")
+            else if (collider.gameObject.tag == "Projectile")
             {
-                durability--;
-                DestroyShieldSFX();
+                DamageShield();
             }
         }
+    }
+
+    private void DamageShield()
+    {
+        durability--;
+        DestroyShieldSFX();
     }
 
     private IEnumerator DestroyShield()

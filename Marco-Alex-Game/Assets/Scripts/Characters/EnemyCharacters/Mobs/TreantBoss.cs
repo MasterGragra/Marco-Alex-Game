@@ -89,7 +89,7 @@ public class TreantBoss : Enemy
     {
         if (CanAttack())
         {
-            int attack = Random.Range(3, 4);
+            int attack = Random.Range(1, 4);
             switch (attack)
             {
                 case 1:

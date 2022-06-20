@@ -7,10 +7,17 @@ public class Player : Character
 {
     private static Player instance;
 
+    private float attackSpeedMultiplier = 1f;
+    private float attackStaminaCostMultiplier = 1f;
+
     [SerializeField] private float mp = 100f;
     private float maxMp = 100f;
     private float mpRegen = 2f;
+    private float mpRegenMultiplier = 1f;
+
     private float spellPower = 10f;
+    private float spellCooldownMultiplier = 1f;
+
     private float fireSpellModifier = 1f;
     private float windSpellModifier = 1f;
     private float earthSpellModifier = 1f;
@@ -18,6 +25,9 @@ public class Player : Character
     [SerializeField] private float stamina = 100f;
     private float maxStamina = 100f;
     private float staminaRegen = 4f;
+    private float staminaRegenMultiplier = 1f;
+    private float movementSpeedMultiplier = 1f;
+    private float skillCooldownMultiplier = 1f;
 
     private Animator animator;
 
@@ -26,14 +36,21 @@ public class Player : Character
 
 
     public static Player Instance { get => instance; set => instance = value; }
+    public float AttackSpeedMultiplier { get => attackSpeedMultiplier; set => attackSpeedMultiplier = value; }
+    public float AttackStaminaCostMultiplier { get => attackStaminaCostMultiplier; set => attackStaminaCostMultiplier = value; }
     public float Mp { get => mp; set => mp = value; }
     public float MaxMp { get => maxMp; set => maxMp = value; }
+    public float MpRegenMultiplier { get => mpRegenMultiplier; set => mpRegenMultiplier = value; }
     public float SpellPower { get => spellPower; set => spellPower = value; }
+    public float SpellCooldownMultiplier { get => spellCooldownMultiplier; set => spellCooldownMultiplier = value; }
     public float FireSpellModifier { get => fireSpellModifier; set => fireSpellModifier = value; }
     public float WindSpellModifier { get => windSpellModifier; set => windSpellModifier = value; }
     public float EarthSpellModifier { get => earthSpellModifier; set => earthSpellModifier = value; }
     public float Stamina { get => stamina; set => stamina = value; }
     public float MaxStamina { get => maxStamina; set => maxStamina = value; }
+    public float StaminaRegenMultiplier { get => staminaRegenMultiplier; set => staminaRegenMultiplier = value; }
+    public float MovementSpeedMultiplier { get => movementSpeedMultiplier; set => movementSpeedMultiplier = value; }
+    public float SkillCooldownMultiplier { get => skillCooldownMultiplier; set => skillCooldownMultiplier = value; }
     public Animator Animator { get => animator; set => animator = value; }
     public AudioSource NormalAudio { get => normalAudio; set => normalAudio = value; }
     public AudioSource LoopingAudio { get => loopingAudio; set => loopingAudio = value; }
@@ -93,7 +110,7 @@ public class Player : Character
     {
         if (mp < MaxMp)
         {
-            mp += mpRegen * Time.deltaTime;
+            mp += mpRegen * MpRegenMultiplier * Time.deltaTime;
         }
         else if (mp > MaxMp) mp = MaxMp;
     }
@@ -113,18 +130,9 @@ public class Player : Character
     {
         if (stamina < MaxStamina)
         {
-            stamina += staminaRegen * Time.deltaTime;
+            stamina += staminaRegen * StaminaRegenMultiplier * Time.deltaTime;
         }
         else if (stamina > MaxStamina) stamina = MaxStamina;
-    }
-
-    private void Debug()
-    {
-        //Suicide
-        if (Input.GetKey(KeyCode.T))
-        {
-            ReceiveDamage(100f);
-        }
     }
 
     // Update is called once per frame
@@ -136,7 +144,5 @@ public class Player : Character
             StaminaRegen();
             Cooldown();
         }
-
-        Debug();
     }
 }

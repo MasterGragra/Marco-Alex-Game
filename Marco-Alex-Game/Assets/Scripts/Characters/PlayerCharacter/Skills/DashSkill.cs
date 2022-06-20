@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DashSkill : Skill
 {
-    private float DashForce = 30f;
+    private float DashForce = 20f;
     private Rigidbody2D rigid;
     private Animator animator;
     private PlayerMovement playerMovement;
@@ -24,7 +24,7 @@ public class DashSkill : Skill
 
     private IEnumerator Dash()
     {
-        playerMovement.UsingPhysics= true;
+        playerMovement.UsingPhysics = true;
         rigid.AddForce(playerMovement.PlayerDirection.normalized * DashForce, ForceMode2D.Impulse);
         animator.SetTrigger("Spellcast");
         yield return new WaitForSeconds(ActionCooldown);

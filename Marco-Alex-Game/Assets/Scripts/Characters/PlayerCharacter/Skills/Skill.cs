@@ -8,6 +8,8 @@ public class Skill : MonoBehaviour
     private bool skillUse;
     [SerializeField] private float staminaCost;
     [SerializeField] private float actionCooldown = 0.3f;
+    [SerializeField] private float skillCooldown;
+    private float skillCooldownTimer = 0f;
 
     public float ActionCooldown { get => actionCooldown; set => actionCooldown = value; }
 
@@ -22,7 +24,7 @@ public class Skill : MonoBehaviour
         else return false;
     }
 
-    public void PayStaminaCost()
+    public void StaminaCost()
     {
         Player.Instance.Stamina -= staminaCost;
     }
@@ -32,11 +34,36 @@ public class Skill : MonoBehaviour
         if (skillUse && !Player.Instance.IsDead() 
             && Player.Instance.CheckCooldown() 
             && StaminaCostCheck())
+        
         {
-            Player.Instance.SetActionCooldown(ActionCooldown);
-            PayStaminaCost();
+            if (SkillCooldownCheck())
+            {
+                Player.Instance.SetActionCooldown(ActionCooldown);
+                StaminaCost();
+                return true;
+            }
+        }
+        return false;
+    }
+    private bool SkillCooldownCheck()
+    {
+        if (skillCooldownTimer <= 0)
+        {
+            skillCooldownTimer = skillCooldown;
             return true;
         }
         return false;
+    }
+
+    private void SkillCooldownManager()
+    {
+        if (skillCooldownTimer > 0)
+        {
+            skillCooldownTimer -= Player.Instance.SkillCooldownMultiplier * Time.deltaTime;
+        }
+    }
+    private void FixedUpdate()
+    {
+        SkillCooldownManager();
     }
 }

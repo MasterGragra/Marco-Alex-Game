@@ -5,6 +5,9 @@ using UnityEngine.InputSystem;
 
 public class Spell : MonoBehaviour
 {
+    //private string spellName;
+    //private string description;
+
     [SerializeField] private GameObject spellPrefab;
     private bool spellcast;
     [SerializeField] private float mpCost;
@@ -16,6 +19,8 @@ public class Spell : MonoBehaviour
     [SerializeField] private AudioClip spellSFX;
     [SerializeField] private float sfxDuration;
 
+    //public string SpellName { get => spellName; set => spellName = value; }
+    //public string Description { get => description; set => description = value; }
     public GameObject SpellPrefab { get => spellPrefab; set => spellPrefab = value; }
     public float SpellCooldown { get => spellCooldown; set => spellCooldown = value; }
     public float SpellCooldownTimer { get => spellCooldownTimer; set => spellCooldownTimer = value; }
@@ -71,7 +76,7 @@ public class Spell : MonoBehaviour
     {
         if(SpellCooldownTimer > 0)
         {
-            SpellCooldownTimer -= Time.deltaTime;
+            SpellCooldownTimer -= Player.Instance.SpellCooldownMultiplier * Time.deltaTime;
         }
     }
 

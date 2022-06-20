@@ -21,4 +21,9 @@ public class Fireball : Projectile
         if (collider.gameObject.tag == "Terrain")
             Destroy(gameObject);
     }
+
+    private void OnDestroy()
+    {
+        Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+    }
 }

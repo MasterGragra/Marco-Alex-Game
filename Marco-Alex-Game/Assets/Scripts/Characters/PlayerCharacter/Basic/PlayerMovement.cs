@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rigid;
-    private float movementSpeed = 500f;
+    private float movementSpeed = 300f;
     private Vector2 movement;
     private string direction = "Down";
     private Vector2 playerDirection = new Vector2(0f, -1f);
@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Player.Instance.Animator.GetBool("Moving"))
         {
-            rigid.velocity = movement.normalized * movementSpeed * Time.fixedDeltaTime;
+            rigid.velocity = movement.normalized * movementSpeed * Player.Instance.MovementSpeedMultiplier * Time.fixedDeltaTime;
         }
         else if(!UsingPhysics)
         {
