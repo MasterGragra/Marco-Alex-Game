@@ -18,9 +18,14 @@ public class HealSpell : Spell
                 GameObject heal = Instantiate(SpellPrefab, this.transform.position, Quaternion.identity);
                 Heal script = heal.GetComponent<Heal>();
                 script.Target = this.transform;
-                script.HealAmount = Player.Instance.SpellPower + healAmount;
+                script.HealAmount = CalculateHealing();
             }
         }
+    }
+
+    private float CalculateHealing()
+    {
+        return (Player.Instance.SpellPower + healAmount) * Player.Instance.HealSpellModifier;
     }
 
     // Update is called once per frame

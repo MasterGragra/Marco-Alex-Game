@@ -36,7 +36,7 @@ public class PlayerAttack : MonoBehaviour
             Player.Instance.CooldownTimer = attackSpeed / Player.Instance.AttackSpeedMultiplier;
             Player.Instance.StaminaCost(staminaCost);
 
-            StartCoroutine("CheckHitbox");
+            StartCoroutine(CheckHitbox());
 
             AttackSFX();
         }

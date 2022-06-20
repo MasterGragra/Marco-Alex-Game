@@ -41,8 +41,8 @@ public class Character : MonoBehaviour
             }
             else
             {
-                StartCoroutine("DamageFeedback");
-                StartCoroutine("InvincibilityTimer");
+                StartCoroutine(DamageFeedback());
+                StartCoroutine(InvincibilityTimer());
             }
         }
     }
@@ -51,7 +51,7 @@ public class Character : MonoBehaviour
     {
         Hp -= damage;
         if (IsDead()) Die();
-        else StartCoroutine("DamageFeedback");
+        else StartCoroutine(DamageFeedback());
     }
 
     public bool IsDead()
@@ -63,7 +63,7 @@ public class Character : MonoBehaviour
     {
         if (!HasDied)
         {
-            StartCoroutine("DeathCoroutine");
+            StartCoroutine(DeathCoroutine());
         }
     }
 

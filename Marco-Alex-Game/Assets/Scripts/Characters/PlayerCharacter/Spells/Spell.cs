@@ -10,6 +10,7 @@ public class Spell : MonoBehaviour
 
     [SerializeField] private GameObject spellPrefab;
     private bool spellcast;
+    [SerializeField] private float damageMultiplier;
     [SerializeField] private float mpCost;
     [SerializeField] private float spellCooldown;
     private float spellCooldownTimer = 0f;
@@ -22,12 +23,18 @@ public class Spell : MonoBehaviour
     //public string SpellName { get => spellName; set => spellName = value; }
     //public string Description { get => description; set => description = value; }
     public GameObject SpellPrefab { get => spellPrefab; set => spellPrefab = value; }
+    public float DamageMultiplier { get => damageMultiplier; set => damageMultiplier = value; }
     public float SpellCooldown { get => spellCooldown; set => spellCooldown = value; }
     public float SpellCooldownTimer { get => spellCooldownTimer; set => spellCooldownTimer = value; }
 
     public void OnSpellcast(InputAction.CallbackContext context)
     {
         spellcast = context.performed;
+    }
+
+    public float CalculateDamage(float spellModifier)
+    {
+        return Player.Instance.SpellPower * DamageMultiplier * spellModifier;
     }
 
     private bool MpCostCheck()
@@ -54,7 +61,7 @@ public class Spell : MonoBehaviour
 
                 SpellcastAnimation();
 
-                StartCoroutine("SpellSFX", sfxDuration);
+                StartCoroutine(SpellSFX(sfxDuration));
 
                 return true;
             }

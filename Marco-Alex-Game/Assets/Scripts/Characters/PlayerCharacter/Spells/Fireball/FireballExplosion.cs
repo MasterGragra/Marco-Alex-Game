@@ -16,7 +16,7 @@ public class FireballExplosion : Projectile
         explosionCollider = GetComponent<BoxCollider2D>();
         enemyLayer = LayerMask.GetMask("Enemy");
         InvokeRepeating("BurnDamage", 0.1f, 0.3f);
-        StartCoroutine("ExplosionSFX");
+        StartCoroutine(ExplosionSFX());
     }
 
     private void BurnDamage()
@@ -24,7 +24,7 @@ public class FireballExplosion : Projectile
         Collider2D[] enemies = Physics2D.OverlapBoxAll(explosionCollider.transform.position, explosionCollider.size, 0f, enemyLayer);
         foreach(Collider2D enemy in enemies)
         {
-            enemy.SendMessage("ReceiveIndirectDamage", Player.Instance.SpellPower * Player.Instance.FireSpellModifier * DamageModifier);
+            enemy.SendMessage("ReceiveIndirectDamage", Damage);
         }
     }
 

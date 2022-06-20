@@ -6,7 +6,7 @@ public class Heal : MonoBehaviour
 {
     private Transform target;
     private float lifetime = 0.5f;
-    private float healAmount;
+    private float healAmount = 0f;
 
     public Transform Target { get => target; set => target = value; }
     public float HealAmount { get => healAmount; set => healAmount = value; }
@@ -21,8 +21,12 @@ public class Heal : MonoBehaviour
     private void HealTarget()
     {
         Character character = target.GetComponent<Character>();
-        if (character.Hp + HealAmount > character.MaxHp) character.Hp = character.MaxHp;
-        else character.Hp += HealAmount;
+        if (healAmount == 0) character.Hp = character.MaxHp;
+        else
+        {
+            if (character.Hp + HealAmount > character.MaxHp) character.Hp = character.MaxHp;
+            else character.Hp += HealAmount;
+        }
     }
 
     // Update is called once per frame
