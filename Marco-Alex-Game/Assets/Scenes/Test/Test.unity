@@ -195,9 +195,21 @@ PrefabInstance:
       propertyPath: mpCost
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 748202740382600253, guid: 252183fc11ede4b49b7c4f1833a1031e, type: 3}
+      propertyPath: damageMultiplier
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 748202740382600254, guid: 252183fc11ede4b49b7c4f1833a1031e, type: 3}
       propertyPath: sfxDuration
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 748202740382600254, guid: 252183fc11ede4b49b7c4f1833a1031e, type: 3}
+      propertyPath: damageMultiplier
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 748202740382600255, guid: 252183fc11ede4b49b7c4f1833a1031e, type: 3}
+      propertyPath: damageMultiplier
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 252183fc11ede4b49b7c4f1833a1031e, type: 3}
@@ -381,13 +393,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3091387425043884635, guid: 21a3a5263af5dd348a3c47036f61c986, type: 3}
+      propertyPath: maxHp
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 3091387425043884637, guid: 21a3a5263af5dd348a3c47036f61c986, type: 3}
       propertyPath: m_Name
       value: TreantMelee
       objectReference: {fileID: 0}
     - target: {fileID: 3091387425043884637, guid: 21a3a5263af5dd348a3c47036f61c986, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21a3a5263af5dd348a3c47036f61c986, type: 3}
@@ -433,6 +449,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2108221575}
     m_Modifications:
+    - target: {fileID: 5493591503495499218, guid: 8fae2cf01502bbf4eb5c3f03f85f3cf0, type: 3}
+      propertyPath: rangeAttackPrefab
+      value: 
+      objectReference: {fileID: 3871015167285116005, guid: 4f01a5f56d126cd47bad449d38e85deb, type: 3}
     - target: {fileID: 7411790454511883906, guid: 8fae2cf01502bbf4eb5c3f03f85f3cf0, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -483,7 +503,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7411790454511883909, guid: 8fae2cf01502bbf4eb5c3f03f85f3cf0, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fae2cf01502bbf4eb5c3f03f85f3cf0, type: 3}
