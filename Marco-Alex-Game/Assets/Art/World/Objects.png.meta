@@ -355,7 +355,7 @@ TextureImporter:
     second: objects_116
   - first:
       213: 2346192434483656938
-    second: objects_117
+    second: Coin
   - first:
       213: -595281427602211305
     second: objects_118
@@ -1140,7 +1140,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 304
-        width: 14
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1705,10 +1705,10 @@ TextureImporter:
       name: SmallChestSemiOpen
       rect:
         serializedVersion: 2
-        x: 0
-        y: 272
-        width: 32
-        height: 32
+        x: 7
+        y: 281
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1726,10 +1726,10 @@ TextureImporter:
       name: SmallChestOpen
       rect:
         serializedVersion: 2
-        x: 32
-        y: 272
-        width: 32
-        height: 32
+        x: 39
+        y: 282
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1873,10 +1873,10 @@ TextureImporter:
       name: BigChestSemiOpen
       rect:
         serializedVersion: 2
-        x: 192
-        y: 272
+        x: 191
+        y: 281
         width: 32
-        height: 32
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1894,10 +1894,10 @@ TextureImporter:
       name: BigChestOpen
       rect:
         serializedVersion: 2
-        x: 224
-        y: 272
+        x: 223
+        y: 281
         width: 32
-        height: 32
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2416,7 +2416,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_117
+      name: Coin
       rect:
         serializedVersion: 2
         x: 0

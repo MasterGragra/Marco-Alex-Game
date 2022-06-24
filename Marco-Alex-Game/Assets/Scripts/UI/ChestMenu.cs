@@ -5,13 +5,21 @@ using UnityEngine.UI;
 
 public class ChestMenu : MonoBehaviour
 {
-    public GameObject acceptButton;
+    public Button acceptButton;
     private bool ischest;
+    public GameObject buttonContainer;
+    public GameObject spellCover;
+    public Animator animator;
+   
+
     // Start is called before the first frame update
     void Start()
     {
-        acceptButton.SetActive(false);
+        buttonContainer.SetActive(false);
         ischest = false;
+        Button btn = acceptButton.GetComponent<Button>();
+        animator = GetComponent<Animator>();
+        animator.SetBool("btnPressed", false);
     }
 
     // Update is called once per frame
@@ -20,13 +28,25 @@ public class ChestMenu : MonoBehaviour
         
     }
 
+    public void Pressed()
+    {
+        spellCover.SetActive(false);
+        OpenChest();
+    }
+
+    private void OpenChest()
+    {
+        animator.SetBool("btnPressed", true);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Chest")
         {
 
             ischest = true;
-            acceptButton.SetActive(true);
+            buttonContainer.SetActive(true);
+
         }
         Debug.Log("chest");
     }
@@ -36,7 +56,7 @@ public class ChestMenu : MonoBehaviour
         if (collision.gameObject.tag == "Chest")
         {
             ischest = false;
-            acceptButton.SetActive(false);
+            buttonContainer.SetActive(false);
         }
         Debug.Log("Left chest");
     }
