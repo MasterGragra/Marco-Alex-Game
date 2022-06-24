@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireballSpell : Spell
+public class FireballSpell : Spell, ISpell
 {
     private float fireballSpeed = 10f;
 
@@ -10,6 +10,16 @@ public class FireballSpell : Spell
     private bool amaterasu = false;
     private bool napalm = false;
     private bool blazingSparks = false;
+
+    public bool Conflagration { get => conflagration; set => conflagration = value; }
+    public bool Amaterasu { get => amaterasu; set => amaterasu = value; }
+    public bool Napalm { get => napalm; set => napalm = value; }
+    public bool BlazingSparks { get => blazingSparks; set => blazingSparks = value; }
+
+    public string ReturnDescription()
+    {
+        throw new System.NotImplementedException();
+    }
 
     private void CastFireball()
     {
@@ -26,5 +36,9 @@ public class FireballSpell : Spell
     private void Update()
     {
         CastFireball();
+        if (Input.GetKey(KeyCode.H))
+        {
+            Debug.Log(ReturnDescription());
+        }
     }
 }

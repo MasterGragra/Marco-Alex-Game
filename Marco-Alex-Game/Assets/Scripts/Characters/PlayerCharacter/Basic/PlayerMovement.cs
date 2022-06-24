@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private AudioClip walkingSFX;
     private float walkCount = 0;
 
+    public float MovementSpeed { get => movementSpeed; set => movementSpeed = value; }
     public string Direction { get => direction; set => direction = value; }
     public Vector2 PlayerDirection { get => playerDirection; set => playerDirection = value; }
     public bool UsingPhysics { get => usingPhysics; set => usingPhysics = value; }
@@ -33,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Player.Instance.Animator.GetBool("Moving"))
         {
-            rigid.velocity = movement.normalized * movementSpeed * Player.Instance.MovementSpeedMultiplier * Time.fixedDeltaTime;
+            rigid.velocity = movement.normalized * MovementSpeed * Player.Instance.MovementSpeedMultiplier * Time.fixedDeltaTime;
         }
         else if(!UsingPhysics)
         {

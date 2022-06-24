@@ -5,8 +5,7 @@ using UnityEngine.InputSystem;
 
 public class Spell : MonoBehaviour
 {
-    //private string spellName;
-    //private string description;
+    private string spellName;
 
     [SerializeField] private GameObject spellPrefab;
     private bool spellcast;
@@ -20,8 +19,7 @@ public class Spell : MonoBehaviour
     [SerializeField] private AudioClip spellSFX;
     [SerializeField] private float sfxDuration;
 
-    //public string SpellName { get => spellName; set => spellName = value; }
-    //public string Description { get => description; set => description = value; }
+    public string SpellName { get => spellName; set => spellName = value; }
     public GameObject SpellPrefab { get => spellPrefab; set => spellPrefab = value; }
     public float DamageMultiplier { get => damageMultiplier; set => damageMultiplier = value; }
     public float SpellCooldown { get => spellCooldown; set => spellCooldown = value; }

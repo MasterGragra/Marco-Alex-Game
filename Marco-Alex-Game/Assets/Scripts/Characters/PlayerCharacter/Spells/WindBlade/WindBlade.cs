@@ -5,7 +5,10 @@ using UnityEngine;
 public class WindBlade : Projectile
 {
     [SerializeField] private bool knockback = true;
+    private bool bouncing = false;
     [SerializeField] private bool destroyOnCollision = true;
+
+    public bool Bouncing { get => bouncing; set => bouncing = value; }
     public bool DestroyOnCollision { get => destroyOnCollision; set => destroyOnCollision = value; }
 
     private void OnTriggerEnter2D(Collider2D collider)
@@ -24,7 +27,14 @@ public class WindBlade : Projectile
             }
         }
 
-        if (collider.gameObject.tag == "Terrain" || collider.gameObject.tag == "Fire")
-            Destroy(gameObject);
+        if (collider.gameObject.tag == "Terrain")
+        {
+            if (bouncing)
+            {
+                GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x * -1f, GetComponent<Rigidbody2D>().velocity.y * -1f);
+            }
+            else Destroy(gameObject);
+        }
+        else if (collider.gameObject.tag == "Fire") Destroy(gameObject);
     }
 }

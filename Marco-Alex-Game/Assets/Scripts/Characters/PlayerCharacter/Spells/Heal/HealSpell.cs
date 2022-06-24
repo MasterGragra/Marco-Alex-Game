@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class HealSpell : Spell
 {
-    //new string SpellName = "Heal";
-    //new string Description = "Press 4 to restore 100% of player spell power + 40 health point.\n Cooldown: 10 seconds.";
+    new string SpellName = "Heal";
 
     private float healAmount = 40f;
 
