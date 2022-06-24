@@ -8,7 +8,7 @@ public class DamageArea : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Player.Instance.Hp -= (Player.Instance.MaxHp / 100f);
+            Player.Instance.Hp -= (Player.Instance.MaxHp / 100f) * Time.deltaTime;
         }
     }
 }

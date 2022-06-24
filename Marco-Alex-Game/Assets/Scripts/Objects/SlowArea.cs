@@ -8,7 +8,7 @@ public class SlowArea : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Player.Instance.MovementSpeedMultiplier *= 0.5f;
+            Player.Instance.MovementSpeedMultiplier -= 0.5f;
         }
     }
 
@@ -16,7 +16,7 @@ public class SlowArea : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Player.Instance.MovementSpeedMultiplier *= 2f;
+            Player.Instance.MovementSpeedMultiplier += 0.5f;
         }
     }
 }
