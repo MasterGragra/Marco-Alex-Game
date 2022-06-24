@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class WindBlade : Projectile
 {
-    [SerializeField] private bool player = true;
     [SerializeField] private bool knockback = true;
     [SerializeField] private bool destroyOnCollision = true;
     public bool DestroyOnCollision { get => destroyOnCollision; set => destroyOnCollision = value; }

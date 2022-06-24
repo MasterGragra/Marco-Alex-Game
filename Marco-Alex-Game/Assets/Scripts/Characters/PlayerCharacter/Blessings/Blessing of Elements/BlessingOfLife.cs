@@ -2,17 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BlessingOfLife : MonoBehaviour
+public class BlessingOfLife : Blessing, IBlessing
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    new string BlessingName = "Blessing of Life";
+    new string Description = "Increase healing spell potency by 10%";
 
-    // Update is called once per frame
-    void Update()
+    public void ApplyBlessing()
     {
-        
+        Player.Instance.HealSpellModifier += 0.1f;
     }
 }

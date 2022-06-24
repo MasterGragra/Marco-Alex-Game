@@ -2,17 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BlessingOfWind : MonoBehaviour
+public class BlessingOfWind : Blessing, IBlessing
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    new string BlessingName = "Blessing of Wind";
+    new string Description = "Increase wind spell damage by 10%";
 
-    // Update is called once per frame
-    void Update()
+    public void ApplyBlessing()
     {
-        
+        Player.Instance.WindSpellModifier += 0.1f;
     }
 }

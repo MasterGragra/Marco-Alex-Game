@@ -2,17 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BlessingOfEarth : MonoBehaviour
+public class BlessingOfEarth : Blessing, IBlessing
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    new string BlessingName = "Blessing of Earth";
+    new string Description = "Increase earth spell damage by 10%";
 
-    // Update is called once per frame
-    void Update()
+    public void ApplyBlessing()
     {
-        
+        Player.Instance.EarthSpellModifier += 0.1f;
     }
 }
