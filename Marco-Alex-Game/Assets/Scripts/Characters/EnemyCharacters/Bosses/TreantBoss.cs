@@ -61,6 +61,7 @@ public class TreantBoss : Enemy
             projectile.GetComponent<WindBlade>().Damage = AttackPower * barrageDamageMultiplier;
             Rigidbody2D rigid = projectile.GetComponent<Rigidbody2D>();
             rigid.AddForce(FacingDirection.normalized * barrageProjectileSpeed, ForceMode2D.Impulse);
+            AttackSFX();
             yield return new WaitForSeconds(0.1f);
         }
     }
@@ -110,7 +111,7 @@ public class TreantBoss : Enemy
     {
         if (CanAttack())
         {
-            int attack = Random.Range(2, 2);
+            int attack = Random.Range(1, 5);
             switch (attack)
             {
                 case 1:

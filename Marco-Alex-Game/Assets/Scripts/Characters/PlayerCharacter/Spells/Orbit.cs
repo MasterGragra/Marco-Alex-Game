@@ -12,12 +12,14 @@ public class Orbit : MonoBehaviour
     [SerializeField] private float outwardTravelSpeed;
     [SerializeField] private Transform axis;
 
+    public float Distance { get => distance; set => distance = value; }
     public float Angle { get => angle; set => angle = value; }
+    public bool Clockwise { get => clockwise; set => clockwise = value; }
     public Transform Axis { get => axis; set => axis = value; }
 
     private void Start()
     {
-        position = new Vector3(0f, distance, 0f);
+        position = new Vector3(0f, Distance, 0f);
         position = Quaternion.AngleAxis(Angle, Vector3.forward) * position;
         transform.position = Axis.position + position;
     }
@@ -28,11 +30,11 @@ public class Orbit : MonoBehaviour
         if (axis == null) Destroy(gameObject);
         else
         {
-            position = new Vector3(0f, distance, 0f);
+            position = new Vector3(0f, Distance, 0f);
             position = Quaternion.AngleAxis(Angle, Vector3.forward) * position;
-            if (clockwise) Angle -= orbitSpeed * Time.fixedDeltaTime;
+            if (Clockwise) Angle -= orbitSpeed * Time.fixedDeltaTime;
             else Angle += orbitSpeed * Time.fixedDeltaTime;
-            distance += outwardTravelSpeed * Time.fixedDeltaTime;
+            Distance += outwardTravelSpeed * Time.fixedDeltaTime;
             transform.position = Axis.position + position;
         }
     }

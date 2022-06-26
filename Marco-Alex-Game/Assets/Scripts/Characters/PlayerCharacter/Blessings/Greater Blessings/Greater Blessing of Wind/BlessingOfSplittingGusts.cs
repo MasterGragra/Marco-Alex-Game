@@ -9,6 +9,5 @@ public class BlessingOfSplittingGusts : Blessing, IBlessing
     public void ApplyBlessing()
     {
         Player.Instance.GetComponent<WindBladesSpell>().SplittingGust = true;
-        Player.Instance.GetComponent<WindBladesSpell>().WindBladesCount += 2;
     }
 }

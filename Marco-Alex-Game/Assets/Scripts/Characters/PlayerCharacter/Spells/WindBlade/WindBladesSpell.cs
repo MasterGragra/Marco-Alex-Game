@@ -12,7 +12,7 @@ public class WindBladesSpell : Spell, ISpell
 
     private bool piercingGales = false;
     private bool splittingGust = false;
-    private bool echoingWind = true;
+    private bool echoingWind = false;
     private bool zephyr = false;
 
     public int WindBladesCount { get => windBladesCount; set => windBladesCount = value; }
@@ -21,22 +21,31 @@ public class WindBladesSpell : Spell, ISpell
     public bool EchoingWind { get => echoingWind; set => echoingWind = value; }
     public bool Zephyr { get => zephyr; set => zephyr = value; }
 
+    //void Start()
+    //{
+    //    piercingGales = true;
+    //    splittingGust = true;
+    //    echoingWind = true;
+    //    zephyr = true;
+    //}
+
     public string ReturnDescription()
     {
-        return "Press 2 to cast " + SpellName + ", shooting "
-            + WindBladesCount
+        return "Press 2 to cast " + SpellName + " for " + MpCost + " mana, shooting " + ReturnProjectileCount()
             + ((PiercingGales) ? " piercing" : "") + " wind blades"
             + ((EchoingWind) ? " that bounces off walls" : "") + " each dealing "
-            + CalculateDamage(Player.Instance.WindSpellModifier) + " points of damage"
-            + ((Zephyr) ? " and increases the character's movement speed by 30% for 3 seconds" : "") + ".\n Cooldown: " + SpellCooldown + " seconds";
+            + CalculateDamage(Player.Instance.WindSpellModifier) + " points of damage to enemies"
+            + ((Zephyr) ? " and increases the character's movement speed by 30% for 3 seconds" : "")
+            + ".\nCooldown: " + SpellCooldown + " seconds";
     }
 
     private void CastWindBlades()
     {
         if (CanCast())
         {
-            Vector3 skillDirection = Quaternion.AngleAxis(-(windBladesSpread * ((float)WindBladesCount - 1f) / 2), Vector3.forward) * Player.Instance.GetComponent<PlayerMovement>().PlayerDirection;
-            for(int i = 0; i < WindBladesCount; i++)
+            Vector3 skillDirection = Quaternion.AngleAxis(-(windBladesSpread * ((float)ReturnProjectileCount() - 1f) / 2), Vector3.forward) * Player.Instance.GetComponent<PlayerMovement>().PlayerDirection;
+            int projectileCount = ReturnProjectileCount();
+            for(int i = 0; i < projectileCount; i++)
             {
                 GameObject windBlade = Instantiate(SpellPrefab, Player.Instance.transform.position, Quaternion.identity);
                 windBlade.GetComponent<Projectile>().Damage = CalculateDamage(Player.Instance.WindSpellModifier);
@@ -51,6 +60,12 @@ public class WindBladesSpell : Spell, ISpell
                 skillDirection = Quaternion.AngleAxis(windBladesSpread, Vector3.forward) * skillDirection;
             }
         }
+    }
+
+    private int ReturnProjectileCount()
+    {
+        if (SplittingGust) return WindBladesCount + 2;
+        else return windBladesCount;
     }
 
     // Update is called once per frame

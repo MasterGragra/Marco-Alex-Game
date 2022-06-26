@@ -34,7 +34,7 @@ public class Character : MonoBehaviour
         if (!invincible)
         {
             Hp -= damage;
-            invincible = true;
+            //invincible = true;
             if (IsDead())
             {
                 Die();
@@ -42,7 +42,7 @@ public class Character : MonoBehaviour
             else
             {
                 StartCoroutine(DamageFeedback());
-                StartCoroutine(InvincibilityTimer());
+                //StartCoroutine(InvincibilityTimer());
             }
         }
     }

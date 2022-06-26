@@ -21,13 +21,15 @@ public class Spell : MonoBehaviour
 
     public string SpellName { get => spellName; set => spellName = value; }
     public GameObject SpellPrefab { get => spellPrefab; set => spellPrefab = value; }
+    public bool Spellcast { get => spellcast; set => spellcast = value; }
     public float DamageMultiplier { get => damageMultiplier; set => damageMultiplier = value; }
+    public float MpCost { get => mpCost; set => mpCost = value; }
     public float SpellCooldown { get => spellCooldown; set => spellCooldown = value; }
     public float SpellCooldownTimer { get => spellCooldownTimer; set => spellCooldownTimer = value; }
 
     public void OnSpellcast(InputAction.CallbackContext context)
     {
-        spellcast = context.performed;
+        Spellcast = context.performed;
     }
 
     public float CalculateDamage(float spellModifier)
@@ -37,25 +39,25 @@ public class Spell : MonoBehaviour
 
     private bool MpCostCheck()
     {
-        if (mpCost <= Player.Instance.Mp) return true;
+        if (MpCost <= Player.Instance.Mp) return true;
         else return false;
     }
 
-    public void MpCost()
+    public void MpCostDeduction()
     {
-        Player.Instance.Mp -= mpCost;
+        Player.Instance.Mp -= MpCost;
     }
 
     public bool CanCast()
     {
-        if (spellcast && !Player.Instance.IsDead() 
+        if (Spellcast && !Player.Instance.IsDead() 
             && Player.Instance.CheckCooldown() 
             && MpCostCheck())
         {
             if (SpellCooldownCheck())
             {
                 Player.Instance.SetActionCooldown();
-                MpCost();
+                MpCostDeduction();
 
                 SpellcastAnimation();
 
@@ -85,7 +87,7 @@ public class Spell : MonoBehaviour
         }
     }
 
-    private void SpellcastAnimation()
+    public void SpellcastAnimation()
     {
         if (buffSpell) Player.Instance.Animator.SetTrigger("Buffcast");
         else Player.Instance.Animator.SetTrigger("Spellcast");

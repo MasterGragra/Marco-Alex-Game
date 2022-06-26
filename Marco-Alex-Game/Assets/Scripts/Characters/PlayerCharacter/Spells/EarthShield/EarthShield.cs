@@ -14,13 +14,14 @@ public class EarthShield : Projectile
 
     private void Awake()
     {
-
+        StartCoroutine(DestroyShield());
     }
 
     private void Start()
     {
         animator = GetComponent<Animator>();
         audioSource = GameManager.Instance.GetComponent<AudioSource>();
+        StartCoroutine(ActivateCollider());
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
@@ -42,15 +43,32 @@ public class EarthShield : Projectile
         }
     }
 
+    private IEnumerator ActivateCollider()
+    {
+        yield return new WaitForSeconds(0.4f);
+        GetComponent<CircleCollider2D>().enabled = true;
+    }
+
     private void DamageShield()
     {
         durability--;
-        DestroyShieldSFX();
+        if(durability > 0)
+        {
+            GetComponent<CircleCollider2D>().enabled = false;
+            StartCoroutine(ActivateCollider());
+        }
+        else StartCoroutine(DestroyShield());
     }
 
     private IEnumerator DestroyShield()
     {
+        if (durability > 0)
+        {
+            yield return new WaitForSeconds(Lifetime);
+        }
         animator.SetTrigger("Broken");
+        GetComponent<CircleCollider2D>().enabled = false;
+        DestroyShieldSFX();
         yield return new WaitForSeconds(0.5f);
         Destroy(gameObject);
     }
@@ -59,14 +77,5 @@ public class EarthShield : Projectile
     {
         audioSource.clip = brokenShieldSFX;
         audioSource.Play();
-    }
-
-    private void FixedUpdate()
-    {
-        Lifetime -= Time.fixedDeltaTime;
-        if (Lifetime <= 0f || durability <= 0)
-        {
-            StartCoroutine(DestroyShield());
-        }
     }
 }
