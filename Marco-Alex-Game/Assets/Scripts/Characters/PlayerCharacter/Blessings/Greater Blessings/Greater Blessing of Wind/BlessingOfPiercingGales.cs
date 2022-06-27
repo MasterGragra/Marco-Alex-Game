@@ -5,11 +5,11 @@ using UnityEngine;
 public class BlessingOfPiercingGales : Blessing, IBlessing
 {
     new string BlessingName = "Blessing of Piercing Gales";
-    new string Description = "Grants Wind Blades piercing properties and increases its damage by 30%";
+    new string Description = "Grants Wind Blades piercing properties and increases its damage by 50%";
 
     public void ApplyBlessing()
     {
         Player.Instance.GetComponent<WindBladesSpell>().PiercingGales = true;
-        Player.Instance.WindSpellModifier += 0.3f;
+        Player.Instance.WindSpellModifier += 0.5f;
     }
 }

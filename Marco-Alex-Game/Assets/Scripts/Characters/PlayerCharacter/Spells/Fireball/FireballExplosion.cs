@@ -10,8 +10,8 @@ public class FireballExplosion : Projectile
     private AudioSource audioSource;
     [SerializeField] private AudioClip explosionSFX;
 
-
-    private void Start()
+    // Start is called before the first frame update
+    void Start()
     {
         explosionCollider = GetComponent<BoxCollider2D>();
         enemyLayer = LayerMask.GetMask("Enemy");
@@ -24,7 +24,7 @@ public class FireballExplosion : Projectile
         Collider2D[] enemies = Physics2D.OverlapBoxAll(explosionCollider.transform.position, explosionCollider.size, 0f, enemyLayer);
         foreach(Collider2D enemy in enemies)
         {
-            enemy.SendMessage("ReceiveIndirectDamage", Damage);
+            enemy.SendMessage("ReceiveDamage", Damage);
         }
     }
 

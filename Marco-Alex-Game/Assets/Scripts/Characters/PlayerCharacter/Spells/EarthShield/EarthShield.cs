@@ -17,7 +17,8 @@ public class EarthShield : Projectile
         StartCoroutine(DestroyShield());
     }
 
-    private void Start()
+    // Start is called before the first frame update
+    void Start()
     {
         animator = GetComponent<Animator>();
         audioSource = GameManager.Instance.GetComponent<AudioSource>();
@@ -52,7 +53,7 @@ public class EarthShield : Projectile
     private void DamageShield()
     {
         durability--;
-        if(durability > 0)
+        if (durability > 0)
         {
             GetComponent<CircleCollider2D>().enabled = false;
             StartCoroutine(ActivateCollider());
@@ -77,5 +78,10 @@ public class EarthShield : Projectile
     {
         audioSource.clip = brokenShieldSFX;
         audioSource.Play();
+    }    // Update is called once per frame
+
+    void Update()
+    {
+
     }
 }

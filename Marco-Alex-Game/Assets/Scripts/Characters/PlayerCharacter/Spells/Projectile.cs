@@ -14,8 +14,18 @@ public class Projectile : MonoBehaviour
     public float Lifetime { get => lifetime; set => lifetime = value; }
     public string[] TargetTags { get => targetTags; set => targetTags = value; }
 
-    void Awake()
+    private void ManageLifetime()
     {
-        if (Lifetime > 0 ) Destroy(gameObject, Lifetime);
+        lifetime -= Time.deltaTime;
+        if(lifetime <= 0f)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        ManageLifetime();
     }
 }

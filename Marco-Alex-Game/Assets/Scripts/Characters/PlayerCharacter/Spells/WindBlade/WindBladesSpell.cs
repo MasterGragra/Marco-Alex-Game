@@ -13,7 +13,9 @@ public class WindBladesSpell : Spell, ISpell
     private bool piercingGales = false;
     private bool splittingGust = false;
     private bool echoingWind = false;
+
     private bool zephyr = false;
+    private float zephyrSpeedMultiplier = 2f;
 
     public int WindBladesCount { get => windBladesCount; set => windBladesCount = value; }
     public bool PiercingGales { get => piercingGales; set => piercingGales = value; }
@@ -32,10 +34,10 @@ public class WindBladesSpell : Spell, ISpell
     public string ReturnDescription()
     {
         return "Press 2 to cast " + SpellName + " for " + MpCost + " mana, shooting " + ReturnProjectileCount()
+            + ((Zephyr) ? "quick" : "")
             + ((PiercingGales) ? " piercing" : "") + " wind blades"
-            + ((EchoingWind) ? " that bounces off walls" : "") + " each dealing "
+            + ((EchoingWind) ? " that bounces off terrain" : "") + ", each dealing "
             + CalculateDamage(Player.Instance.WindSpellModifier) + " points of damage to enemies"
-            + ((Zephyr) ? " and increases the character's movement speed by 30% for 3 seconds" : "")
             + ".\nCooldown: " + SpellCooldown + " seconds";
     }
 
@@ -49,13 +51,11 @@ public class WindBladesSpell : Spell, ISpell
             {
                 GameObject windBlade = Instantiate(SpellPrefab, Player.Instance.transform.position, Quaternion.identity);
                 windBlade.GetComponent<Projectile>().Damage = CalculateDamage(Player.Instance.WindSpellModifier);
-                if (EchoingWind)
-                {
-                    windBlade.GetComponent<WindBlade>().Bouncing = true;
-                }
+                if (EchoingWind) windBlade.GetComponent<WindBlade>().Bouncing = true;
                 if (PiercingGales) windBlade.GetComponent<WindBlade>().DestroyOnCollision = false;
+
                 Rigidbody2D rigid = windBlade.GetComponent<Rigidbody2D>();
-                Vector3 force = (Zephyr) ? skillDirection.normalized * windBladesSpeed * 2f : skillDirection.normalized * windBladesSpeed;
+                Vector3 force = (Zephyr) ? skillDirection.normalized * windBladesSpeed * zephyrSpeedMultiplier : skillDirection.normalized * windBladesSpeed;
                 rigid.AddForce(force, ForceMode2D.Impulse);
                 skillDirection = Quaternion.AngleAxis(windBladesSpread, Vector3.forward) * skillDirection;
             }

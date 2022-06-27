@@ -9,15 +9,16 @@ public class EarthShieldSpell : Spell, ISpell
     private int earthShieldCount = 3;
     private bool active = false;
 
-    [SerializeField] GameObject stratificationPrefab;
+    private bool fortification = true;
+    private bool pebbles = true;
+
+    private bool stoning = true;
     [SerializeField] GameObject stoningPrefab;
     private float stoningMultiplier = 1.5f;
     private float stoningSpeed = 15f;
 
-    private bool fortification = true;
-    private bool pebbles = true;
-    private bool stoning = true;
     private bool stratification = true;
+    [SerializeField] GameObject stratificationPrefab;
 
     public int EarthShieldCount { get => earthShieldCount; set => earthShieldCount = value; }
     public bool Fortification { get => fortification; set => fortification = value; }
@@ -38,7 +39,7 @@ public class EarthShieldSpell : Spell, ISpell
         return "Press 3 to cast " + SpellName + " for " + MpCost + " mana, creating "
             + ((Stratification) ? "2 layers of " : "")
             + ReturnProjectileCount() + " flying boulders that each deal "
-            + CalculateDamage(Player.Instance.EarthSpellModifier) + " points of damage to enemies, blocks projectiles and break"
+            + CalculateDamage(Player.Instance.EarthSpellModifier) + " points of damage to enemies, block projectiles and break"
             + ((Fortification) ? "after 2 impacts." : "on impact.")
             + ((Stoning) ? " Press 3 while Earth Shield is active to throw the barrier forward and increases damage by 50%." : "")
             + "\nCooldown: " + SpellCooldown + " seconds";
@@ -122,18 +123,18 @@ public class EarthShieldSpell : Spell, ISpell
         Destroy(projectile);
     }
 
-    private void StoningCoroutine2()
-    {
-        EarthShield[] earthShields = (EarthShield[])GameObject.FindObjectsOfType(typeof(EarthShield));
-        foreach (EarthShield earthShield in earthShields)
-        {
-            earthShield.Damage *= stoningMultiplier;
-            earthShield.GetComponent<Orbit>().enabled = false;
-            Rigidbody2D rigid = earthShield.GetComponent<Rigidbody2D>();
-            rigid.AddForce(Player.Instance.GetComponent<PlayerMovement>().PlayerDirection.normalized * stoningSpeed, ForceMode2D.Impulse);
-        }
-        active = false;
-    }
+    //private void StoningCoroutine2()
+    //{
+    //    EarthShield[] earthShields = (EarthShield[])GameObject.FindObjectsOfType(typeof(EarthShield));
+    //    foreach (EarthShield earthShield in earthShields)
+    //    {
+    //        earthShield.Damage *= stoningMultiplier;
+    //        earthShield.GetComponent<Orbit>().enabled = false;
+    //        Rigidbody2D rigid = earthShield.GetComponent<Rigidbody2D>();
+    //        rigid.AddForce(Player.Instance.GetComponent<PlayerMovement>().PlayerDirection.normalized * stoningSpeed, ForceMode2D.Impulse);
+    //    }
+    //    active = false;
+    //}
 
     // Update is called once per frame
     void Update()

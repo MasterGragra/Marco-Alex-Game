@@ -135,10 +135,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 325182846566401489, guid: 252183fc11ede4b49b7c4f1833a1031e, type: 3}
-      propertyPath: skillCooldown
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 748202740382600241, guid: 252183fc11ede4b49b7c4f1833a1031e, type: 3}
       propertyPath: m_Name
       value: Player
@@ -186,38 +182,6 @@ PrefabInstance:
     - target: {fileID: 748202740382600246, guid: 252183fc11ede4b49b7c4f1833a1031e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 748202740382600249, guid: 252183fc11ede4b49b7c4f1833a1031e, type: 3}
-      propertyPath: hp
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 748202740382600253, guid: 252183fc11ede4b49b7c4f1833a1031e, type: 3}
-      propertyPath: mpCost
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 748202740382600253, guid: 252183fc11ede4b49b7c4f1833a1031e, type: 3}
-      propertyPath: stoningPrefab
-      value: 
-      objectReference: {fileID: 9005284746098291219, guid: 7c437f0d7bb1471449e85fd0aab5404e, type: 3}
-    - target: {fileID: 748202740382600253, guid: 252183fc11ede4b49b7c4f1833a1031e, type: 3}
-      propertyPath: damageMultiplier
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 748202740382600253, guid: 252183fc11ede4b49b7c4f1833a1031e, type: 3}
-      propertyPath: stratificationPrefab
-      value: 
-      objectReference: {fileID: 9155516930848181368, guid: 68d0f3cf50808704c9db62ca5e605b94, type: 3}
-    - target: {fileID: 748202740382600254, guid: 252183fc11ede4b49b7c4f1833a1031e, type: 3}
-      propertyPath: sfxDuration
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 748202740382600254, guid: 252183fc11ede4b49b7c4f1833a1031e, type: 3}
-      propertyPath: damageMultiplier
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 748202740382600255, guid: 252183fc11ede4b49b7c4f1833a1031e, type: 3}
-      propertyPath: damageMultiplier
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 252183fc11ede4b49b7c4f1833a1031e, type: 3}
