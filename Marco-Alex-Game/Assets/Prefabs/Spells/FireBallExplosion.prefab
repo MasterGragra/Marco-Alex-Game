@@ -663,7 +663,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -695,6 +695,7 @@ MonoBehaviour:
   lifetime: 1
   targetTags:
   - Enemy
+  napalmPrefab: {fileID: 904660442615481716, guid: 129babfbb2d4b1b41953bdc3df59f5f1, type: 3}
   explosionSFX: {fileID: 8300000, guid: 55f8fe1460bfbf24bbd2520e898c4674, type: 3}
 --- !u!1 &4640501818753348889
 GameObject:
