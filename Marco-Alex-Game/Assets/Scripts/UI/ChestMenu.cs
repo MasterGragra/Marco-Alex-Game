@@ -5,10 +5,9 @@ using UnityEngine.UI;
 
 public class ChestMenu : MonoBehaviour
 {
-    public Button acceptButton;
-    private bool ischest;
+    public Button openButton;
+    private bool isChest;
     public GameObject buttonContainer;
-    public GameObject spellCover;
     public Animator animator;
    
 
@@ -16,10 +15,10 @@ public class ChestMenu : MonoBehaviour
     void Start()
     {
         buttonContainer.SetActive(false);
-        ischest = false;
-        Button btn = acceptButton.GetComponent<Button>();
+        isChest = false;
+        Button btn = openButton.GetComponent<Button>();
         animator = GetComponent<Animator>();
-        animator.SetBool("btnPressed", false);
+        animator.SetBool("Pressed", false);
     }
 
     // Update is called once per frame
@@ -30,23 +29,20 @@ public class ChestMenu : MonoBehaviour
 
     public void Pressed()
     {
-        spellCover.SetActive(false);
         OpenChest();
     }
 
     private void OpenChest()
     {
-        animator.SetBool("btnPressed", true);
+        animator.SetBool("Pressed", true);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Chest")
         {
-
-            ischest = true;
+            isChest = true;
             buttonContainer.SetActive(true);
-
         }
         Debug.Log("chest");
     }
@@ -55,7 +51,7 @@ public class ChestMenu : MonoBehaviour
     {
         if (collision.gameObject.tag == "Chest")
         {
-            ischest = false;
+            isChest = false;
             buttonContainer.SetActive(false);
         }
         Debug.Log("Left chest");
