@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BlessingOfSplittingGusts : Blessing, IBlessing
+public class BlessingOfSplittingGusts : GreaterBlessing
 {
     new string BlessingName = "Blessing of Splitting Gusts";
     new string Description = "Grants Wind Blades 2 additional projectiles";
-    public void ApplyBlessing()
+    public override void ApplyBlessing()
     {
         Player.Instance.GetComponent<WindBladesSpell>().SplittingGust = true;
     }

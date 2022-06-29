@@ -8,6 +8,11 @@ public class HealSpell : Spell
 
     private float healAmount = 40f;
 
+    private bool holyGrounds = false;
+    private bool purity = false;
+    private bool rejuvenation = false;
+    private bool sanctification = false;
+
     private void CastHeal()
     {
         if (Player.Instance.Hp < Player.Instance.MaxHp)

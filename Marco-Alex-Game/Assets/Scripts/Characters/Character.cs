@@ -8,6 +8,7 @@ public class Character : MonoBehaviour
     [SerializeField] private float hp;
     [SerializeField] private float maxHp;
     private float attackPower = 10f;
+    private float damageReduction = 0f;
 
     private bool invincible = false;
     private float invincibilityTime = 0.2f;
@@ -19,6 +20,7 @@ public class Character : MonoBehaviour
     public float Hp { get => hp; set => hp = value; }
     public float MaxHp { get => maxHp; set => maxHp = value; }
     public float AttackPower { get => attackPower; set => attackPower = value; }
+    public float DamageReduction { get => damageReduction; set => damageReduction = value; }
     public bool HasDied { get => hasDied; set => hasDied = value; }
     public Color OriginalColor { get => originalColor; set => originalColor = value; }
     public float CooldownTimer { get => cooldownTimer; set => cooldownTimer = value; }
@@ -33,7 +35,7 @@ public class Character : MonoBehaviour
     {
         if (!invincible)
         {
-            Hp -= damage;
+            Hp -= damage * (1f - DamageReduction);
             //invincible = true;
             if (IsDead())
             {
@@ -47,12 +49,12 @@ public class Character : MonoBehaviour
         }
     }
 
-    public void ReceiveIndirectDamage(float damage)
-    {
-        Hp -= damage;
-        if (IsDead()) Die();
-        else StartCoroutine(DamageFeedback());
-    }
+    //public void ReceiveIndirectDamage(float damage)
+    //{
+    //    Hp -= damage * (1f - DamageReduction);
+    //    if (IsDead()) Die();
+    //    else StartCoroutine(DamageFeedback());
+    //}
 
     public bool IsDead()
     {

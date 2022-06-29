@@ -2,13 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DamageArea : MonoBehaviour
+public class DamageArea : StayAreaEffect
 {
-    private void OnTriggerStay2D(Collider2D collision)
+    public override void AreaEffect(Collider2D collider)
     {
-        if (collision.CompareTag("Player"))
-        {
-            Player.Instance.Hp -= (Player.Instance.MaxHp / 100f) * Time.deltaTime;
-        }
+        collider.GetComponent<Character>().Hp -= collider.GetComponent<Character>().MaxHp * 0.02f * Time.deltaTime;
     }
 }
