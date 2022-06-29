@@ -9,6 +9,7 @@ public class ChestMenu : MonoBehaviour
     private bool isChest;
     public GameObject buttonContainer;
     public Animator animator;
+    public bool chestOpened;
    
 
     // Start is called before the first frame update
@@ -19,6 +20,7 @@ public class ChestMenu : MonoBehaviour
         Button btn = openButton.GetComponent<Button>();
         animator = GetComponent<Animator>();
         animator.SetBool("Pressed", false);
+        chestOpened = false;
     }
 
     // Update is called once per frame
@@ -35,6 +37,7 @@ public class ChestMenu : MonoBehaviour
     private void OpenChest()
     {
         animator.SetBool("Pressed", true);
+        chestOpened = true;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

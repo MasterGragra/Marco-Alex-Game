@@ -217,6 +217,9 @@ MonoBehaviour:
   elementBlessing: 0
   mightBlessing: 0
   wisdomBlessing: 0
+  animator: {fileID: 0}
+  blessingMenu: {fileID: 0}
+  script: {fileID: 0}
 --- !u!1 &1180351949
 GameObject:
   m_ObjectHideFlags: 0
@@ -427,8 +430,47 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8917562319656233726, guid: 58341280639130f4783dbe26b19b6b74, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1318253418401510391, guid: 58341280639130f4783dbe26b19b6b74, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 58341280639130f4783dbe26b19b6b74, type: 3}
+--- !u!1 &1315614002 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 169507691923822344, guid: 58341280639130f4783dbe26b19b6b74, type: 3}
+  m_PrefabInstance: {fileID: 1315614001}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1315614003 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5792733433240808048, guid: 58341280639130f4783dbe26b19b6b74, type: 3}
+  m_PrefabInstance: {fileID: 1315614001}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1315614004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1315614002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0be6d2a2bf9b03b4ebab84038c7d16b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireBlessing: 0
+  windBlessing: 0
+  earthBlessing: 0
+  healingBlessing: 0
+  randomNumber: 0
+  dexterityBlessing: 0
+  elementBlessing: 0
+  mightBlessing: 0
+  wisdomBlessing: 0
+  animator: {fileID: 0}
+  blessingMenu: {fileID: 1315614003}
+  script: {fileID: 1435839115}
 --- !u!1 &1408867345
 GameObject:
   m_ObjectHideFlags: 0
