@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StayAreaEffect : MonoBehaviour, IStayAreaEffect
+public class StayAreaEffect : AreaEffect, IStayAreaEffect
 {
     [SerializeField] private string[] targetTags = new string[] { "Player" };
 
@@ -15,12 +15,12 @@ public class StayAreaEffect : MonoBehaviour, IStayAreaEffect
         {
             if (collider.gameObject.CompareTag(TargetTags[i]))
             {
-                AreaEffect(collider);
+                ApplyAreaEffect(collider);
             }
         }
     }
 
-    public virtual void AreaEffect(Collider2D collider)
+    public virtual void ApplyAreaEffect(Collider2D collider)
     {
         throw new NotImplementedException();
     }

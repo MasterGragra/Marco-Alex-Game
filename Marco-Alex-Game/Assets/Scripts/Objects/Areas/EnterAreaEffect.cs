@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnterAreaEffect : MonoBehaviour, IEnterAreaEffect
+public class EnterAreaEffect : AreaEffect, IEnterAreaEffect
 {
     [SerializeField] private string[] targetTags = new string[] { "Player" };
 

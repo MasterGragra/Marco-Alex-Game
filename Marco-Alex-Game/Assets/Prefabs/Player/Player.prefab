@@ -474,7 +474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db1554e765875924baafbc0b77baa0d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 100
+  hp: 10
   maxHp: 100
   mp: 100
   stamina: 100
@@ -576,6 +576,9 @@ MonoBehaviour:
   buffSpell: 1
   spellSFX: {fileID: 8300000, guid: 97c9be6a345f4c54b9a277d8472f62f7, type: 3}
   sfxDuration: 0.4
+  consecrationPrefab: {fileID: 9006679516680648484, guid: 63d776a4e1ad8d849949deefee824e86, type: 3}
+  holyGroundsPrefab: {fileID: 4725032088985573919, guid: 76f47df408718a441bdffde81466f514, type: 3}
+  sanctificationPrefab: {fileID: 1589853565399103733, guid: fb7e2597434850146b0d19d3f7c244ff, type: 3}
 --- !u!114 &325182846566401489
 MonoBehaviour:
   m_ObjectHideFlags: 0

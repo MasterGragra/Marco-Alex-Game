@@ -49,12 +49,10 @@ public class Character : MonoBehaviour
         }
     }
 
-    //public void ReceiveIndirectDamage(float damage)
-    //{
-    //    Hp -= damage * (1f - DamageReduction);
-    //    if (IsDead()) Die();
-    //    else StartCoroutine(DamageFeedback());
-    //}
+    public void ReceiveIndirectDamage(float damage)
+    {
+        if (Hp > 1) Hp -= damage * (1f - DamageReduction);
+    }
 
     public bool IsDead()
     {

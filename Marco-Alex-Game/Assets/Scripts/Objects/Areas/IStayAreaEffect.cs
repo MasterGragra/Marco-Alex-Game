@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IStayAreaEffect
 {
-    public abstract void AreaEffect(Collider2D collider);
+    public abstract void ApplyAreaEffect(Collider2D collider);
 }

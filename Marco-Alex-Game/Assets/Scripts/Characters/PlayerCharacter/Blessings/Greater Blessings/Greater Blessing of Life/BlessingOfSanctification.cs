@@ -2,17 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BlessingOfSanctification : MonoBehaviour
+public class BlessingOfSanctification : GreaterBlessing
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    new string BlessingName = "Blessing Of Sanctification";
+    new string Description = "Heal creates an area reduces damage taken by 30% for 8 seconds";
 
-    // Update is called once per frame
-    void Update()
+    public override void ApplyBlessing()
     {
-        
+        Player.Instance.GetComponent<HealSpell>().Sanctification = true;
     }
 }
