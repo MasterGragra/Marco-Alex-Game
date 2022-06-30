@@ -97,26 +97,27 @@ public class RNGBlessing : MonoBehaviour
         randomNumber = Random.Range(5, 8);
     }
 
-   
+
 
     void OpenBlessingMenu()
     {
-        if(chestIsOpen == true)
-            {
-                RollForGreaterBlessing();
-                blessingMenu.SetActive(true);
-            }
+        if (chestIsOpen == true)
+        {
+            RollForGreaterBlessing();
+            blessingMenu.SetActive(true);
+        }
     }
 
     void GreaterBlessingDisplay()
     {
-            switch (randomNumber)
-            {
-                case 1: fireBlessing = true;
-                    RollForLesserBlessing();
-                    
-                    break;
-            }
+        switch (randomNumber)
+        {
+            case 1:
+                fireBlessing = true;
+                RollForLesserBlessing();
+
+                break;
+        }
     }
 
     // Update is called once per frame
@@ -124,4 +125,5 @@ public class RNGBlessing : MonoBehaviour
     {
 
     }
+}
 
