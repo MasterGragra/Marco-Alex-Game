@@ -208,18 +208,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0be6d2a2bf9b03b4ebab84038c7d16b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireBlessing: 0
-  windBlessing: 0
-  earthBlessing: 0
-  healingBlessing: 0
-  randomNumber: 0
-  dexterityBlessing: 0
-  elementBlessing: 0
-  mightBlessing: 0
-  wisdomBlessing: 0
+  amaterasu: 0
+  spark: 0
+  confliguration: 0
+  napalm: 0
+  echo: 0
+  gale: 0
+  gust: 0
+  zephyr: 0
+  fortification: 0
+  pebbles: 0
+  stoning: 0
+  stratification: 0
+  holy: 0
+  purity: 0
+  rejuvenation: 0
+  sanctafication: 0
+  agility: 0
+  invigoration: 0
+  momentum: 0
+  vitality: 0
+  fire: 0
+  wind: 0
+  earth: 0
+  life: 0
+  alacrity: 0
+  endurance: 0
+  fortitude: 0
+  power: 0
+  acuity: 0
+  expansion: 0
+  insight: 0
+  knowledge: 0
   animator: {fileID: 0}
   blessingMenu: {fileID: 0}
+  textbox: {fileID: 0}
+  textFile: {fileID: 0}
+  textLines: []
+  text: {fileID: 0}
   script: {fileID: 0}
+  chestIsOpen: 0
+  randomNumber: 0
+  reroll: 0
 --- !u!1 &1180351949
 GameObject:
   m_ObjectHideFlags: 0
@@ -430,9 +460,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8917562319656233726, guid: 58341280639130f4783dbe26b19b6b74, type: 3}
+    - target: {fileID: 4073474448324036877, guid: 58341280639130f4783dbe26b19b6b74, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -233
+      objectReference: {fileID: 0}
+    - target: {fileID: 5822377087609911794, guid: 58341280639130f4783dbe26b19b6b74, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8917562319656233726, guid: 58341280639130f4783dbe26b19b6b74, type: 3}
+      propertyPath: m_Name
+      value: nTextBoxImagenTextBoxImage
+      objectReference: {fileID: 0}
+    - target: {fileID: 8917562319656233726, guid: 58341280639130f4783dbe26b19b6b74, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1318253418401510391, guid: 58341280639130f4783dbe26b19b6b74, type: 3}
@@ -459,18 +501,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0be6d2a2bf9b03b4ebab84038c7d16b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireBlessing: 0
-  windBlessing: 0
-  earthBlessing: 0
-  healingBlessing: 0
-  randomNumber: 0
-  dexterityBlessing: 0
-  elementBlessing: 0
-  mightBlessing: 0
-  wisdomBlessing: 0
+  amaterasu: 0
+  spark: 0
+  confliguration: 0
+  napalm: 0
+  echo: 0
+  gale: 0
+  gust: 0
+  zephyr: 0
+  fortification: 0
+  pebbles: 0
+  stoning: 0
+  stratification: 0
+  holy: 0
+  purity: 0
+  rejuvenation: 0
+  sanctafication: 0
+  agility: 0
+  invigoration: 0
+  momentum: 0
+  vitality: 0
+  fire: 0
+  wind: 0
+  earth: 0
+  life: 0
+  alacrity: 0
+  endurance: 0
+  fortitude: 0
+  power: 0
+  acuity: 0
+  expansion: 0
+  insight: 0
+  knowledge: 0
   animator: {fileID: 0}
   blessingMenu: {fileID: 1315614003}
+  textbox: {fileID: 0}
+  textFile: {fileID: 0}
+  textLines: []
+  text: {fileID: 0}
   script: {fileID: 1435839115}
+  chestIsOpen: 0
+  randomNumber: 0
+  reroll: 0
 --- !u!1 &1408867345
 GameObject:
   m_ObjectHideFlags: 0
