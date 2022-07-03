@@ -123,7 +123,7 @@ public class EarthShieldSpell : Spell, ISpell
         Destroy(projectile);
     }
 
-    //private void StoningCoroutine2()
+    //private void StoningCoroutine()
     //{
     //    EarthShield[] earthShields = (EarthShield[])GameObject.FindObjectsOfType(typeof(EarthShield));
     //    foreach (EarthShield earthShield in earthShields)

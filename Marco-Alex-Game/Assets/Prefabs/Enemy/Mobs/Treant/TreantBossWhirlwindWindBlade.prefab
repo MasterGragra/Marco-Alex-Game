@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7944366985659559378}
   - component: {fileID: 4875164091484228593}
   - component: {fileID: 7944366985659559385}
+  - component: {fileID: -3013952965069928159}
   m_Layer: 0
   m_Name: TreantBossWhirlwindWindBlade
   m_TagString: Projectile
@@ -172,11 +173,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5cda3c704c2dae45a5d72698bcd794e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageModifier: 2
-  knockbackForce: 5
-  lifetime: 8
   targetTags:
   - Player
-  player: 0
-  knockback: 1
+  lifetime: 8
   destroyOnCollision: 0
+--- !u!114 &-3013952965069928159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7944366985659559379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e4ec9e24a988094da69bb037654ef7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetTags:
+  - Enemy
+  knockbackForce: 5

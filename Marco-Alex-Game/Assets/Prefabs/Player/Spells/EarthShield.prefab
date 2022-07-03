@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1564260674139367623}
   - component: {fileID: 1564260674139367620}
   - component: {fileID: 2039303139}
+  - component: {fileID: 4813677731507860410}
   m_Layer: 0
   m_Name: EarthShield
   m_TagString: Terrain
@@ -172,8 +173,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72eb04d0390612541bf5714ca9684291, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockbackForce: 10
-  lifetime: 5
   targetTags:
   - Enemy
+  lifetime: 5
   brokenShieldSFX: {fileID: 8300000, guid: 1c2024885b669dc4b8978c83e360744e, type: 3}
+--- !u!114 &4813677731507860410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564260674139367626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e4ec9e24a988094da69bb037654ef7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetTags:
+  - Enemy
+  knockbackForce: 5

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4302203384133919591}
   - component: {fileID: 4302203384133919592}
   - component: {fileID: 4302203384133919587}
+  - component: {fileID: -4224224257051426870}
   m_Layer: 0
   m_Name: Fireball
   m_TagString: Projectile
@@ -154,8 +155,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 891bd9f5bac54e541a9b0fb2bfe36560, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockbackForce: 5
-  lifetime: 1
   targetTags:
   - Enemy
+  lifetime: 1
   explosionPrefab: {fileID: 4640501818692109384, guid: c8d36c44d793b75409a53472bc0bf583, type: 3}
+--- !u!114 &-4224224257051426870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4302203384133919593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e4ec9e24a988094da69bb037654ef7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetTags:
+  - Enemy
+  knockbackForce: 5

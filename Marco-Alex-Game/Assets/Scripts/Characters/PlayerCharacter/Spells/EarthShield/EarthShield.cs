@@ -32,8 +32,6 @@ public class EarthShield : Projectile
             if (collider.gameObject.CompareTag(TargetTags[i]))
             {
                 collider.SendMessage("ReceiveDamage", Damage);
-                Vector2 direction = collider.transform.position - transform.position;
-                collider.GetComponent<Character>().StartCoroutine("Knockback", direction * KnockbackForce);
                 DamageShield();
             }
 
