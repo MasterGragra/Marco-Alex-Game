@@ -33,6 +33,16 @@ public class HealSpell : Spell
         Sanctification = true;
     }
 
+    public string ReturnDescription()
+    {
+        return "Press 4 to cast " + SpellName + " for " + MpCost + " mana, restoring " + CalculateHealing() + " health to the character"
+            + ((Consecration || HolyGrounds || Sanctification) ? " and creating a" + ((Purity) ? " long lasting" : "") + " zone that:" : ".")
+            + ((Consecration) ? "\n- Deals " + Player.Instance.GetComponent<HealSpell>().CalculateHealing() * 0.2f + " damage per seconds to enemies." : ".")
+            + ((HolyGrounds) ? "\n- Restores " + Player.Instance.GetComponent<HealSpell>().CalculateHealing() * 0.05f + " health per seconds to the character." : ".")
+            + ((Sanctification) ? "\n- Reduces damage taken by the character by 30%." : "")
+            + "\nCooldown: " + SpellCooldown + " seconds";
+    }
+
     private void CastHeal()
     {
         if (Player.Instance.Hp < Player.Instance.MaxHp ||
@@ -75,5 +85,8 @@ public class HealSpell : Spell
     void Update()
     {
         CastHeal();
+
+        if (Input.GetKeyDown(KeyCode.H))
+            Debug.Log(ReturnDescription());
     }
 }
