@@ -8,9 +8,9 @@ public class Enemy : Character
     private Animator animator;
     private Transform target;
 
-    [SerializeField] private float attackRange = 1.5f;
-    [SerializeField] private float attackDelay = 2f;
-    [SerializeField] private float movementSpeed = 5f;
+    [SerializeField] private float attackRange;
+    [SerializeField] private float attackDelay;
+    [SerializeField] private float movementSpeed;
     private Vector3 facingDirection;
 
     public Animator Animator { get => animator; set => animator = value; }

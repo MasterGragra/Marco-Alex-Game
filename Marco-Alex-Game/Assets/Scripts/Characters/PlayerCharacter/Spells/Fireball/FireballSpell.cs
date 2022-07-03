@@ -18,7 +18,7 @@ public class FireballSpell : Spell, ISpell
     private bool conflagration = false;
     private float conflagrationScaleMultiplier = 1.5f;
 
-    private bool napalm = true;
+    private bool napalm = false;
     private float napalmBurnDamageMultiplier = 1.5f;
 
     public bool Conflagration { get => conflagration; set => conflagration = value; }

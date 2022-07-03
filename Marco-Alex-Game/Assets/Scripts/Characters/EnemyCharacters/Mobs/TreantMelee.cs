@@ -7,6 +7,7 @@ public class TreantMelee : Enemy
     [SerializeField] private GameObject attackPrefab;
     private float attackMultiplier = 0.5f;
     private int attackCount = 3;
+    [SerializeField] private AudioClip attackSFX;
 
     private void MeleeAttack()
     {
@@ -26,8 +27,15 @@ public class TreantMelee : Enemy
             script.Axis = transform;
             script.Angle = (360f / attackCount) * i;
         }
+        AttackSFX();
         yield return new WaitForSeconds(1f);
         Animator.SetBool("Attacking", false);
+    }
+
+    private void AttackSFX()
+    {
+        GameManager.Instance.GetComponent<AudioSource>().clip = attackSFX;
+        GameManager.Instance.GetComponent<AudioSource>().Play();
     }
 
     // Update is called once per frame

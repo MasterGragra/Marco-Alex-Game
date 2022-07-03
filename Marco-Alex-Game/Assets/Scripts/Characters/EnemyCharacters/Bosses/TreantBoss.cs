@@ -4,18 +4,20 @@ using UnityEngine;
 
 public class TreantBoss : Enemy
 {
+    private int attackCounter = 3;
+
     [SerializeField] private GameObject meleeAttackPrefab;
     private float meleeDamageMultiplier = 1f;
     private int meleeProjectileCount = 3;
 
     [SerializeField] private GameObject rangeAttackPrefab;
     private float barrageDamageMultiplier = 2f;
-    private float barrageAttackDelay = 6f;
+    private float barrageAttackDelay = 8f;
     private int barrageProjectileCount = 30;
     private float barrageProjectileSpeed = 15f;
 
     private float fanDamageMultiplier = 2f;
-    private float fanAttackDelay = 6f;
+    private float fanAttackDelay = 8f;
     private int fanBarrageCount = 7;
     private float fanBarrageDelay = 0.5f;
     private int fanProjectileCount = 7;
@@ -24,9 +26,9 @@ public class TreantBoss : Enemy
 
     [SerializeField] private GameObject whirlwindAttackPrefab;
     private float whirlwindDamageMultiplier = 1.5f;
-    private float whirlwindAttackDelay = 8f;
+    private float whirlwindAttackDelay = 10f;
     private int whirlwindCount = 3;
-    private int whirlwindLeafCount = 12;
+    private int whirlwindLeafCount = 10;
     private float whirlwindBarrageDelay = 2f;
 
     [SerializeField] private AudioClip attackSFX;
