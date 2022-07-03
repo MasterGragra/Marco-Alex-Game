@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class GreaterBlessing : Blessing
 {
-    new int Cost = 500;
+    new int Cost = 300;
 }
