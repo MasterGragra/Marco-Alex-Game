@@ -295,7 +295,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2108221575
 Transform:
   m_ObjectHideFlags: 0
@@ -393,7 +393,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3091387425043884635, guid: 21a3a5263af5dd348a3c47036f61c986, type: 3}
       propertyPath: maxHp
-      value: 50
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 3091387425043884635, guid: 21a3a5263af5dd348a3c47036f61c986, type: 3}
       propertyPath: attackSFX
@@ -421,6 +421,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2108221575}
     m_Modifications:
+    - target: {fileID: 3190023423195313298, guid: 3279e1d7b018b1a45b2ca2de32991a65, type: 3}
+      propertyPath: maxHp
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 3190023423195313298, guid: 3279e1d7b018b1a45b2ca2de32991a65, type: 3}
       propertyPath: m_Enabled
       value: 1

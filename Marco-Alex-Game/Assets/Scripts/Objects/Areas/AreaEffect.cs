@@ -5,7 +5,7 @@ using UnityEngine;
 public class AreaEffect : MonoBehaviour
 {
     [SerializeField] private float duration = 0f;
-    private bool countdown = false;
+    [SerializeField] private bool countdown = false;
 
     public float Duration { get => duration; set => duration = value; }
 

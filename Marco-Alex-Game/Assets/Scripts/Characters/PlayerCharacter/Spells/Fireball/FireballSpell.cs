@@ -75,5 +75,7 @@ public class FireballSpell : Spell, ISpell
     private void Update()
     {
         CastFireball();
+        if (Input.GetKeyDown(KeyCode.H))
+            Debug.Log(ReturnDescription());
     }
 }

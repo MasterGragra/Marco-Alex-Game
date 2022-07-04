@@ -74,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: -5034061168752090764, guid: 91fe78ee69ec5ae4bb10265448c3786e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -104,7 +104,7 @@ Rigidbody2D:
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 4
 --- !u!70 &3091387425043884632
@@ -155,8 +155,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 0
-  maxHp: 50
+  maxHp: 80
   attackRange: 1.5
   attackDelay: 2.5
   movementSpeed: 3
   attackPrefab: {fileID: 4449164927317996925, guid: be020fccdcaf0bb488a2ddc3afbbf434, type: 3}
+  attackSFX: {fileID: 8300000, guid: e64803ffa87f9304eb0eb170a267bbf8, type: 3}

@@ -20,7 +20,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7411790454511883906
 Transform:
   m_ObjectHideFlags: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: -5034061168752090764, guid: 91fe78ee69ec5ae4bb10265448c3786e, type: 3}
   m_Color: {r: 1, g: 0, b: 0.7843137, a: 1}
   m_FlipX: 0
@@ -104,7 +104,7 @@ Rigidbody2D:
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 7
 --- !u!70 &7411790454511883904
@@ -133,7 +133,7 @@ Animator:
   m_GameObject: {fileID: 7411790454511883909}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8c5fe5b5bd9e55f4c9d94a787c21a94c, type: 2}
+  m_Controller: {fileID: 9100000, guid: 90304a6dbcec1dd43bcd190b39ce5c05, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -160,6 +160,6 @@ MonoBehaviour:
   attackDelay: 3
   movementSpeed: 0
   meleeAttackPrefab: {fileID: 5373406930403090780, guid: 8b148399f6b26fb42bf8df3516cebf02, type: 3}
-  fanAttackPrefab: {fileID: 3871015167285116005, guid: 4f01a5f56d126cd47bad449d38e85deb, type: 3}
+  rangeAttackPrefab: {fileID: 3871015167285116005, guid: 4f01a5f56d126cd47bad449d38e85deb, type: 3}
   whirlwindAttackPrefab: {fileID: 7944366985659559379, guid: afdc3fa361ba8be4baa04d124773602e, type: 3}
   attackSFX: {fileID: 8300000, guid: e64803ffa87f9304eb0eb170a267bbf8, type: 3}
