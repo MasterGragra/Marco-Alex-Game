@@ -76,7 +76,6 @@ public class RNGBlessing : MonoBehaviour
     public Text text;
 
     public ChestMenu script;
-    //public Blessing blessingScript;
     public bool chestIsOpen;
 
     public int randomNumber =0;

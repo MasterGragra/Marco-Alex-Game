@@ -15,7 +15,7 @@ public class ChestMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        buttonContainer.SetActive(false);
+        //buttonContainer.SetActive(false);
         isChest = false;
         Button btn = openButton.GetComponent<Button>();
         animator = GetComponent<Animator>();

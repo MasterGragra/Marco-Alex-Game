@@ -14,7 +14,7 @@ public class Sign : MonoBehaviour
     void Start()
     {
         textBox.SetActive(false);
-        textBox.CompareTag("Sign");
+        textBox.CompareTag("Chest");
     }
 
    
