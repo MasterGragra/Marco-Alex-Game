@@ -172,5 +172,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetTags:
-  - Enemy
+  - Player
   knockbackForce: 5
