@@ -434,9 +434,25 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1711186441402362201, guid: 58341280639130f4783dbe26b19b6b74, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 2197855871317943228, guid: 593848b94af38064492efca7547cbf36, type: 3}
+    - target: {fileID: 1711186441402362201, guid: 58341280639130f4783dbe26b19b6b74, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1711186441402362201, guid: 58341280639130f4783dbe26b19b6b74, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1711186441402362201, guid: 58341280639130f4783dbe26b19b6b74, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2136340676137352646, guid: 58341280639130f4783dbe26b19b6b74, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2136340676784348859, guid: 58341280639130f4783dbe26b19b6b74, type: 3}
       propertyPath: m_Name
@@ -546,6 +562,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7040493671996307494, guid: 58341280639130f4783dbe26b19b6b74, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 7040493671996307494, guid: 58341280639130f4783dbe26b19b6b74, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 7040493671996307494, guid: 58341280639130f4783dbe26b19b6b74, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -200
+      objectReference: {fileID: 0}
     - target: {fileID: 8917562319656233726, guid: 58341280639130f4783dbe26b19b6b74, type: 3}
       propertyPath: m_Name
       value: nTextBoxImagenTextBoxImage
@@ -553,6 +581,10 @@ PrefabInstance:
     - target: {fileID: 8917562319656233726, guid: 58341280639130f4783dbe26b19b6b74, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9055637347584595108, guid: 58341280639130f4783dbe26b19b6b74, type: 3}
+      propertyPath: m_Name
+      value: BlackBackGround
       objectReference: {fileID: 0}
     - target: {fileID: 9055637347584595108, guid: 58341280639130f4783dbe26b19b6b74, type: 3}
       propertyPath: m_IsActive
