@@ -898,7 +898,7 @@ TextureImporter:
     second: objects_302
   - first:
       213: 6977493882134065280
-    second: objects_303
+    second: UIOutlineCorner
   - first:
       213: -7748398981147773625
     second: objects_304
@@ -4537,7 +4537,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_303
+      name: UIOutlineCorner
       rect:
         serializedVersion: 2
         x: 64
@@ -4546,7 +4546,7 @@ TextureImporter:
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 10, y: 1, z: 2, w: 8}
       outline: []
       physicsShape: []
       tessellationDetail: 0
