@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ExitButton : MonoBehaviour
 {
+    [SerializeField] private GameObject BlessingMenuUI;
     public void Exit()
     {
         #if UNITY_EDITOR
@@ -11,5 +12,10 @@ public class ExitButton : MonoBehaviour
         #else
         Application.Quit();
         #endif
+    }
+
+    public void CloseBlessingMenu()
+    {
+        BlessingMenuUI.SetActive(false);
     }
 }
