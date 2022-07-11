@@ -9,15 +9,15 @@ public class EarthShieldSpell : Spell, ISpell
     private int earthShieldCount = 3;
     private bool active = false;
 
-    private bool fortification = true;
-    private bool pebbles = true;
+    private bool fortification = false;
+    private bool pebbles = false;
 
-    private bool stoning = true;
+    private bool stoning = false;
     [SerializeField] GameObject stoningPrefab;
     private float stoningMultiplier = 1.5f;
     private float stoningSpeed = 15f;
 
-    private bool stratification = true;
+    private bool stratification = false;
     [SerializeField] GameObject stratificationPrefab;
 
     public int EarthShieldCount { get => earthShieldCount; set => earthShieldCount = value; }

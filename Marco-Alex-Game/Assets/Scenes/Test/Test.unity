@@ -183,6 +183,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 748202740382600249, guid: 252183fc11ede4b49b7c4f1833a1031e, type: 3}
+      propertyPath: hp
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 252183fc11ede4b49b7c4f1833a1031e, type: 3}
 --- !u!1 &1667750905
@@ -447,6 +451,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2108221575}
     m_Modifications:
+    - target: {fileID: 468944020871617803, guid: 541a2a6ad555e8b46b9c893d49eb0668, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: eb3fe16c52e773e4cb512751c44bb2e0, type: 2}
     - target: {fileID: 468944020871617810, guid: 541a2a6ad555e8b46b9c893d49eb0668, type: 3}
       propertyPath: m_Name
       value: TreantHealer
@@ -494,6 +502,10 @@ PrefabInstance:
     - target: {fileID: 468944020871617813, guid: 541a2a6ad555e8b46b9c893d49eb0668, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4615173238166995617, guid: 541a2a6ad555e8b46b9c893d49eb0668, type: 3}
+      propertyPath: attackDelay
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 541a2a6ad555e8b46b9c893d49eb0668, type: 3}

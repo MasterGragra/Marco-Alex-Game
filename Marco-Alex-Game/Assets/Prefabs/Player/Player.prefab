@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 748202740382600253}
   - component: {fileID: 748202740382600226}
   - component: {fileID: 325182846566401489}
+  - component: {fileID: 6075007697030414666}
   - component: {fileID: 748202740382600252}
   - component: {fileID: 748202740382600227}
   m_Layer: 0
@@ -197,9 +198,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingLayerID: 402187967
+  m_SortingLayer: 4
+  m_SortingOrder: 0
   m_Sprite: {fileID: 3538544566889952401, guid: e4eda10a5e791684da6bd5d77ec521b8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -594,6 +595,19 @@ MonoBehaviour:
   staminaCost: 30
   actionCooldown: 0.3
   skillCooldown: 3
+--- !u!114 &6075007697030414666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 748202740382600241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2ffb6faea9b97f46be10b1e7d35a61c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sortOnce: 0
 --- !u!82 &748202740382600252
 AudioSource:
   m_ObjectHideFlags: 0

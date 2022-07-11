@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3091387425043884632}
   - component: {fileID: 3091387425043884612}
   - component: {fileID: 3091387425043884635}
+  - component: {fileID: 4914182217015729427}
   m_Layer: 6
   m_Name: TreantMelee
   m_TagString: Enemy
@@ -72,9 +73,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingLayerID: 402187967
+  m_SortingLayer: 4
+  m_SortingOrder: 0
   m_Sprite: {fileID: -5034061168752090764, guid: 91fe78ee69ec5ae4bb10265448c3786e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -161,3 +162,16 @@ MonoBehaviour:
   movementSpeed: 3
   attackPrefab: {fileID: 4449164927317996925, guid: be020fccdcaf0bb488a2ddc3afbbf434, type: 3}
   attackSFX: {fileID: 8300000, guid: e64803ffa87f9304eb0eb170a267bbf8, type: 3}
+--- !u!114 &4914182217015729427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3091387425043884637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2ffb6faea9b97f46be10b1e7d35a61c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sortOnce: 0

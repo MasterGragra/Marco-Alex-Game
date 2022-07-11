@@ -14,13 +14,14 @@ GameObject:
   - component: {fileID: 7411790454511883904}
   - component: {fileID: 7411790454511883932}
   - component: {fileID: 5493591503495499218}
+  - component: {fileID: 7170770670551071060}
   m_Layer: 6
   m_Name: TreantBoss
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7411790454511883906
 Transform:
   m_ObjectHideFlags: 0
@@ -72,9 +73,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingLayerID: 402187967
+  m_SortingLayer: 4
+  m_SortingOrder: 0
   m_Sprite: {fileID: -5034061168752090764, guid: 91fe78ee69ec5ae4bb10265448c3786e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -163,3 +164,16 @@ MonoBehaviour:
   rangeAttackPrefab: {fileID: 3871015167285116005, guid: 4f01a5f56d126cd47bad449d38e85deb, type: 3}
   whirlwindAttackPrefab: {fileID: 7944366985659559379, guid: afdc3fa361ba8be4baa04d124773602e, type: 3}
   attackSFX: {fileID: 8300000, guid: e64803ffa87f9304eb0eb170a267bbf8, type: 3}
+--- !u!114 &7170770670551071060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7411790454511883909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2ffb6faea9b97f46be10b1e7d35a61c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sortOnce: 0

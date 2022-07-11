@@ -71,10 +71,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2021c9381f1ef34fa360786f2792f4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockbackForce: 0
-  lifetime: 1
   targetTags:
   - Enemy
+  lifetime: 1
   napalmPrefab: {fileID: 4302203384133919593, guid: 71f609b10851b2d4ca4a623005a22397, type: 3}
   explosionSFX: {fileID: 0}
 --- !u!1 &904660443826348845
@@ -146,9 +145,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingLayerID: 480053489
+  m_SortingLayer: 3
+  m_SortingOrder: 0
   m_Sprite: {fileID: -6156538738564848463, guid: 593848b94af38064492efca7547cbf36, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

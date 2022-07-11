@@ -53,6 +53,12 @@ TagManager:
   - name: Signs
     uniqueID: 2033329251
     locked: 0
-  - name: Player
+  - name: Spell Lower Layer
+    uniqueID: 480053489
+    locked: 0
+  - name: Characters & Objects
     uniqueID: 402187967
+    locked: 0
+  - name: Spell Upper Layer
+    uniqueID: 2790054255
     locked: 0

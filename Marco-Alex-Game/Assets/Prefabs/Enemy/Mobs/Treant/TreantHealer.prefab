@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 468944020871617800}
   - component: {fileID: 468944020871617815}
   - component: {fileID: 468944020871617803}
+  - component: {fileID: 4615173238166995617}
+  - component: {fileID: 4501330592606798459}
   m_Layer: 6
   m_Name: TreantHealer
   m_TagString: Enemy
@@ -71,9 +73,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingLayerID: 402187967
+  m_SortingLayer: 4
+  m_SortingOrder: 0
   m_Sprite: {fileID: -5034061168752090764, guid: 91fe78ee69ec5ae4bb10265448c3786e, type: 3}
   m_Color: {r: 1, g: 0.39215687, b: 1, a: 1}
   m_FlipX: 0
@@ -141,3 +143,35 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4615173238166995617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 468944020871617810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7c70665da3b513489619d46aeea60f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 0
+  maxHp: 50
+  attackRange: 10
+  attackDelay: 5
+  movementSpeed: 2
+  healPrefab: {fileID: 5609632458946122239, guid: c2fb20b6fa5c39840bfc7ff8c17a2e85, type: 3}
+  healSFX: {fileID: 8300000, guid: 97c9be6a345f4c54b9a277d8472f62f7, type: 3}
+--- !u!114 &4501330592606798459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 468944020871617810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2ffb6faea9b97f46be10b1e7d35a61c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sortOnce: 0
