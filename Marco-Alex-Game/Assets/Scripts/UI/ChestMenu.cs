@@ -7,15 +7,24 @@ public class ChestMenu : MonoBehaviour
 {
     public Button openButton;
     private bool isChest;
-    public GameObject buttonContainer;
+    //public GameObject buttonContainer;
     public Animator animator;
     public bool chestOpened;
-   
+
+    [SerializeField] private GameObject blessingMenu;
+    [SerializeField] private GameObject textboxOne;
+    [SerializeField] private GameObject textboxTwo;
+    [SerializeField] private GameObject textboxThree;
+    [SerializeField] private GameObject textboxFour;
+    [SerializeField] private GameObject blessingOneTitle;
+    [SerializeField] private GameObject blessingTwoTitle;
+    [SerializeField] private GameObject blessingThreeTitle;
+    [SerializeField] private GameObject blessingFourTitle;
+    //[SerializeField] private Text text;
 
     // Start is called before the first frame update
     void Start()
     {
-        //buttonContainer.SetActive(false);
         isChest = false;
         Button btn = openButton.GetComponent<Button>();
         animator = GetComponent<Animator>();
@@ -29,23 +38,27 @@ public class ChestMenu : MonoBehaviour
         
     }
 
-    public void Pressed()
+    void OpenBlessingMenu()
     {
-        OpenChest();
+        if (chestOpened == true)
+        {
+            blessingMenu.SetActive(true);
+        }
     }
 
     private void OpenChest()
     {
         animator.SetBool("Pressed", true);
         chestOpened = true;
+        OpenBlessingMenu();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Chest")
         {
-            isChest = true;
-            buttonContainer.SetActive(true);
+            isChest = true;  
+            
         }
         Debug.Log("chest");
     }
@@ -55,7 +68,6 @@ public class ChestMenu : MonoBehaviour
         if (collision.gameObject.tag == "Chest")
         {
             isChest = false;
-            buttonContainer.SetActive(false);
         }
         Debug.Log("Left chest");
     }

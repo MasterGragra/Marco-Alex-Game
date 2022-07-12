@@ -7,6 +7,8 @@ public class ControlMenu : MonoBehaviour
 { 
     [SerializeField] private GameObject controlPanel;
     [SerializeField] private GameObject pauseMenu;
+    
+
 
     public void OpenControlPanel()
     {
@@ -19,4 +21,6 @@ public class ControlMenu : MonoBehaviour
         controlPanel.SetActive(false);
         pauseMenu.SetActive(true);
     }
+
+ 
 }
