@@ -19,6 +19,7 @@ public class OpenBlessingMenu : MonoBehaviour
         if (chestIsOpen == true)
         {
             BlessingMenu.SetActive(true);
+            Time.timeScale = 0;
         }
         
     }

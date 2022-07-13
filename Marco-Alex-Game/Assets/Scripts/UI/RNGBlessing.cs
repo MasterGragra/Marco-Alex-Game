@@ -5,48 +5,49 @@ using UnityEngine.UI;
 
 public class RNGBlessing : MonoBehaviour
 {
-    //UI 
-    [SerializeField] private GameObject blessingMenu;
-    [SerializeField] private GameObject textbox;
-    [SerializeField] private Text text;
+    [SerializeField] private GameObject[] greaterChestPrefabs;
+    [SerializeField] private GameObject[] lesserChestPrefabs;
 
-    public ChestMenu script;
-    public bool chestIsOpen;
+    [SerializeField] private GameObject[] chestLocations;
 
-    public int randomNumber = 0;
+    [SerializeField] private bool bossroom = false;
+
     
+    void SpawnLesserChest()
+    {
+        int index = 0;
+        int randomNumber = Random.Range(0, 3);
+        for(int i = 0; i < lesserChestPrefabs.Length; i++)
+        {
+            if (randomNumber != i)
+            {
+                Instantiate(lesserChestPrefabs[i], chestLocations[index].transform.position, Quaternion.identity);
+                index++;
+            }
+        }
+    }
 
+    void SpawnGreaterChest()
+    {
+        int index = 0;
+        int randomNumber = Random.Range(0, 4);
+        for (int i = 0; i < greaterChestPrefabs.Length; i++)
+        {
+            if (randomNumber != i)
+            {
+                Instantiate(greaterChestPrefabs[i], chestLocations[index].transform.position, Quaternion.identity);
+                index++;
+            }
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        chestIsOpen = script.chestOpened;
+        if (bossroom) SpawnGreaterChest();
+        else SpawnLesserChest();
     }
 
-    void RollForGreaterBlessing()
-    {
-        randomNumber = Random.Range(1, 4);
-        
-    }
 
-    void RollForLesserBlessing()
-    {
-        randomNumber = Random.Range(5, 8);
-        
-    }
-
-    void OpenBlessingMenu()
-    {
-        if (chestIsOpen == true)
-        {
-            blessingMenu.SetActive(true);
-        }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 }
 

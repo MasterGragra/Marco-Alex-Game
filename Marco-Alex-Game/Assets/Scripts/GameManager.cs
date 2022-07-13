@@ -10,9 +10,89 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get => instance; set => instance = value; }
     public int Gold { get => gold; set => gold = value; }
 
+
+    [SerializeField] private Blessing[] might;
+    [SerializeField] private Blessing[] wisdom;
+    [SerializeField] private Blessing[] elements;
+    [SerializeField] private Blessing[] dexterity;
+
+    [SerializeField] private Blessing[] fire;
+    [SerializeField] private Blessing[] wind;
+    [SerializeField] private Blessing[] earth;
+    [SerializeField] private Blessing[] healing;
+
+    [SerializeField] private GameObject[] lesserChests;
+    [SerializeField] private GameObject[] greaterChests;
+
+    [SerializeField] private GameObject greaterChestContainer;
+    [SerializeField] private GameObject lesserChestContainer;
+
+    [SerializeField] private bool bossroom = false;
+
+
+    void SpawnLesserChest()
+    {
+        lesserChestContainer.SetActive(true);
+        int index = 0;
+        int randomNumber = Random.Range(0, 4);
+        if(randomNumber != 0)
+        {
+            lesserChests[index].GetComponent<Chest>().Blessings = might;
+            index++;
+        }
+        if (randomNumber != 1)
+        {
+            lesserChests[index].GetComponent<Chest>().Blessings = wisdom;
+            index++;
+        }
+        if (randomNumber != 2)
+        {
+            lesserChests[index].GetComponent<Chest>().Blessings = dexterity;
+            index++;
+        }
+        if (randomNumber != 3)
+        {
+            lesserChests[index].GetComponent<Chest>().Blessings = elements;
+            index++;
+        }
+    }
+
+    void SpawnGreaterChest()
+    {
+        greaterChestContainer.SetActive(true);
+        int index = 0;
+        int randomNumber = Random.Range(0, 3);
+        if (randomNumber != 0)
+        {
+            greaterChests[index].GetComponent<Chest>().Blessings = fire;
+            index++;
+        }
+        if (randomNumber != 1)
+        {
+            greaterChests[index].GetComponent<Chest>().Blessings = wind;
+            index++;
+        }
+        if (randomNumber != 2)
+        {
+            greaterChests[index].GetComponent<Chest>().Blessings = earth;
+            index++;
+        }
+        if (randomNumber != 3)
+        {
+            greaterChests[index].GetComponent<Chest>().Blessings = healing;
+            index++;
+        }
+    }
+
     private void Awake()
     {
         if (Instance != null && Instance != this) Destroy(this);
         else Instance = this;
+    }
+
+    void Start()
+    {
+        if (bossroom) SpawnGreaterChest();
+        else SpawnLesserChest();
     }
 }
