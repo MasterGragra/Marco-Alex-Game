@@ -15,7 +15,7 @@ public class SpellMenu : MonoBehaviour
     [SerializeField] private Text earthSpellDesc;
     [SerializeField] private Text healingSpellDesc;
 
-    [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private GameObject pauseMenuButtonContainer;
     [SerializeField] private GameObject spellMenu;
 
     public void LoadDescriptions()
@@ -39,6 +39,6 @@ public class SpellMenu : MonoBehaviour
         LoadSpellNames();
         LoadDescriptions();
         spellMenu.SetActive(true);
-        pauseMenu.SetActive(false);
+        pauseMenuButtonContainer.SetActive(false);
     }
 }

@@ -6,20 +6,20 @@ using UnityEngine.UI;
 public class ControlMenu : MonoBehaviour
 { 
     [SerializeField] private GameObject controlPanel;
-    [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private GameObject pauseMenuButtonContainer;
     
 
 
     public void OpenControlPanel()
     {
         controlPanel.SetActive(true);
-        pauseMenu.SetActive(false);
+        pauseMenuButtonContainer.SetActive(false);
     }
 
     public void CloseControlPanel()
     {
         controlPanel.SetActive(false);
-        pauseMenu.SetActive(true);
+        pauseMenuButtonContainer.SetActive(true);
     }
 
  
