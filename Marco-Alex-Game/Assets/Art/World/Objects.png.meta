@@ -148,7 +148,7 @@ TextureImporter:
     second: objects_47
   - first:
       213: -6429866276832845431
-    second: objects_48
+    second: Teleporter
   - first:
       213: 3482744526424367930
     second: objects_49
@@ -1681,7 +1681,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_48
+      name: Teleporter
       rect:
         serializedVersion: 2
         x: 416

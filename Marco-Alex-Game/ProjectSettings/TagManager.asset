@@ -10,6 +10,7 @@ TagManager:
   - Projectile
   - Sign
   - Chest
+  - SmallChest
   layers:
   - Default
   - TransparentFX
@@ -46,6 +47,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Objects
+    uniqueID: 2542267385
     locked: 0
   - name: Collisions
     uniqueID: 1467969489
