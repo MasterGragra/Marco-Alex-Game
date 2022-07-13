@@ -5,24 +5,38 @@ using UnityEngine.UI;
 
 public class SpellMenu : MonoBehaviour
 {
-    [SerializeField] private GameObject spellDescriptionOne;
-    [SerializeField] private GameObject spellDescriptionTwo;
-    [SerializeField] private GameObject spellDescriptionThree;
-    [SerializeField] private GameObject spellDescriptionFour;
+    [SerializeField] private Text fireSpellName;
+    [SerializeField] private Text windSpellName;
+    [SerializeField] private Text earthSpellName;
+    [SerializeField] private Text healingSpellName;
+
+    [SerializeField] private Text fireSpellDesc;
+    [SerializeField] private Text windSpellDesc;
+    [SerializeField] private Text earthSpellDesc;
+    [SerializeField] private Text healingSpellDesc;
 
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject spellMenu;
 
     public void LoadDescriptions()
     {
-        Player.Instance.GetComponent<FireballSpell>().ReturnDescription();
-        Player.Instance.GetComponent<WindBladesSpell>().ReturnDescription();
-        Player.Instance.GetComponent<EarthShieldSpell>().ReturnDescription();
-        Player.Instance.GetComponent<HealSpell>().ReturnDescription();
+        fireSpellDesc.text = Player.Instance.GetComponent<FireballSpell>().ReturnDescription();
+        windSpellDesc.text = Player.Instance.GetComponent<WindBladesSpell>().ReturnDescription();
+        earthSpellDesc.text = Player.Instance.GetComponent<EarthShieldSpell>().ReturnDescription();
+        healingSpellDesc.text = Player.Instance.GetComponent<HealSpell>().ReturnDescription();
+    }
+
+    void LoadSpellNames()
+    {
+        fireSpellName.text = Player.Instance.GetComponent<FireballSpell>().SpellName;
+        windSpellName.text = Player.Instance.GetComponent<WindBladesSpell>().SpellName;
+        earthSpellName.text = Player.Instance.GetComponent<EarthShieldSpell>().SpellName;
+        healingSpellName.text = Player.Instance.GetComponent<HealSpell>().SpellName;
     }
 
     public void OpenSpellMenu()
     {
+        LoadSpellNames();
         LoadDescriptions();
         spellMenu.SetActive(true);
         pauseMenu.SetActive(false);
