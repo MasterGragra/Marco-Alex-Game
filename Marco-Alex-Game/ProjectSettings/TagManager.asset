@@ -48,6 +48,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Characters & Objects
+    uniqueID: 402187967
+    locked: 0
   - name: Objects
     uniqueID: 2542267385
     locked: 0
@@ -59,9 +62,6 @@ TagManager:
     locked: 0
   - name: Spell Lower Layer
     uniqueID: 480053489
-    locked: 0
-  - name: Characters & Objects
-    uniqueID: 402187967
     locked: 0
   - name: Spell Upper Layer
     uniqueID: 2790054255
