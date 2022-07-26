@@ -48,6 +48,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Top Collisions
+    uniqueID: 2284480457
+    locked: 0
   - name: Characters & Objects
     uniqueID: 402187967
     locked: 0

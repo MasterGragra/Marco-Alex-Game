@@ -778,10 +778,10 @@ TextureImporter:
     second: FountainThree
   - first:
       213: -8523025207103374437
-    second: Overworld_258
+    second: CastleWallMiddle
   - first:
       213: 4072211229523600940
-    second: Overworld_259
+    second: CastleWallLeftCorner
   - first:
       213: 6333853765583690847
     second: Overworld_260
@@ -916,7 +916,7 @@ TextureImporter:
     second: Overworld_303
   - first:
       213: -7515960650730833386
-    second: Overworld_304
+    second: CastleWallRightCorner
   - first:
       213: -567448202144228391
     second: Overworld_305
@@ -26124,7 +26124,7 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -26145,7 +26145,7 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -26166,7 +26166,7 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -26174,6 +26174,69 @@ TextureImporter:
       bones: []
       spriteID: 65828fafb553f7380800000000000000
       internalID: -8971393263529875370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CastleWallMiddle
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 525
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9b37e62bb128b980800000000000000
+      internalID: -8523025207103374437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CastleWallLeftCorner
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 524
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c266c1aa986638830800000000000000
+      internalID: 4072211229523600940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CastleWallRightCorner
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 525
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61aff530c91f1b790800000000000000
+      internalID: -7515960650730833386
       vertices: []
       indices: 
       edges: []
