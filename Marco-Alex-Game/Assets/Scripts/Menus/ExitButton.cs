@@ -6,6 +6,7 @@ public class ExitButton : MonoBehaviour
 {
     [SerializeField] private GameObject blessingMenuUI;
     [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private GameObject teleporter;
     public void Exit()
     {
         #if UNITY_EDITOR
@@ -19,6 +20,7 @@ public class ExitButton : MonoBehaviour
     {
         blessingMenuUI.SetActive(false);
         Time.timeScale = 1;
+        teleporter.SetActive(true);
     }
 
     public void UnPause()
