@@ -4812,6 +4812,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blessingMenuUI: {fileID: 0}
   pauseMenu: {fileID: 6940592795108209244}
+  teleporter: {fileID: 0}
 --- !u!1 &3490587219596590979
 GameObject:
   m_ObjectHideFlags: 0
@@ -6163,7 +6164,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &161764760471485090
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6722,8 +6723,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2257b23c612b7ae4ca748a501d84c143, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blessingMenuUI: {fileID: 0}
-  pauseMenu: {fileID: 0}
+  blessingMenuUI: {fileID: 5792733433240808048}
+  pauseMenu: {fileID: 6940592795108209244}
+  teleporter: {fileID: 0}
 --- !u!1 &6311722534872896490
 GameObject:
   m_ObjectHideFlags: 0
@@ -7069,6 +7071,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blessingMenuUI: {fileID: 0}
   pauseMenu: {fileID: 0}
+  teleporter: {fileID: 0}
 --- !u!1 &6940592795108209244
 GameObject:
   m_ObjectHideFlags: 0
