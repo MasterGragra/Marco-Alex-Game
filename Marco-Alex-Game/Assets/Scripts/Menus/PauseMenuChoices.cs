@@ -8,9 +8,20 @@ public class PauseMenuChoices : MonoBehaviour
     [SerializeField] private GameObject controlPanel;
     [SerializeField] private GameObject skillPanel;
     [SerializeField] private GameObject statPanel;
+    [SerializeField] private GameObject volumePanel;
     [SerializeField] private GameObject pauseMenuButtonContainer;
     
+    public void OpenVolumePanel()
+    {
+        volumePanel.SetActive(true);
+        pauseMenuButtonContainer.SetActive(false);
+    }
 
+    public void CloseVolumePanel()
+    {
+        volumePanel.SetActive(false);
+        pauseMenuButtonContainer.SetActive(true);
+    }
     public void OpenStatPanel()
     {
         statPanel.SetActive(true);
