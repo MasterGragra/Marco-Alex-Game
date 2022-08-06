@@ -4,5 +4,32 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Game/Levels/Main Menu.unity
+    guid: 9de1dfca9c5ea904189b372f72c32f23
+  - enabled: 1
+    path: Assets/Scenes/Game/Levels/MainHub.unity
+    guid: d35418d643b3aad44a99250c6626f529
+  - enabled: 1
+    path: Assets/Scenes/Game/Levels/Regular Levels/LevelOne.unity
+    guid: 424f914f5ff569e4eaf135fd61320344
+  - enabled: 1
+    path: Assets/Scenes/Game/Levels/Regular Levels/LevelThree.unity
+    guid: b1fcc633ae26b254f8893cf5661b35ea
+  - enabled: 1
+    path: Assets/Scenes/Game/Levels/Regular Levels/LevelTwo.unity
+    guid: 3f118b5a12b9bdb478c5df6c47d49601
+  - enabled: 1
+    path: Assets/Scenes/Game/Levels/Regular Levels/LevelFour.unity
+    guid: afec8bc78091b3442933f620a3a48f01
+  - enabled: 1
+    path: Assets/Scenes/Game/Levels/Boss Levels/BossLvlOne.unity
+    guid: 4080f5a062230d342b841346d0dc75b0
+  - enabled: 1
+    path: Assets/Scenes/Game/Levels/Boss Levels/BossLvlTwo.unity
+    guid: 2b7209b170222b74a977d8be0e2fb99d
+  - enabled: 1
+    path: Assets/Scenes/Game/Levels/Boss Levels/BossLvlFour.unity
+    guid: de9d410b8b25b6847b1c8456ef3be17f
   m_configObjects: {}

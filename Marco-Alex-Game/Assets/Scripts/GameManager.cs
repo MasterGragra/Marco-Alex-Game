@@ -30,6 +30,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private bool bossroom = false;
 
+    [SerializeField] private GameObject pauseMenu;
+
 
     void SpawnLesserChest()
     {
@@ -85,6 +87,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void GamePaused()
+    {
+        if (pauseMenu == true)
+        {
+            Time.timeScale = 1;
+        }
+    }
     private void Awake()
     {
         if (Instance != null && Instance != this) Destroy(this);

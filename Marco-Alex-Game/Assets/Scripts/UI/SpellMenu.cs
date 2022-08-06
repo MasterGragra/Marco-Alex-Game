@@ -41,4 +41,10 @@ public class SpellMenu : MonoBehaviour
         spellMenu.SetActive(true);
         pauseMenuButtonContainer.SetActive(false);
     }
+
+    public void CloseSpellMenu()
+    {
+        spellMenu.SetActive(false);
+        pauseMenuButtonContainer.SetActive(true);
+    }
 }

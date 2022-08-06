@@ -14,34 +14,21 @@ public class PauseMenu : MonoBehaviour
     {
         PauseMenuUI.SetActive(false);
         Time.timeScale = 1;
-        isPaused = false;
     }
 
-    public void OnPause(InputAction.CallbackContext context)
-    {
-        pause = context.performed;
-    }
+
     public void Pause()
     {
         PauseMenuUI.SetActive(true);
         Time.timeScale = 0;
-        isPaused = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (pause)
+        if(Input.GetKeyDown(KeyCode.Escape))
         {
-            pause = false;
-            if (isPaused)
-            {
-                Resume();
-            }
-            else
-            {
-                Pause();
-            }
+            Pause();
         }
     }
 }
