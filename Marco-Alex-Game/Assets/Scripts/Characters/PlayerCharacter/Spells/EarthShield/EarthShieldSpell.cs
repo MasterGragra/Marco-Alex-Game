@@ -28,8 +28,8 @@ public class EarthShieldSpell : Spell, ISpell
 
     //void Start()
     //{
+    //    fortification = true;
     //    pebbles = true;
-    //    rubbles = true;
     //    stoning = true;
     //    stratification = true;
     //}
@@ -135,6 +135,17 @@ public class EarthShieldSpell : Spell, ISpell
     //    }
     //    active = false;
     //}
+
+    private void Debug()
+    {
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            fortification = true;
+            pebbles = true;
+            stoning = true;
+            stratification = true;
+        }
+    }
 
     // Update is called once per frame
     void Update()
