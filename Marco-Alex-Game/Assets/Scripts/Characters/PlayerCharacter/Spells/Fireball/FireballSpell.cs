@@ -72,10 +72,20 @@ public class FireballSpell : Spell, ISpell
         }
     }
 
+    private void Debug()
+    {
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            Amaterasu = true;
+            BlazingSparks = true;
+            Conflagration = true;
+            Napalm = true;
+        }
+    }
+
     private void Update()
     {
         CastFireball();
-        if (Input.GetKeyDown(KeyCode.H))
-            Debug.Log(ReturnDescription());
+        Debug();
     }
 }

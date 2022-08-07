@@ -76,6 +76,17 @@ public class HealSpell : Spell
         }
     }
 
+    private void Debug()
+    {
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            Consecration = true;
+            HolyGrounds = true;
+            Purity = true;
+            Sanctification = true;
+        }
+    }
+
     public float CalculateHealing()
     {
         return Player.Instance.SpellPower * healMultiplier * Player.Instance.HealSpellModifier;
@@ -85,8 +96,6 @@ public class HealSpell : Spell
     void Update()
     {
         CastHeal();
-
-        if (Input.GetKeyDown(KeyCode.H))
-            Debug.Log(ReturnDescription());
+        Debug();
     }
 }

@@ -64,6 +64,17 @@ public class WindBladesSpell : Spell, ISpell
         }
     }
 
+    private void Debug()
+    {
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            piercingGales = true;
+            splittingGust = true;
+            echoingWind = true;
+            zephyr = true;
+        }
+    }
+
     private int ReturnProjectileCount()
     {
         if (SplittingGust) return WindBladesCount + 2;
@@ -74,5 +85,6 @@ public class WindBladesSpell : Spell, ISpell
     void Update()
     {
         CastWindBlades();
+        Debug();
     }
 }
