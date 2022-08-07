@@ -74,7 +74,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 402187967
-  m_SortingLayer: 4
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -5034061168752090764, guid: 91fe78ee69ec5ae4bb10265448c3786e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -156,9 +156,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 0
-  maxHp: 500
+  maxHp: 300
   attackRange: 5
-  attackDelay: 3
+  attackDelay: 5
   movementSpeed: 0
   meleeAttackPrefab: {fileID: 5373406930403090780, guid: 8b148399f6b26fb42bf8df3516cebf02, type: 3}
   rangeAttackPrefab: {fileID: 3871015167285116005, guid: 4f01a5f56d126cd47bad449d38e85deb, type: 3}

@@ -21,6 +21,7 @@ public class Enemy : Character
     // Start is called before the first frame update
     void Start()
     {
+        CooldownTimer = 2f;
         CharacterStart();
         rigid = GetComponent<Rigidbody2D>();
         Animator = GetComponent<Animator>();

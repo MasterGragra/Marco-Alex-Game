@@ -11,12 +11,12 @@ public class TreantBoss : Enemy
     private int meleeProjectileCount = 3;
 
     [SerializeField] private GameObject rangeAttackPrefab;
-    private float barrageDamageMultiplier = 2f;
+    private float barrageDamageMultiplier = 1.5f;
     private float barrageAttackDelay = 10f;
     private int barrageProjectileCount = 30;
     private float barrageProjectileSpeed = 15f;
 
-    private float fanDamageMultiplier = 2f;
+    private float fanDamageMultiplier = 1.5f;
     private float fanAttackDelay = 10f;
     private int fanBarrageCount = 7;
     private float fanBarrageDelay = 0.5f;
@@ -25,7 +25,7 @@ public class TreantBoss : Enemy
     private float fanSpread = 20f;
 
     [SerializeField] private GameObject whirlwindAttackPrefab;
-    private float whirlwindDamageMultiplier = 1.5f;
+    private float whirlwindDamageMultiplier = 1f;
     private float whirlwindAttackDelay = 12f;
     private int whirlwindCount = 3;
     private int whirlwindLeafCount = 10;

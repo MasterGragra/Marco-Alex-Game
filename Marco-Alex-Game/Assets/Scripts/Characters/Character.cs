@@ -15,7 +15,7 @@ public class Character : MonoBehaviour
     private bool hasDied = false;
     private Color originalColor;
 
-    private float cooldownTimer = 1f;
+    private float cooldownTimer = 0f;
 
     public float Hp { get => hp; set => hp = value; }
     public float MaxHp { get => maxHp; set => maxHp = value; }

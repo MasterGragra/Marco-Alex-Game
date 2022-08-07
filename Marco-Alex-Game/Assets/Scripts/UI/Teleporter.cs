@@ -13,16 +13,8 @@ public class Teleporter : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-        
-                random = Random.Range(2, 6);
+                random = Random.Range(2, 7);
                 SceneManager.LoadScene(random);
-           
-           if(GameManager.Instance.LevelCounter >= 5)
-            {
-                GameManager.Instance.LevelCounter = 0;
-                SceneManager.LoadScene("BossLvlOne");
-                
-            }    
         }
         //Debug.Log("Sign");
     }

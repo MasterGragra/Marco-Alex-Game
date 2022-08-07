@@ -7,6 +7,6 @@ public class StartButton : MonoBehaviour
 {
    public void BeginGame()
     {
-        SceneManager.LoadScene("World");
+        SceneManager.LoadScene("MainHub");
     }
 }

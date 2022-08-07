@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     private static GameManager instance;
     private int gold = 0;
-    private int levelCounter = 0;
+    [SerializeField] private int levelCounter = 0;
     private int enemyCounter = 0;
 
     [SerializeField] private GameObject[] enemies;
@@ -108,6 +108,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        levelCounter++;
         foreach(GameObject enemy in enemies)
         {
             EnemyCounter++;

@@ -12,7 +12,7 @@ public class Player : Character
 
     [SerializeField] private float mp = 100f;
     private float maxMp = 100f;
-    private float mpRegen = 2f;
+    private float mpRegen = 10f;
     private float mpRegenMultiplier = 1f;
 
     private float spellPower = 10f;
