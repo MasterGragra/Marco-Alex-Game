@@ -151,5 +151,6 @@ public class EarthShieldSpell : Spell, ISpell
     void Update()
     {
         CastEarthShield();
+        Debug();
     }
 }
