@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies: []
-  teleporter: {fileID: 0}
+  teleporter: {fileID: 3924543342228625785}
   lesserChests:
   - {fileID: 602181559480736393}
   - {fileID: 5536095877691126534}
@@ -137,6 +137,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Teleporter
       objectReference: {fileID: 0}
+    - target: {fileID: 3892030810760816788, guid: f24f8d40533d05c40afd5764f8a81439, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3892030810760816791, guid: f24f8d40533d05c40afd5764f8a81439, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -183,6 +187,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f24f8d40533d05c40afd5764f8a81439, type: 3}
+--- !u!1 &3924543342228625785 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3892030810760816788, guid: f24f8d40533d05c40afd5764f8a81439, type: 3}
+  m_PrefabInstance: {fileID: 33075537264996845}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3924543342228625786 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3892030810760816791, guid: f24f8d40533d05c40afd5764f8a81439, type: 3}
