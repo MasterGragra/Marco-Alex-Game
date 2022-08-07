@@ -12,12 +12,12 @@ public class TreantBoss : Enemy
 
     [SerializeField] private GameObject rangeAttackPrefab;
     private float barrageDamageMultiplier = 2f;
-    private float barrageAttackDelay = 8f;
+    private float barrageAttackDelay = 10f;
     private int barrageProjectileCount = 30;
     private float barrageProjectileSpeed = 15f;
 
     private float fanDamageMultiplier = 2f;
-    private float fanAttackDelay = 8f;
+    private float fanAttackDelay = 10f;
     private int fanBarrageCount = 7;
     private float fanBarrageDelay = 0.5f;
     private int fanProjectileCount = 7;
@@ -26,12 +26,17 @@ public class TreantBoss : Enemy
 
     [SerializeField] private GameObject whirlwindAttackPrefab;
     private float whirlwindDamageMultiplier = 1.5f;
-    private float whirlwindAttackDelay = 10f;
+    private float whirlwindAttackDelay = 12f;
     private int whirlwindCount = 3;
     private int whirlwindLeafCount = 10;
     private float whirlwindBarrageDelay = 2f;
 
     [SerializeField] private AudioClip attackSFX;
+
+    private void Awake()
+    {
+        AttackDelay = 3f;
+    }
 
     private IEnumerator MeleeAttackCoroutine()
     {
