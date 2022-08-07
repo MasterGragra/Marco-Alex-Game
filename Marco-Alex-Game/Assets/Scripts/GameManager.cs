@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get => instance; set => instance = value; }
     public int Gold { get => gold; set => gold = value; }
     public int EnemyCounter { get => enemyCounter; set => enemyCounter = value; }
+    public int LevelCounter { get => levelCounter; set => levelCounter = value; }
 
     [SerializeField] private Blessing[] might;
     [SerializeField] private Blessing[] wisdom;

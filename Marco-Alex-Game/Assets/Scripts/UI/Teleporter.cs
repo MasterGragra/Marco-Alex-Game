@@ -6,24 +6,21 @@ using UnityEngine.SceneManagement;
 
 public class Teleporter : MonoBehaviour
 {
-    private int counter = 0;
+    
     private int random;
   
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            counter++;
-           if(counter != 5)
-            {
+        
                 random = Random.Range(2, 6);
                 SceneManager.LoadScene(random);
-            }
-           if(counter == 5)
+           
+           if(GameManager.Instance.LevelCounter >= 5)
             {
-                counter = 0;
-                random = Random.Range(6, 9);
-                SceneManager.LoadScene(random);
+                GameManager.Instance.LevelCounter = 0;
+                SceneManager.LoadScene("BossLvlOne");
                 
             }    
         }
