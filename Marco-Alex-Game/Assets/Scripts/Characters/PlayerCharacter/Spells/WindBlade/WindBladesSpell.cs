@@ -45,7 +45,8 @@ public class WindBladesSpell : Spell, ISpell
     {
         if (CanCast())
         {
-            Vector3 skillDirection = Quaternion.AngleAxis(-(windBladesSpread * ((float)ReturnProjectileCount() - 1f) / 2), Vector3.forward) * Player.Instance.GetComponent<PlayerMovement>().PlayerDirection;
+            Vector3 skillDirection = Quaternion.AngleAxis(-(windBladesSpread * ((float)ReturnProjectileCount() - 1f) / 2), Vector3.forward)
+                * Player.Instance.GetComponent<PlayerMovement>().PlayerDirection;
             int projectileCount = ReturnProjectileCount();
             for(int i = 0; i < projectileCount; i++)
             {
@@ -55,7 +56,8 @@ public class WindBladesSpell : Spell, ISpell
                 if (PiercingGales) windBlade.GetComponent<WindBlade>().DestroyOnCollision = false;
 
                 Rigidbody2D rigid = windBlade.GetComponent<Rigidbody2D>();
-                Vector3 force = (Zephyr) ? skillDirection.normalized * windBladesSpeed * zephyrSpeedMultiplier : skillDirection.normalized * windBladesSpeed;
+                Vector3 force = (Zephyr) ? skillDirection.normalized * windBladesSpeed * zephyrSpeedMultiplier
+                    : skillDirection.normalized * windBladesSpeed;
                 rigid.AddForce(force, ForceMode2D.Impulse);
                 skillDirection = Quaternion.AngleAxis(windBladesSpread, Vector3.forward) * skillDirection;
             }
