@@ -29,6 +29,11 @@ public class Enemy : Character
         InvokeRepeating("Animate", 0f, 0.2f);
     }
 
+    private void OnDestroy()
+    {
+        GameManager.Instance.EnemyCounter--;
+    }
+
     public float CheckDistance()
     {
         return Vector3.Distance(transform.position, target.transform.position);

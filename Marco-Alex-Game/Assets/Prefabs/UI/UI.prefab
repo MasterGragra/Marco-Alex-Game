@@ -3913,7 +3913,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBarImage: {fileID: 2136340676627631476}
   manaBarImage: {fileID: 2136340676324457496}
-  staminaBarImage: {fileID: 0}
+  staminaBarImage: {fileID: 2136340677472648109}
 --- !u!114 &8169916759796885172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11008,7 +11008,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7053367321350723929
 RectTransform:
   m_ObjectHideFlags: 0

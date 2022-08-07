@@ -24,7 +24,7 @@ public class Teleporter : MonoBehaviour
                 counter = 0;
                 random = Random.Range(6, 9);
                 SceneManager.LoadScene(random);
-
+                
             }    
         }
         //Debug.Log("Sign");

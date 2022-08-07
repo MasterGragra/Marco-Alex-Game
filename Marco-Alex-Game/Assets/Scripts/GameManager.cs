@@ -7,10 +7,15 @@ public class GameManager : MonoBehaviour
 {
     private static GameManager instance;
     private int gold = 0;
+    private int levelCounter = 0;
+    private int enemyCounter = 0;
+
+    [SerializeField] private GameObject[] enemies;
+    [SerializeField] private GameObject teleporter;
 
     public static GameManager Instance { get => instance; set => instance = value; }
     public int Gold { get => gold; set => gold = value; }
-
+    public int EnemyCounter { get => enemyCounter; set => enemyCounter = value; }
 
     [SerializeField] private Blessing[] might;
     [SerializeField] private Blessing[] wisdom;
@@ -102,9 +107,20 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        foreach(GameObject enemy in enemies)
+        {
+            EnemyCounter++;
+        }
         if (bossroom) SpawnGreaterChest();
         else SpawnLesserChest();
         lesserChestContainer.SetActive(false);
         greaterChestContainer.SetActive(false);
+    }
+    private void Update()
+    {
+        if(EnemyCounter <= 0)
+        {
+            teleporter.SetActive(true);
+        }
     }
 }

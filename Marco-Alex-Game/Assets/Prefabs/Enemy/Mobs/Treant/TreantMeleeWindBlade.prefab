@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1177299508541133663}
   - component: {fileID: 4449164927317996919}
   m_Layer: 0
-  m_Name: TreantWindBlade
+  m_Name: TreantMeleeWindBlade
   m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,8 +73,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 402187967
+  m_SortingLayer: 2
   m_SortingOrder: 2
   m_Sprite: {fileID: 4698315425400886581, guid: 593848b94af38064492efca7547cbf36, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -172,11 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5cda3c704c2dae45a5d72698bcd794e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageModifier: 0.5
-  knockbackForce: 5
-  lifetime: 1
   targetTags:
   - Player
-  player: 0
-  knockback: 0
+  lifetime: 1
   destroyOnCollision: 0
